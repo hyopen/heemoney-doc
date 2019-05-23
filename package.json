@@ -1,0 +1,16 @@
+{
+  "name": "hyproduct",
+  "version": "1.0.0",
+  "description": "> zyy note",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "dev": "node_modules/.bin/serve docs -l 8000",
+    "template": "git checkout yunbiz-dev && git merge template-master && git push origin yunbiz-dev && git checkout template-dev"
+  },
+  "author": "zyy",
+  "devDependencies": {
+    "serve": "^11.0.0"
+  }
+}
