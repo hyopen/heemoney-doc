@@ -1,0 +1,37 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'F:\\nodejs\\node.exe',
+1 verbose cli   'F:\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'run',
+1 verbose cli   'dev' ]
+2 info using npm@6.4.1
+3 info using node@v10.15.0
+4 verbose run-script [ 'predev', 'dev', 'postdev' ]
+5 info lifecycle hyproduct@1.0.0~predev: hyproduct@1.0.0
+6 info lifecycle hyproduct@1.0.0~dev: hyproduct@1.0.0
+7 verbose lifecycle hyproduct@1.0.0~dev: unsafe-perm in lifecycle true
+8 verbose lifecycle hyproduct@1.0.0~dev: PATH: F:\nodejs\node_modules\npm\node_modules\npm-lifecycle\node-gyp-bin;F:\MyWork\heemoney-doc\node_modules\.bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\%MYSQL_HOME%/bin;E:\svn\bin;F:\nodejs\;C:\Program Files\TortoiseGit\bin;F:\nodejs\node_global;F:\nodejs\node_cache;F:\Microsoft VS Code\bin;C:\Windows\System32\OpenSSH\;F:\Git\cmd;C:\Program Files\OpenSSH\bin;F:\nodejs\node_global
+9 verbose lifecycle hyproduct@1.0.0~dev: CWD: F:\MyWork\heemoney-doc
+10 silly lifecycle hyproduct@1.0.0~dev: Args: [ '/d /s /c', 'serve docs -l 8000' ]
+11 silly lifecycle hyproduct@1.0.0~dev: Returned: code: 1  signal: null
+12 info lifecycle hyproduct@1.0.0~dev: Failed to exec dev script
+13 verbose stack Error: hyproduct@1.0.0 dev: `serve docs -l 8000`
+13 verbose stack Exit status 1
+13 verbose stack     at EventEmitter.<anonymous> (F:\nodejs\node_modules\npm\node_modules\npm-lifecycle\index.js:301:16)
+13 verbose stack     at EventEmitter.emit (events.js:182:13)
+13 verbose stack     at ChildProcess.<anonymous> (F:\nodejs\node_modules\npm\node_modules\npm-lifecycle\lib\spawn.js:55:14)
+13 verbose stack     at ChildProcess.emit (events.js:182:13)
+13 verbose stack     at maybeClose (internal/child_process.js:962:16)
+13 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:251:5)
+14 verbose pkgid hyproduct@1.0.0
+15 verbose cwd F:\MyWork\heemoney-doc
+16 verbose Windows_NT 6.1.7601
+17 verbose argv "F:\\nodejs\\node.exe" "F:\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "run" "dev"
+18 verbose node v10.15.0
+19 verbose npm  v6.4.1
+20 error code ELIFECYCLE
+21 error errno 1
+22 error hyproduct@1.0.0 dev: `serve docs -l 8000`
+22 error Exit status 1
+23 error Failed at the hyproduct@1.0.0 dev script.
+23 error This is probably not a problem with npm. There is likely additional logging output above.
+24 verbose exit [ 1, true ]
