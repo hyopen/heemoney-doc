@@ -1,4 +1,3 @@
-- [首页](README.md)
 - [文档说明](WDSM.md)
 - [接口规则](JKGZ.md)
 - [场景介绍](CJJS.md)

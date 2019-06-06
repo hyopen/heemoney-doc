@@ -11,6 +11,6 @@
   },
   "author": "zyy",
   "devDependencies": {
-    "serve": "^11.0.0"
+    "serve": "^11.0.1"
   }
 }
