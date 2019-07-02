@@ -98,7 +98,7 @@
     <td>是</td>
     <td>10</td>
     <td>商户生成签名字符串所使用的签名算法类型</td>
-    <td>md5</td>
+    <td>MD5</td>
 </tr>
 <tr>
     <td>sign</td>
@@ -587,7 +587,7 @@
     <td>是</td>
     <td>10</td>
     <td>商户生成签名字符串所使用的签名算法类型</td>
-    <td>md5</td>
+    <td>MD5</td>
 </tr>
 <tr>
     <td>sign</td>
@@ -991,7 +991,7 @@ total_fee=real_fee
     <td>是</td>
     <td>10</td>
     <td>商户生成签名字符串所使用的签名算法类型</td>
-    <td>md5</td>
+    <td>MD5</td>
 </tr>
 <tr>
     <td>sign</td>
@@ -1374,7 +1374,7 @@ total_fee=real_fee
     <td>是</td>
     <td>10</td>
     <td>商户生成签名字符串所使用的签名算法类型</td>
-    <td>md5</td>
+    <td>MD5</td>
 </tr>
 <tr>
     <td>sign</td>
@@ -1911,7 +1911,7 @@ total_fee=real_fee
     <td>是</td>
     <td>10</td>
     <td>商户生成签名字符串所使用的签名算法类型</td>
-    <td>md5</td>
+    <td>MD5</td>
 </tr>
 <tr>
     <td>sign</td>
@@ -2397,7 +2397,7 @@ total_fee=real_fee
     <td>是</td>
     <td>10</td>
     <td>商户生成签名字符串所使用的签名算法类型</td>
-    <td>md5</td>
+    <td>MD5</td>
 </tr>
 <tr>
     <td>sign</td>
@@ -2816,7 +2816,7 @@ total_fee=real_fee
     <td>是</td>
     <td>10</td>
     <td>商户生成签名字符串所使用的签名算法类型</td>
-    <td>md5</td>
+    <td>MD5</td>
 </tr>
 <tr>
     <td>sign</td>
@@ -2965,7 +2965,7 @@ hy_contract_no和out_contract_no二选其一，不能同时为空，优先hy_con
     <td>是</td>
     <td>10</td>
     <td>版本号，默认1.0</td>
-    <td>V1.0</td>
+    <td>1.0</td>
 </tr>
 <tr>
     <td>app_id</td>
@@ -3182,7 +3182,7 @@ hy_contract_no和out_contract_no二选其一，不能同时为空，优先hy_con
     <td>是</td>
     <td>10</td>
     <td>商户生成签名字符串所使用的签名算法类型</td>
-    <td>md5</td>
+    <td>MD5</td>
 </tr>
 <tr>
     <td>sign</td>
@@ -3338,9 +3338,9 @@ hy_contract_no和out_contract_no二选其一，不能同时为空，优先hy_con
     <td>version	</td>
     <td>String</td>
     <td>是</td>
-    <td>32</td>
-    <td>应用ID,商户的应用id</td>
-    <td>Ap22512545</td>
+    <td>10</td>
+    <td>版本编号1.0</td>
+    <td>1.0</td>
 </tr>
 <tr>
     <td>app_id</td>
@@ -3614,6 +3614,7 @@ hy_contract_no和out_contract_no二选其一，不能同时为空，优先hy_con
     <td>解约备注</td>
     <td></td>
 </tr>
+
 <tr>
     <td>sign</td>
     <td>String</td>
@@ -3623,6 +3624,920 @@ hy_contract_no和out_contract_no二选其一，不能同时为空，优先hy_con
     <td></td>
 </tr>
 </table>
+
+
+
+
+## 鉴权
+
+- 鉴权请求接口
+
+> 请求URL:`http://api.heemoney.com/v1/UserAuthSubmit`
+
+> 请求方式:`POST`   
+
+> 是否需要证书：`否`
+
+> method：`heemoney.user.auth.submit`
+
+- 公共参数
+
+<table data-hy-role="doctbl">
+    <th>参数</th>
+    <th>类型</th>
+    <th>是否必填</th>
+    <th>最大长度</th>
+    <th>描述</th>
+    <th>示例值</th>
+</tr>
+<tr>
+    <td>method</td>
+    <td>String</td>
+    <td>是</td>
+    <td>100</td>
+    <td>具体业务接口名称</td>
+    <td>heemoney.user.auth.submit</td>
+</tr>
+<tr>
+    <td>version</td>
+    <td>String</td>
+    <td>是</td>
+    <td>10</td>
+    <td>版本号,默认1.0</td>
+    <td></td>
+</tr>
+<tr>
+    <td>app_id</td>
+    <td>String</td>
+    <td>是</td>
+    <td>32</td>
+    <td>应用ID，商户的应用id</td>
+    <td></td>
+</tr>
+<tr>
+    <td>mch_id</td>
+    <td>String</td>
+    <td>是</td>
+    <td>32</td>
+    <td>商户统一编号</td>
+    <td></td>
+</tr>
+<tr>
+    <td>charset</td>
+    <td>String</td>
+    <td>否</td>
+    <td>32</td>
+    <td>编码格式默认为UTF-8</td>
+    <td>UTF-8,GBK,GB2312</td>
+</tr>
+<tr>
+    <td>sign_type</td>
+    <td>String</td>
+    <td>是</td>
+    <td>10</td>
+    <td>商户生成签名字符串所使用的签名算法类型</td>
+    <td>MD5</td>
+</tr>
+<tr>
+    <td>timestamp</td>
+    <td>String</td>
+    <td>是</td>
+    <td>19</td>
+    <td>发送请求的时间</td>
+    <td>yyyyMMddHHmmss</td>
+</tr>
+<tr>
+    <td>biz_content</td>
+    <td>String</td>
+    <td>是</td>
+    <td>不限</td>
+    <td>鉴权参数集合,Json格式,长度不限,具体参数见如下业务参数</td>
+    <td>Json格式</td>
+</tr>
+<tr>
+    <td>sign</td>
+    <td>String</td>
+    <td>是</td>
+    <td>32</td>
+    <td>数据签名</td>
+    <td></td>
+</tr>
+</table>
+
+
+- 业务参数
+
+<table data-hy-role="doctbl">
+    <th>参数</th>
+    <th>类型</th>
+    <th>是否必填</th>
+    <th>最大长度</th>
+    <th>描述</th>
+    <th>示例值</th>
+</tr>
+<tr>
+    <td>out_trade_no</td>
+    <td>String</td>
+    <td>是</td>
+    <td>64</td>
+    <td>单号,要求64个字符内、且在同一个商户号下唯一</td>
+    <td>Hylsjdklj245</td>
+</tr>
+<tr>
+    <td>auth_type</td>
+    <td>String</td>
+    <td>是</td>
+    <td>10</td>
+    <td>鉴权类型,0=未知,1=身份证鉴权,2=银行卡鉴权</td>
+    <td>2</td>
+</tr>
+<tr>
+    <td>auth_detail_type</td>
+    <td>String</td>
+    <td>是</td>
+    <td>10</td>
+    <td>鉴权详细类型,0=未知,1=二要素,2=三要素,3=四要素</td>
+    <td>2</td>
+</tr>
+<tr>
+    <td>auth_data_info</td>
+    <td>String</td>
+    <td>是</td>
+    <td>-</td>
+    <td>鉴权数据详细集合,Json格式,长度不限</td>
+    <td>[{"bank_card_type":"","auth_bank_card":"","auth_name":""}]</td>
+</tr>
+</table>
+
+```text
+	auth_data_info	鉴权数据详细json格式
+     示例
+银行卡二要素 
+储蓄卡： [{"bank_card_type":"1","auth_bank_card":"6217000130000751966","auth_name":"张三"}] 
+信用卡： [{"bank_card_type":"2","auth_bank_card":"6217000130000751966","auth_name":"张三","cvv2":"233","expire_date":"1225"}]
+银行卡三要素 
+储蓄卡：[{"bank_card_type":"1","auth_bank_card":"6217000130000751966","auth_id_card":"320926195511175276","auth_name":"张三"}] 
+信用卡： [{"bank_card_type":"2","auth_bank_card":"6217000130000751966","auth_id_card":"320926195511175276","auth_name":"张三","cvv2":"233","expire_date":"1225"}]
+银行卡四要素 
+储蓄卡：[{"bank_card_type":"1","auth_bank_card":"6217000130000751966","auth_id_card":"320926195511175276","auth_name":"张三","auth_mobile":"13811111111"}] 
+信用卡： [{"bank_card_type":"2","auth_bank_card":"6217000130000751966","auth_id_card":"320926195511175276","auth_name":"张三","auth_mobile":"13811111111","cvv2":"233","expire_date":"1225"}]
+
+```
+
+
+
+- 鉴权查询接口
+
+> 请求URL:`http://api.heemoney.com/v1/UserAuthQuery`
+
+> 请求方式:`POST`   
+
+> 是否需要证书：`否`
+
+> method：`heemoney.user.auth.query`
+
+- 公共参数
+
+<table data-hy-role="doctbl">
+    <th>参数</th>
+    <th>类型</th>
+    <th>是否必填</th>
+    <th>最大长度</th>
+    <th>描述</th>
+    <th>示例值</th>
+</tr>
+<tr>
+    <td>method</td>
+    <td>String</td>
+    <td>是</td>
+    <td>100</td>
+    <td>具体业务接口名称</td>
+    <td>heemoney.user.auth.query</td>
+</tr>
+<tr>
+    <td>version</td>
+    <td>String</td>
+    <td>是</td>
+    <td>10</td>
+    <td>版本号,默认1.0</td>
+    <td></td>
+</tr>
+<tr>
+    <td>app_id</td>
+    <td>String</td>
+    <td>是</td>
+    <td>32</td>
+    <td>应用ID，商户的应用id</td>
+    <td></td>
+</tr>
+<tr>
+    <td>mch_id</td>
+    <td>String</td>
+    <td>是</td>
+    <td>32</td>
+    <td>商户统一编号</td>
+    <td></td>
+</tr>
+<tr>
+    <td>charset</td>
+    <td>String</td>
+    <td>否</td>
+    <td>32</td>
+    <td>编码格式默认为UTF-8</td>
+    <td>UTF-8,GBK,GB2312</td>
+</tr>
+<tr>
+    <td>sign_type</td>
+    <td>String</td>
+    <td>是</td>
+    <td>10</td>
+    <td>商户生成签名字符串所使用的签名算法类型</td>
+    <td>MD5</td>
+</tr>
+<tr>
+    <td>timestamp</td>
+    <td>String</td>
+    <td>是</td>
+    <td>19</td>
+    <td>发送请求的时间</td>
+    <td>yyyyMMddHHmmss</td>
+</tr>
+<tr>
+    <td>biz_content</td>
+    <td>String</td>
+    <td>是</td>
+    <td>不限</td>
+    <td>鉴权参数集合,Json格式,长度不限,具体参数见如下业务参数</td>
+    <td>Json格式</td>
+</tr>
+<tr>
+    <td>sign</td>
+    <td>String</td>
+    <td>是</td>
+    <td>32</td>
+    <td>数据签名</td>
+    <td></td>
+</tr>
+</table>
+
+
+- 业务参数
+
+<table data-hy-role="doctbl">
+    <th>参数</th>
+    <th>类型</th>
+    <th>是否必填</th>
+    <th>最大长度</th>
+    <th>描述</th>
+    <th>示例值</th>
+</tr>
+<tr>
+    <td>out_trade_no</td>
+    <td>String</td>
+    <td>是</td>
+    <td>64</td>
+    <td>单号,要求64个字符内、且在同一个商户号下唯一</td>
+    <td>Hylsjdklj245</td>
+</tr>
+<tr>
+    <td>auth_type</td>
+    <td>String</td>
+    <td>是</td>
+    <td>10</td>
+    <td>鉴权类型,0=未知,1=身份证鉴权,2=银行卡鉴权</td>
+    <td>2</td>
+</tr>
+<tr>
+    <td>auth_detail_type</td>
+    <td>String</td>
+    <td>是</td>
+    <td>10</td>
+    <td>鉴权详细类型,0=未知,1=二要素,2=三要素,3=四要素</td>
+    <td>2</td>
+</tr>
+</table>
+
+
+
+
+## 统一进件
+
+- 进件接口
+
+> 请求URL:`http://api.heemoney.com/v1/MerchProviderSubmit`
+
+> 请求方式:`POST`   
+
+> 是否需要证书：`否`
+
+> method：`heemoney.merch.provider.submit`
+
+- 公共参数
+
+<table data-hy-role="doctbl">
+    <th>参数</th>
+    <th>类型</th>
+    <th>是否必填</th>
+    <th>最大长度</th>
+    <th>描述</th>
+    <th>示例值</th>
+</tr>
+<tr>
+    <td>method</td>
+    <td>String</td>
+    <td>是</td>
+    <td>100</td>
+    <td>具体业务接口名称</td>
+    <td>heemoney.merch.provider.submit</td>
+</tr>
+<tr>
+    <td>version</td>
+    <td>String</td>
+    <td>是</td>
+    <td>10</td>
+    <td>版本号,默认1.0</td>
+    <td></td>
+</tr>
+<tr>
+    <td>isv_mch_uid</td>
+    <td>String</td>
+    <td>是</td>
+    <td>32</td>
+    <td>服务商商户号</td>
+    <td>1002501975866</td>
+</tr>
+<tr>
+    <td>isv_app_id</td>
+    <td>String</td>
+    <td>是</td>
+    <td>32</td>
+    <td>服务商的应用id</td>
+    <td>hyp180514100</td>
+</tr>
+<tr>
+    <td>charset</td>
+    <td>String</td>
+    <td>否</td>
+    <td>32</td>
+    <td>编码格式默认为UTF-8</td>
+    <td>UTF-8,GBK,GB2312</td>
+</tr>
+<tr>
+    <td>sign_type</td>
+    <td>String</td>
+    <td>是</td>
+    <td>10</td>
+    <td>商户生成签名字符串所使用的签名算法类型</td>
+    <td>MD5</td>
+</tr>
+<tr>
+    <td>timestamp</td>
+    <td>String</td>
+    <td>是</td>
+    <td>19</td>
+    <td>发送请求的时间</td>
+    <td>yyyyMMddHHmmss</td>
+</tr>
+<tr>
+    <td>biz_content</td>
+    <td>String</td>
+    <td>是</td>
+    <td>不限</td>
+    <td>鉴权参数集合,Json格式,长度不限,具体参数见如下业务参数</td>
+    <td>Json格式</td>
+</tr>
+<tr>
+    <td>sign</td>
+    <td>String</td>
+    <td>是</td>
+    <td>32</td>
+    <td>数据签名</td>
+    <td></td>
+</tr>
+</table>
+
+
+- 业务参数
+
+<table data-hy-role="doctbl">
+    <th>参数</th>
+    <th>类型</th>
+    <th>是否必填</th>
+    <th>最大长度</th>
+    <th>描述</th>
+    <th>示例值</th>
+</tr>
+<tr>
+    <td>mch_uid</td>
+    <td>String</td>
+    <td>是</td>
+    <td>64</td>
+    <td>商户号</td>
+    <td>1002502108179</td>
+</tr>
+<tr>
+    <td>merch_full_name</td>
+    <td>String</td>
+    <td>是</td>
+    <td>50</td>
+    <td>商户全名称</td>
+    <td></td>
+</tr>
+<tr>
+    <td>merch_short_name</td>
+    <td>String</td>
+    <td>是</td>
+    <td>20</td>
+    <td>商户简称</td>
+    <td></td>
+</tr>
+<tr>
+    <td>merch_type</td>
+    <td>String</td>
+    <td>是</td>
+    <td>10</td>
+    <td>商户类型编码，0线下商户，1线上商户，-1未知</td>
+    <td>0</td>
+</tr>
+<tr>
+    <td>province_id</td>
+    <td>String</td>
+    <td>是</td>
+    <td>10</td>
+    <td>省份ID</td>
+    <td><a href="files/省区县数据.txt">省市县编码下载</a></td>
+</tr>
+<tr>
+    <td>city_id</td>
+    <td>String</td>
+    <td>是</td>
+    <td>10</td>
+    <td>城市ID</td>
+    <td><a href="files/省区县数据.txt">省市县编码</a></td>
+</tr>
+<tr>
+    <td>county_id</td>
+    <td>String</td>
+    <td>是</td>
+    <td>10</td>
+    <td>县ID</td>
+    <td><a href="files/省区县数据.txt">省市县编码</a></td>
+</tr>
+<tr>
+    <td>offical_type</td>
+    <td>String</td>
+    <td>是</td>
+    <td>10</td>
+    <td>商户行政类型，5 个体工商户，4 企业，6 个人</td>
+    <td>6</td>
+</tr>
+<tr>
+    <td>contact_type</td>
+    <td>String</td>
+    <td>是</td>
+    <td>32</td>
+    <td>联系人类型，LEGAL_PERSON 法人，CONTROLLER 实际控制人，AGENT代理人，OTHER 其他</td>
+    <td>LEGAL_PERSON</td>
+</tr>
+<tr>
+    <td>contact_name</td>
+    <td>String</td>
+    <td>是</td>
+    <td>50</td>
+    <td>联系人姓名</td>
+    <td>张三</td>
+</tr>
+<tr>
+    <td>contact_mobile</td>
+    <td>String</td>
+    <td>是</td>
+    <td>50</td>
+    <td>联系人手机号</td>
+    <td>13811111111</td>
+</tr>
+<tr>
+    <td>contact_idcard</td>
+    <td>String</td>
+    <td>是</td>
+    <td>50</td>
+    <td>联系人身份证号</td>
+    <td></td>
+</tr>
+<tr>
+    <td>contact_idcard_valid</td>
+    <td>String</td>
+    <td>是</td>
+    <td>50</td>
+    <td>联系人身份证有效期</td>
+    <td>2015-6-8_2025-6-8_10或者2015-6-8__长期</td>
+</tr>
+<tr>
+    <td>area_type</td>
+    <td>String</td>
+    <td>是</td>
+    <td>50</td>
+    <td>营业执照类型,营业执照:NATIONAL_LEGAL,营业执照()多证合一):NATIONAL_LEGAL_MERGE,事业单位法人证书:INST_RGST_CTF</td>
+    <td>NATIONAL_LEGAL_MERGE</td>
+</tr>
+<tr>
+    <td>business_no</td>
+    <td>String</td>
+    <td>是</td>
+    <td>30</td>
+    <td>营业执照号</td>
+    <td>2334dghhs2</td>
+</tr>
+<tr>
+    <td>business_name</td>
+    <td>String</td>
+    <td>是</td>
+    <td>50</td>
+    <td>营业执照注册名称</td>
+    <td>公司名称</td>
+</tr>
+<tr>
+    <td>business_valid</td>
+    <td>String</td>
+    <td>是</td>
+    <td>50</td>
+    <td>营业执照有效期</td>
+    <td>2015-6-8_2025-6-8_10或者2015-6-8__长期</td>
+</tr>
+<tr>
+    <td>licence_address</td>
+    <td>String</td>
+    <td>是</td>
+    <td>125</td>
+    <td>营业执照上的地址</td>
+    <td></td>
+</tr>
+<tr>
+    <td>address</td>
+    <td>String</td>
+    <td>是</td>
+    <td>125</td>
+    <td>商户经营地址</td>
+    <td></td>
+</tr>
+<tr>
+    <td>legal_user</td>
+    <td>String</td>
+    <td>是</td>
+    <td>50</td>
+    <td>法人姓名</td>
+    <td></td>
+</tr>
+<tr>
+    <td>legal_mobile</td>
+    <td>String</td>
+    <td>是</td>
+    <td>50</td>
+    <td>法人手机号</td>
+    <td></td>
+</tr>
+<tr>
+    <td>legal_idcard</td>
+    <td>String</td>
+    <td>是</td>
+    <td>50</td>
+    <td>法人身份证号</td>
+    <td></td>
+</tr>
+<tr>
+    <td>legal_idcard_valid</td>
+    <td>String</td>
+    <td>是</td>
+    <td>50</td>
+    <td>法人身份证有效期限</td>
+    <td>2015-6-8_2025-6-8_10或者2015-6-8__长期</td>
+</tr>
+<tr>
+    <td>business_scope</td>
+    <td>String</td>
+    <td>是</td>
+    <td>500</td>
+    <td>经营范围</td>
+    <td>报刊亭，小商店等</td>
+</tr>
+<tr>
+    <td>industry_id</td>
+    <td>String</td>
+    <td>是</td>
+    <td>10</td>
+    <td>所属行业编码,详情看下方示例编码</td>
+    <td>15</td>
+</tr>
+<tr>
+    <td>serv_phone</td>
+    <td>String</td>
+    <td>是</td>
+    <td>30</td>
+    <td>客服电话</td>
+    <td>1235885</td>
+</tr>
+<tr>
+    <td>serv_email</td>
+    <td>String</td>
+    <td>是</td>
+    <td>30</td>
+    <td>邮箱</td>
+    <td>1235885@qq.com</td>
+</tr>
+<tr>
+    <td>shop_id_card</td>
+    <td>String</td>
+    <td>是</td>
+    <td>50</td>
+    <td>店主身份证号</td>
+    <td>421224199212141641</td>
+</tr>
+<tr>
+    <td>sale_id</td>
+    <td>String</td>
+    <td>是</td>
+    <td>36</td>
+    <td>销售ID</td>
+    <td>4f2eba6c-0f12-40fc-900d-d5c1365b5058</td>
+</tr>
+<tr>
+    <td>local_code</td>
+    <td>String</td>
+    <td>是</td>
+    <td>10</td>
+    <td>门店所在地地区代码</td>
+    <td><a href="files/门店所在地地区代码.xlsx">门店所在地地区编码</a></td>
+</tr>
+<tr>
+    <td>settle_type</td>
+    <td>String</td>
+    <td>是</td>
+    <td>10</td>
+    <td>结算类型,T：T+1结算,D：D+1结算</td>
+    <td>T</td>
+</tr>
+<tr>
+    <td>acct_type</td>
+    <td>String</td>
+    <td>是</td>
+    <td>10</td>
+    <td>银行开户类型,1对公,2对私</td>
+    <td>1</td>
+</tr>
+<tr>
+    <td>bank_card_no</td>
+    <td>String</td>
+    <td>是</td>
+    <td>50</td>
+    <td>银行卡号</td>
+    <td>4654894</td>
+</tr>
+<tr>
+    <td>bank_account</td>
+    <td>String</td>
+    <td>是</td>
+    <td>128</td>
+    <td>银行账户名称</td>
+    <td></td>
+</tr>
+<tr>
+    <td>open_bank</td>
+    <td>String</td>
+    <td>是</td>
+    <td>128</td>
+    <td>开户行名称</td>
+    <td>建设银行</td>
+</tr>
+<tr>
+    <td>bank_code</td>
+    <td>String</td>
+    <td>是</td>
+    <td>10</td>
+    <td>银行总行联行号</td>
+    <td><a href="files/银行总行号.xlsx">银行总行号编码</a></td>
+</tr>
+<tr>
+    <td>open_branch_bank</td>
+    <td>String</td>
+    <td>是</td>
+    <td>128</td>
+    <td>开户支行名称</td>
+    <td></td>
+</tr>
+<tr>
+    <td>bank_branch_code</td>
+    <td>String</td>
+    <td>否</td>
+    <td>10</td>
+    <td>银行支行联行号</td>
+    <td></td>
+</tr>
+<tr>
+    <td>bank_province_id</td>
+    <td>String</td>
+    <td>是</td>
+    <td>10</td>
+    <td>银行省份ID</td>
+    <td><a href="files/省区县数据.txt">省市编码</a></td>
+</tr>
+<tr>
+    <td>bank_city_id</td>
+    <td>String</td>
+    <td>是</td>
+    <td>10</td>
+    <td>银行城市ID</td>
+    <td><a href="files/省区县数据.txt">省市编码</a></td>
+</tr>
+<tr>
+    <td>bank_mobile</td>
+    <td>String</td>
+    <td>是</td>
+    <td>50</td>
+    <td>银行预留手机号</td>
+    <td>15212341234</td>
+</tr>
+<tr>
+    <td>wei_xin_fee_rate</td>
+    <td>String</td>
+    <td>是</td>
+    <td>10</td>
+    <td>微信费率,优质商户固定为0.38,非优质商户0.25~0.6,百分比</td>
+    <td>0.38</td>
+</tr>
+<tr>
+    <td>alipay_fee_rate</td>
+    <td>String</td>
+    <td>是</td>
+    <td>10</td>
+    <td>支付宝费率,优质商户固定为0.38,非优质商户0.25~0.6,百分比</td>
+    <td>0.38</td>
+</tr>
+<tr>
+    <td>material_upload_7file</td>
+    <td>String</td>
+    <td>是</td>
+    <td>256</td>
+    <td>收银台照片,图片的全路径</td>
+    <td>http://192.168.1.1/pay/bc6a1.jpg</td>
+</tr>
+<tr>
+    <td>registry_upload_file</td>
+    <td>String</td>
+    <td>是</td>
+    <td>256</td>
+    <td>门头照,图片的全路径</td>
+    <td>http://192.168.2.1/pay/bc6a1.jpg</td>
+</tr>
+<tr>
+    <td>rupload_file</td>
+    <td>String</td>
+    <td>是</td>
+    <td>256</td>
+    <td>对公账户许可,图片的全路径</td>
+    <td>http://192.168.2.1/pay/bc6a1.jpg</td>
+</tr>
+<tr>
+    <td>legal_upload_file</td>
+    <td>String</td>
+    <td>是</td>
+    <td>256</td>
+    <td>法人身份证国徽(反面照),图片的全路径</td>
+    <td>http://192.168.2.1/pay/bc6a1.jpg</td>
+</tr>
+<tr>
+    <td>bupload_file</td>
+    <td>String</td>
+    <td>是</td>
+    <td>256</td>
+    <td>营业执照,图片的全路径</td>
+    <td>http://192.168.2.1/pay/bc6a1.jpg</td>
+</tr>
+<tr>
+    <td>photo_upload_file</td>
+    <td>String</td>
+    <td>是</td>
+    <td>256</td>
+    <td>内部经营照片,图片的全路径</td>
+    <td>http://192.168.2.1/pay/bc6a1.jpg</td>
+</tr>
+<tr>
+    <td>material_upload_2file</td>
+    <td>String</td>
+    <td>是</td>
+    <td>256</td>
+    <td>结算银行卡正面照,图片的全路径</td>
+    <td>http://192.168.2.1/pay/bc6a1.jpg</td>
+</tr>
+<tr>
+    <td>material_upload_3file</td>
+    <td>String</td>
+    <td>是</td>
+    <td>256</td>
+    <td>店主身份证国徽面(反面),图片的全路径</td>
+    <td>http://192.168.2.1/pay/bc6a1.jpg</td>
+</tr>
+<tr>
+    <td>material_upload_4file</td>
+    <td>String</td>
+    <td>是</td>
+    <td>256</td>
+    <td>店主身份证人像面(正面),图片的全路径</td>
+    <td>http://192.168.2.1/pay/bc6a1.jpg</td>
+</tr>
+<tr>
+    <td>material_upload_5file</td>
+    <td>String</td>
+    <td>是</td>
+    <td>256</td>
+    <td>入账人手持身份证正面,图片的全路径</td>
+    <td>http://192.168.2.1/pay/bc6a1.jpg</td>
+</tr>
+<tr>
+    <td>material_upload_file</td>
+    <td>String</td>
+    <td>是</td>
+    <td>256</td>
+    <td>法人身份证人像面(正面),图片的全路径</td>
+    <td>http://192.168.2.1/pay/bc6a1.jpg</td>
+</tr>
+<tr>
+    <td>material_upload_1file</td>
+    <td>String</td>
+    <td>是</td>
+    <td>256</td>
+    <td>入账授权书,图片的全路径</td>
+    <td>http://192.168.2.1/pay/bc6a1.jpg</td>
+</tr>
+</table>
+
+- 响应参数
+
+<table data-hy-role="doctbl">
+    <th>参数</th>
+    <th>类型</th>
+    <th>是否必填</th>
+    <th>最大长度</th>
+    <th>描述</th>
+    <th>示例值</th>
+</tr>
+<tr>
+    <td>return_code</td>
+    <td>String</td>
+    <td>是</td>
+    <td>16</td>
+    <td>返回状态码</td>
+    <td>SUCCESS</td>
+</tr>
+<tr>
+    <td>return_msg</td>
+    <td>String</td>
+    <td>是</td>
+    <td>128</td>
+    <td>返回的信息描述</td>
+    <td>进件信息提交成功</td>
+</tr>
+<tr>
+    <td>status</td>
+    <td>String</td>
+    <td>是</td>
+    <td>16</td>
+    <td>返回的信息状态</td>
+    <td>ok</td>
+</tr>
+<tr>
+    <td>sub_mch_id</td>
+    <td>String</td>
+    <td>是</td>
+    <td>32</td>
+    <td>商户编号</td>
+    <td>LMFPAY000001068</td>
+</tr>
+</table>
+
+
+```text
+industry_id参数行业及编码:
+
+8	小型超市/便利店/零售商店
+9	小吃/快餐/美食城
+10	水果零售/蔬菜零售
+11	水吧/饮料/冷饮
+12	药品/医疗/保健
+13	美发/美容/足疗保健
+14	网吧/KTV/酒吧休闲娱乐类
+15	大中型餐饮
+16	大中型连锁超市
+17	校园内食堂/餐饮
+18	校园内超市/便利店/零售
+19	快递
+20	彩票
+21	交通运输/票务旅游
+22	教育
+23	烟酒零食
+24	其他
+```
+
+
+
 
 
 ## 错误码
