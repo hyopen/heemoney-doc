@@ -40,13 +40,13 @@
 </table>
 
 MD5签名规则：
-```text
-第一步：把字典按Key的字母顺序排序；
-第二步：把所有参数名和参数值串在一起；
-第三步：在第二步生成的参数串后加入KEY;
-第四步：讲第三步得到的参数串进行MD5加密；
-第五步：将MD5串转大写。
-```
+
+1. 把字典按Key的字母顺序排序；
+- 把所有参数名和参数值串在一起；
+- 在第二步生成的参数串后加入KEY;
+- 讲第三步得到的参数串进行MD5加密；
+- 将MD5串转大写。
+
 
 例如：
 ```
@@ -54,8 +54,18 @@ APP_KEY：EA9DA4530C454D009D0E1291
 ```
 
 请求参数（除sign外）：
-```text
-{"api_from_type":"Out_Api","method":"heemoney.pay.applypay","version":"1.0","app_id":"hyp170420470720000001025BCB0C31E","mch_uid":"4707201974600","charset":"utf-8","sign_type":"MD5","timestamp":"20170511000017","biz_content":"{\"out_trade_no\":\"20170511000017\",\"subject\":\"测试1分\",\"total_fee\":\"1\",\"client_ip\":\"127.0.0.1\",\"notify_url\":\"http://localhost/TestMergepay/Api/RecNotifyUrl.aspx\",\"return_url\":\"http://localhost/TestMergepay/Api/RecReturnUrl.aspx\",\"channel_type\":\"100\"}"}
+```javascript
+{
+    "api_from_type": "Out_Api",
+    "method": "heemoney.pay.applypay",
+    "version": "1.0",
+    "app_id": "hyp170420470720000001025BCB0C31E",
+    "mch_uid": "4707201974600",
+    "charset": "utf-8",
+    "sign_type": "MD5",
+    "timestamp": "20170511000017",
+    "biz_content": "{\"out_trade_no\":\"20170511000017\",\"subject\":\"测试1分\",\"total_fee\":\"1\",\"client_ip\":\"127.0.0.1\",\"notify_url\":\"http://localhost/TestMergepay/Api/RecNotifyUrl.aspx\",\"return_url\":\"http://localhost/TestMergepay/Api/RecReturnUrl.aspx\",\"channel_type\":\"100\"}"
+}
 ```
 
 根据规则应生成MD5签名串：
@@ -64,8 +74,10 @@ api_from_type=Out_Api&app_id=hyp170420470720000001025BCB0C31E&biz_content={"out_
 ```
 
 MD5签名转大写后：
-```text
- "sign":"5799E16B62E6607704345E02C80D5ACF"
+```javascript
+{
+    "sign":"5799E16B62E6607704345E02C80D5ACF"
+}
 ```
 
 
@@ -92,37 +104,32 @@ CNY：人民币
         <th>含义</th>
     </tr>
     <tr>
-        <td>微信</td>
+        <td rowspan="4">微信</td>
         <td>WX_NATIVE</td>
         <td>微信扫码</td>
     </tr>
     <tr>
-        <td></td>
         <td>WX_JSAPI</td>
         <td>微信公众号</td>
     </tr>
     <tr>
-        <td></td>
         <td>WX_H5</td>
         <td>微信H5</td>
     </tr>
     <tr>
-        <td></td>
         <td>WX_MICROPAY</td>
         <td>微信刷卡</td>
     </tr>
     <tr>
-        <td>支付宝</td>
+        <td rowspan="3">支付宝</td>
         <td>ALI_QRCODE</td>
         <td>支付宝扫码</td>
     </tr>
     <tr>
-        <td></td>
         <td>ALI_WAP</td>
         <td>支付宝WAP</td>
     </tr>
     <tr>
-        <td></td>
         <td>ALI_SWIPE</td>
         <td>支付宝刷卡</td>
     </tr>
@@ -132,12 +139,11 @@ CNY：人民币
         <td>QQ扫码</td>
     </tr>
     <tr>
-        <td>快捷支付</td>
+        <td rowspan="2">快捷支付</td>
         <td>BANK_QUICK_PAY_FD</td>
         <td>快捷支付封顶</td>
     </tr>
     <tr>
-        <td></td>
         <td>BANK_QUICK_PAY_BFD</td>
         <td>快捷支付不封顶</td>
     </tr>
@@ -147,17 +153,15 @@ CNY：人民币
         <td>网银支付</td>
     </tr>
     <tr>
-        <td>银联</td>
+        <td rowspan="3">银联</td>
         <td>BANK_QRCODE</td>
         <td>银联扫码</td>
     </tr>
     <tr>
-        <td></td>
         <td>BANK_SWIPE</td>
         <td>银联刷卡</td>
     </tr>
     <tr>
-        <td></td>
         <td>BANK_WAP</td>
         <td>银联WAP</td>
     </tr>
@@ -182,9 +186,7 @@ CNY：人民币
  ```
 
 - 开发步骤
-```text
-1.申请注册汇收银商户账号
-2.开通所需要的支付通道
-3.查询商户UID、APPID、KEY,如果您是服务商模式，另外，如果您服务商模式的对接，需要查找服务商的商户UID、APPID、KEY,
-4.根据API规范，开始程序对接
-```
+    1. 申请注册汇收银商户账号
+    - 开通所需要的支付通道
+    - 查询商户UID、APPID、KEY,如果您是服务商模式，另外，如果您服务商模式的对接，需要查找服务商的商户UID、APPID、KEY,
+    - 根据API规范，开始程序对接

@@ -1,4 +1,4 @@
-- [文档说明](WDSM.md)
+- [文档说明](README.md)
 - [接口规则](JKGZ.md)
 - [场景介绍](CJJS.md)
 - [API列表](API.md) 
