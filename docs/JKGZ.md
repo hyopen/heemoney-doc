@@ -65,16 +65,8 @@ APP_KEY：EA9DA4530C454D009D0E1291
 ```
 
 根据规则应生成MD5签名串：
-```javascript
-api_from_type=Out_Api&app_id=hyp170420470720000001025BCB0C31E&biz_content={
-    "out_trade_no":"20170511000017",
-    "subject":"测试1分",
-    "total_fee":"1",
-    "client_ip":"127.0.0.1",
-    "notify_url":"http://localhost/TestMergepay/Api/RecNotifyUrl.aspx",
-    "return_url":"http://localhost/TestMergepay/Api/RecReturnUrl.aspx",
-    "channel_type":"100"
-    }&charset=utf-8&mch_uid=4707201974600&method=heemoney.pay.applypay&sign_type=MD5&timestamp=20170511000017&version=1.0&key=EA9DA4530C454D009D0E1291
+```text
+api_from_type=Out_Api&app_id=hyp170420470720000001025BCB0C31E&biz_content={"out_trade_no":"20170511000017","subject":"测试1分","total_fee":"1","client_ip":"127.0.0.1","notify_url":"http://localhost/TestMergepay/Api/RecNotifyUrl.aspx","return_url":"http://localhost/TestMergepay/Api/RecReturnUrl.aspx","channel_type":"100"}&charset=utf-8&mch_uid=4707201974600&method=heemoney.pay.applypay&sign_type=MD5&timestamp=20170511000017&version=1.0&key=EA9DA4530C454D009D0E1291
 ```
 
 MD5签名转大写后：
@@ -177,14 +169,11 @@ CNY：人民币
 </table>
 
 
+```text
 注： 快捷支付不封顶接口 pay_option 格式为{“Bank_Info”:”value”}，
 该value值由（付款银行卡号|收款银行名称|收款银行卡号|身份证号|姓名）3DES(ECB)加密组成。
 示例：
-```javascript
-”pay_option”:
-    {
-        “Bank_Info”:”0w/7dSjd9DHk7qJssYNeN2dqTuIZCEtskBZ3ioRLKLzcKLQfYyTYwnshoEXqKaLsDhkOyFjD9/zdb3wbffxDybUEM5DgR7zxRSKT0+Utiqc=”
-    }
+”pay_option”:{“Bank_Info”:”0w/7dSjd9DHk7qJssYNeN2dqTuIZCEtskBZ3ioRLKLzcKLQfYyTYwnshoEXqKaLsDhkOyFjD9/zdb3wbffxDybUEM5DgR7zxRSKT0+Utiqc=”}
 ```
 
 
