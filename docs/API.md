@@ -241,11 +241,11 @@
     <td>http://…</td>
 </tr>
 <tr>
-    <td>open_id</td>
+    <td>wx_js_code</td>
     <td>String</td>
     <td>否</td>
     <td>50</td>
-    <td>用户唯一标识（例如微信小程序openid）微信小程序支付必传</td>
+    <td>微信小程序jsCode，获取OpenID用，微信小程序支付必传</td>
     <td>ofOjKwQhQDI7pQU1DoQ2lU4ycPd0</td>
 </tr>
 </table>
@@ -4937,6 +4937,148 @@ hy_bill_no、out_trade_no 两者二选其一
 </tr>
 </table>
 
+
+- 分账异步通知API（汇收银主动发请求给商户）
+
+> 请求URL:`异步通知地址`
+
+> 请求方式:`POST`   
+
+- 公共参数
+
+<table data-hy-role="doctbl">
+    <th>参数</th>
+    <th>类型</th>
+    <th>是否必填</th>
+    <th>最大长度</th>
+    <th width="220">描述</th>
+    <th width="163">示例值</th>
+</tr>
+<tr>
+    <td>version</td>
+    <td>String</td>
+    <td>是</td>
+    <td>10</td>
+    <td>版本号,默认1.0</td>
+    <td></td>
+</tr>
+<tr>
+    <td>app_id</td>
+    <td>String</td>
+    <td>是</td>
+    <td>32</td>
+    <td>应用ID，商户的应用id</td>
+    <td></td>
+</tr>
+<tr>
+    <td>mch_id</td>
+    <td>String</td>
+    <td>是</td>
+    <td>32</td>
+    <td>商户统一编号</td>
+    <td></td>
+</tr>
+<tr>
+    <td>isv_app_id</td>
+    <td>String</td>
+    <td>否</td>
+    <td>32</td>
+    <td>服务商应用ID</td>
+    <td></td>
+</tr>
+<tr>
+    <td>isv_mch_uid</td>
+    <td>String</td>
+    <td>否</td>
+    <td>32</td>
+    <td>服务商商户号</td>
+    <td></td>
+</tr>
+<tr>
+    <td>out_trabe_no</td>
+    <td>String</td>
+    <td>是</td>
+    <td>28</td>
+    <td>商户订单号</td>
+    <td>123456</td>
+</tr>
+<tr>
+    <td>hy_bill_no</td>
+    <td>String</td>
+    <td>是</td>
+    <td>28</td>
+    <td>支付订单号</td>
+    <td>hy123456</td>
+</tr>
+<tr>
+    <td>out_pshard_no</td>
+    <td>String</td>
+    <td>是</td>
+    <td>28</td>
+    <td>商户分账单号</td>
+    <td>123456</td>
+</tr>
+<tr>
+    <td>hy_pshard_no</td>
+    <td>String</td>
+    <td>是</td>
+    <td>28</td>
+    <td>汇元分账单号</td>
+    <td>123456</td>
+</tr>
+<tr>
+    <td>pshard_status</td>
+    <td>String</td>
+    <td>是</td>
+    <td>-</td>
+    <td>分账状态，-1=分账失败，0=未分账，1=分账申请中，2=分账处理中，3=分账成功，4=分账完成</td>
+    <td>4</td>
+</tr>
+<tr>
+    <td>pshard_fee</td>
+    <td>String</td>
+    <td>是</td>
+    <td>-</td>
+    <td>完结分账金额</td>
+    <td></td>
+</tr>
+<tr>
+    <td>attach</td>
+    <td>String</td>
+    <td>是</td>
+    <td>100</td>
+    <td>商户附加信息</td>
+    <td></td>
+</tr>
+<tr>
+    <td>meta_option</td>
+    <td>String</td>
+    <td>是</td>
+    <td>100</td>
+    <td>商户媒体扩展信息</td>
+    <td></td>
+</tr>
+<tr>
+    <td>pshard_option</td>
+    <td>String</td>
+    <td>是</td>
+    <td>100</td>
+    <td>商户支付扩展信息</td>
+    <td></td>
+</tr>
+<tr>
+    <td>sign</td>
+    <td>String</td>
+    <td>是</td>
+    <td>32</td>
+    <td>数据签名</td>
+    <td></td>
+</tr>
+</table>
+
+
+
+
 - 分账查询接口
 
 > 请求URL:`https://pay.heemoney.com/v1/PShard`
@@ -5367,8 +5509,6 @@ hy_bill_no、out_trade_no 两者二选其一
 
 - 业务参数
 
-hy_bill_no、out_trade_no 两者二选其一
-（商户分账单号）
 
 <table data-hy-role="doctbl">
     <th>参数</th>
@@ -5409,14 +5549,6 @@ hy_bill_no、out_trade_no 两者二选其一
     <td>16</td>
     <td>价税合计,保留两位小数</td>
     <td>5.00</td>
-</tr>
-<tr>
-    <td>pshard_desc</td>
-    <td>String</td>
-    <td>是</td>
-    <td>125</td>
-    <td>分账描述</td>
-    <td></td>
 </tr>
 <tr>
     <td>note</td>
@@ -6078,14 +6210,6 @@ return_code为FAIL时只返回return_code和return_msg
     <td>32</td>
     <td>开票时间</td>
     <td>20190617114346</td>
-</tr>
-<tr>
-    <td>invoice_extract_code</td>
-    <td>String</td>
-    <td>否</td>
-    <td>32</td>
-    <td>发票提取码</td>
-    <td>2019</td>
 </tr>
 <tr>
     <td>invoice_extract_url</td>
@@ -7030,7 +7154,7 @@ return_code为FAIL时只返回return_code和return_msg
     <td>1.0</td>
 </tr>
 <tr>
-    <td>app_id</td>
+    <td>isv_app_id</td>
     <td>String</td>
     <td>是</td>
     <td>32</td>
@@ -7038,7 +7162,7 @@ return_code为FAIL时只返回return_code和return_msg
     <td>Ap22512545</td>
 </tr>
 <tr>
-    <td>org_uid</td>
+    <td>isv_mch_uid</td>
     <td>String</td>
     <td>是</td>
     <td>32</td>
@@ -7491,6 +7615,811 @@ return_code为FAIL时只返回return_code和return_msg
     <td>SUCCESS</td>
 </tr>
 </table>
+
+
+
+## 商户上下班签退
+
+- 支付请求接口
+
+> 请求URL:`https://api.heemoney.com/v1/MerchOnOffLine`
+
+> 请求方式:`POST`   
+
+> 是否需要证书：`否`
+
+> method：`heemoney.merch.onoffline`
+
+- 公共参数
+
+<table data-hy-role="doctbl">
+    <th>参数</th>
+    <th>类型</th>
+    <th>是否必填</th>
+    <th>最大长度</th>
+    <th>描述</th>
+    <th>示例值</th>
+</tr>
+<tr>
+    <td>method</td>
+    <td>String</td>
+    <td>是</td>
+    <td>100</td>
+    <td>具体业务接口名称</td>
+    <td>heemoney.merch.onoffline</td>
+</tr>
+<tr>
+    <td>version</td>
+    <td>String</td>
+    <td>否</td>
+    <td>10</td>
+    <td>版本号,默认1.0</td>
+    <td>1.0</td>
+</tr>
+<tr>
+    <td>app_id</td>
+    <td>String</td>
+    <td>是</td>
+    <td>32</td>
+    <td>应用ID，商户的应用id</td>
+    <td>Ap22512545</td>
+</tr>
+<tr>
+    <td>mch_id</td>
+    <td>String</td>
+    <td>是</td>
+    <td>32</td>
+    <td>商户统一编号</td>
+    <td>276952</td>
+</tr>
+<tr>
+    <td>charset</td>
+    <td>String</td>
+    <td>否</td>
+    <td>10</td>
+    <td>编码格式默认为UTF-8</td>
+    <td>UTF-8,GBK,GB2312</td>
+</tr>
+<tr>
+    <td>timestamp</td>
+    <td>String</td>
+    <td>是</td>
+    <td>19</td>
+    <td>发送请求的时间</td>
+    <td>yyyyMMddHHmmss</td>
+</tr>
+<tr>
+    <td>biz_content</td>
+    <td>String</td>
+    <td>是</td>
+    <td>不限</td>
+    <td>请求参数集合,Json格式,长度不限,具体参数见如下业务参数</td>
+    <td>Json格式</td>
+</tr>
+<tr>
+    <td>sign_type</td>
+    <td>String</td>
+    <td>是</td>
+    <td>10</td>
+    <td>商户生成签名字符串所使用的签名算法类型</td>
+    <td>md5</td>
+</tr>
+<tr>
+    <td>sign</td>
+    <td>String</td>
+    <td>是</td>
+    <td>256</td>
+    <td>商户请求参数的签名串</td>
+    <td>详见示例</td>
+</tr>
+</table>
+
+- 业务参数
+
+
+<table data-hy-role="doctbl">
+    <th>参数</th>
+    <th>类型</th>
+    <th>是否必填</th>
+    <th>最大长度</th>
+    <th>描述</th>
+    <th>示例值</th>
+</tr>
+<tr>
+    <td>clerk_uid</td>
+    <td>String</td>
+    <td>是</td>
+    <td>16</td>
+    <td>职员UID</td>
+    <td>100250000004951</td>
+</tr>
+<tr>
+    <td>clerk_on_off_line</td>
+    <td>String</td>
+    <td>是</td>
+    <td>16</td>
+    <td>操作标识</td>
+    <td>signout签退，on上班，off下班</td>
+</tr>
+<tr>
+    <td>store_uid</td>
+    <td>String</td>
+    <td>否</td>
+    <td>16</td>
+    <td>店铺UID</td>
+    <td>201609140000001</td>
+</tr>
+<tr>
+    <td>url_uids</td>
+    <td>String</td>
+    <td>是</td>
+    <td>255</td>
+    <td>收款码UIDs(多个英文逗号分隔)</td>
+    <td></td>
+</tr>
+<tr>
+    <td>device_uids</td>
+    <td>String</td>
+    <td>是</td>
+    <td>255</td>
+    <td>设备UIDs(多个英文逗号分隔)</td>
+    <td></td>
+</tr>
+</table>
+
+
+-公共响应参数：
+
+return_code为FAIL时只返回return_code和return_msg
+
+<table data-hy-role="doctbl">
+    <th>参数</th>
+    <th>类型</th>
+    <th>是否必填</th>
+    <th>最大长度</th>
+    <th>描述</th>
+    <th>示例值</th>
+</tr>
+<tr>
+    <td>return_code</td>
+    <td>String</td>
+    <td>是</td>
+    <td>16</td>
+    <td>业务状态码</td>
+    <td>SUCCESS</td>
+</tr>
+<tr>
+    <td>return_msg</td>
+    <td>String</td>
+    <td>是</td>
+    <td>128</td>
+    <td>返回状态码描述</td>
+    <td>ok</td>
+</tr>
+<tr>
+    <td>result_code</td>
+    <td>String</td>
+    <td>否</td>
+    <td>16</td>
+    <td>业务状态码</td>
+    <td>SUCCESS</td>
+</tr>
+<tr>
+    <td>sign</td>
+    <td>String</td>
+    <td>是</td>
+    <td>32</td>
+    <td>签名结果</td>
+    <td>1234567890</td>
+</tr>
+</table>
+
+
+以下字段在return_code为SUCCESS时，result_code为FAIL时返回
+
+<table data-hy-role="doctbl">
+    <th>参数</th>
+    <th>类型</th>
+    <th>是否必填</th>
+    <th>最大长度</th>
+    <th>描述</th>
+    <th>示例值</th>
+</tr>
+<tr>
+    <td>error_code</td>
+    <td>String</td>
+    <td>否</td>
+    <td>32</td>
+    <td>详见错误列表</td>
+    <td>0</td>
+</tr>
+<tr>
+    <td>error_msg</td>
+    <td>String</td>
+    <td>否</td>
+    <td>128</td>
+    <td>错误返回的信息描述</td>
+    <td>ok</td>
+</tr>
+</table>
+
+- 响应参数
+
+以下字段在return_code为SUCCESS时，result_code为SUCCESS时返回
+
+<table data-hy-role="doctbl">
+    <th>参数</th>
+    <th>类型</th>
+    <th>是否必填</th>
+    <th>最大长度</th>
+    <th>描述</th>
+    <th>示例值</th>
+</tr>
+<tr>
+    <td>sign_out_last_time</td>
+    <td>String</td>
+    <td>是</td>
+    <td>32</td>
+    <td>上次签退时间</td>
+    <td>2019/7/10 16:44:10</td>
+</tr>
+<tr>
+    <td>sign_out_time</td>
+    <td>String</td>
+    <td>是</td>
+    <td>32</td>
+    <td>本次签退时间</td>
+    <td>2019/7/11 10:24:20</td>
+</tr>
+<tr>
+    <td>sign</td>
+    <td>String</td>
+    <td>是</td>
+    <td>32</td>
+    <td>签名结果</td>
+    <td>1234567890</td>
+</tr>
+</table>
+
+## 商户登录
+
+- 订单查询接口
+
+> 请求URL:`https://api.heemoney.com/v1/MerchLogin`
+
+> 请求方式:`POST`   
+
+> 是否需要证书：`否`
+
+> method：`heemoney.merch.account.login`
+
+- 公共参数
+
+<table data-hy-role="doctbl">
+    <th>参数</th>
+    <th>类型</th>
+    <th>是否必填</th>
+    <th>最大长度</th>
+    <th>描述</th>
+    <th>示例值</th>
+</tr>
+<tr>
+    <td>method</td>
+    <td>String</td>
+    <td>是</td>
+    <td>128</td>
+    <td>具体业务接口名称</td>
+    <td>heemoney.merch.account.login</td>
+</tr>
+<tr>
+    <td>version</td>
+    <td>String</td>
+    <td>否</td>
+    <td>10</td>
+    <td>版本号,默认1.0</td>
+    <td>1.0</td>
+</tr>
+<tr>
+    <td>isv_app_id</td>
+    <td>String</td>
+    <td>是</td>
+    <td>32</td>
+    <td>服务商的应用id</td>
+    <td>hy1213131511</td>
+</tr>
+<tr>
+    <td>isv_mch_uid</td>
+    <td>String</td>
+    <td>是</td>
+    <td>32</td>
+    <td>服务商商户号</td>
+    <td>276952</td>
+</tr>
+<tr>
+    <td>charset</td>
+    <td>String</td>
+    <td>否</td>
+    <td>10</td>
+    <td>编码格式默认为utf-8</td>
+    <td>utf-8</td>
+</tr>
+<tr>
+    <td>timestamp</td>
+    <td>String</td>
+    <td>是</td>
+    <td>19</td>
+    <td>发送请求的时间</td>
+    <td>yyyyMMddHHmmss,20181030152539</td>
+</tr>
+<tr>
+    <td>biz_content</td>
+    <td>String</td>
+    <td>是</td>
+    <td>不限</td>
+    <td>请求参数集合,Json格式,长度不限,具体参数见如下业务参数</td>
+    <td>Json格式</td>
+</tr>
+<tr>
+    <td>sign_type</td>
+    <td>String</td>
+    <td>否</td>
+    <td>10</td>
+    <td>商户生成签名字符串所使用的签名算法类型</td>
+    <td>md5</td>
+</tr>
+<tr>
+    <td>sign</td>
+    <td>String</td>
+    <td>是</td>
+    <td>256</td>
+    <td>商户请求参数的签名串</td>
+    <td>详见示例</td>
+</tr>
+</table>
+
+- 业务参数
+
+<table data-hy-role="doctbl">
+    <th>参数</th>
+    <th>类型</th>
+    <th>是否必填</th>
+    <th>最大长度</th>
+    <th>描述</th>
+    <th>示例值</th>
+</tr>
+<tr>
+    <td>mch_account</td>
+    <td>String</td>
+    <td>是</td>
+    <td>32</td>
+    <td>商户账号(只能有数字，字母及下划线组成，6 - 30位)</td>
+    <td>zhifubaoceshi</td>
+</tr>
+<tr>
+    <td>mch_emp_account</td>
+    <td>String</td>
+    <td>否</td>
+    <td>64</td>
+    <td>员工账号</td>
+    <td>15110186488</td>
+</tr>
+<tr>
+    <td>login_pwd</td>
+    <td>String</td>
+    <td>是</td>
+    <td>16</td>
+    <td>密码</td>
+    <td>123456</td>
+</tr>
+<tr>
+    <td>device_uid</td>
+    <td>String</td>
+    <td>是</td>
+    <td>32</td>
+    <td>设备UID</td>
+    <td>100250000000938</td>
+</tr>
+<tr>
+    <td>dpass_pwd</td>
+    <td>String</td>
+    <td>否</td>
+    <td>16</td>
+    <td>动态口令</td>
+    <td>15113211350</td>
+</tr>
+<tr>
+    <td>login_info</td>
+    <td>String</td>
+    <td>是</td>
+    <td>255</td>
+    <td>所有业务参数组织成json格式再3eds加密后放到login_info参数里面传递</td>
+    <td>{"mch_account":"zhifubaoceshi","mch_emp_account":"15110186488","login_pwd":"123456","device_uid":"100250000000938","dpass_pwd":"123456"}</td>
+</tr>
+</table>
+
+返回响应：
+
+
+- 公共响应参数
+
+return_code为FAIL时只返回return_code和return_msg
+
+<table data-hy-role="doctbl">
+    <th>参数</th>
+    <th>类型</th>
+    <th>是否必填</th>
+    <th>最大长度</th>
+    <th>描述</th>
+    <th>示例值</th>
+</tr>
+<tr>
+    <td>return_code</td>
+    <td>String</td>
+    <td>是</td>
+    <td>16</td>
+    <td>返回状态码</td>
+    <td>SUCCESS</td>
+</tr>
+<tr>
+    <td>return_msg</td>
+    <td>String</td>
+    <td>是</td>
+    <td>128</td>
+    <td>返回状态码描述</td>
+    <td>ok</td>
+</tr>
+<tr>
+    <td>result_code</td>
+    <td>String</td>
+    <td>否</td>
+    <td>16</td>
+    <td>业务状态码</td>
+    <td>SUCCESS</td>
+</tr>
+<tr>
+    <td>sign</td>
+    <td>String</td>
+    <td>是</td>
+    <td>32</td>
+    <td>签名结果</td>
+    <td>3213</td>
+</tr>
+</table>
+
+
+*以下字段在return_code=SUCCESS&result_code=FAIL时返回
+
+<table data-hy-role="doctbl">
+    <th>参数</th>
+    <th>类型</th>
+    <th>是否必填</th>
+    <th>最大长度</th>
+    <th>描述</th>
+    <th>示例值</th>
+</tr>
+<tr>
+    <td>error_code</td>
+    <td>Int</td>
+    <td>是</td>
+    <td>16</td>
+    <td>错误码</td>
+    <td>0</td>
+</tr>
+<tr>
+    <td>error_msg</td>
+    <td>String</td>
+    <td>是</td>
+    <td>128</td>
+    <td>错误信息</td>
+    <td>结果不明确，不处理单据，状态=Unknow</td>
+</tr>
+</table>
+
+
+- 响应参数
+
+*以下字段在return_code为SUCCESS时，result_code为SUCCESS时返回
+
+<table data-hy-role="doctbl">
+    <th>参数</th>
+    <th>类型</th>
+    <th>是否必填</th>
+    <th>最大长度</th>
+    <th>描述</th>
+    <th>示例值</th>
+</tr>
+<tr>
+    <td>app_id</td>
+    <td>String</td>
+    <td>是</td>
+    <td>32</td>
+    <td>应用ID,商户的应用id</td>
+    <td>Ap22512545</td>
+</tr>
+<tr>
+    <td>mch_uid</td>
+    <td>String</td>
+    <td>是</td>
+    <td>32</td>
+    <td>商户统一编号</td>
+    <td>276952</td>
+</tr>
+<tr>
+    <td>store_uid</td>
+    <td>String</td>
+    <td>是</td>
+    <td>32</td>
+    <td>店铺id</td>
+    <td>213213211</td>
+</tr>
+<tr>
+    <td>clerk_uid</td>
+    <td>String</td>
+    <td>是</td>
+    <td>32</td>
+    <td>职员id</td>
+    <td>hy123456</td>
+</tr>
+<tr>
+    <td>sign</td>
+    <td>String</td>
+    <td>是</td>
+    <td>32</td>
+    <td>签名结果</td>
+    <td>1234567890</td>
+</tr>
+</table>
+
+
+
+
+## 商户设备激活
+
+- 直接开票接口
+
+> 请求URL:`https://api.heemoney.com/v1/MerchDevice`
+
+> 请求方式:`POST`   
+
+> 是否需要证书：`否`
+
+> method：`heemoney.merch.device`
+
+- 公共参数
+
+<table data-hy-role="doctbl">
+    <th>参数</th>
+    <th>类型</th>
+    <th>是否必填</th>
+    <th>最大长度</th>
+    <th>描述</th>
+    <th>示例值</th>
+</tr>
+<tr>
+    <td>method</td>
+    <td>String</td>
+    <td>是</td>
+    <td>100</td>
+    <td>具体业务接口名称</td>
+    <td>heemoney.merch.device</td>
+</tr>
+<tr>
+    <td>version</td>
+    <td>String</td>
+    <td>否</td>
+    <td>10</td>
+    <td>版本号,默认1.0</td>
+    <td>1.0</td>
+</tr>
+<tr>
+    <td>isv_app_id</td>
+    <td>String</td>
+    <td>是</td>
+    <td>32</td>
+    <td>应用ID，商户的应用id</td>
+    <td>Ap22512545</td>
+</tr>
+<tr>
+    <td>isv_mch_uid</td>
+    <td>String</td>
+    <td>是</td>
+    <td>32</td>
+    <td>商户统一编号</td>
+    <td>276952</td>
+</tr>
+<tr>
+    <td>charset</td>
+    <td>String</td>
+    <td>否</td>
+    <td>10</td>
+    <td>编码格式默认为utf-8</td>
+    <td>utf-8</td>
+</tr>
+<tr>
+    <td>timestamp</td>
+    <td>String</td>
+    <td>是</td>
+    <td>19</td>
+    <td>发送请求的时间</td>
+    <td>yyyyMMddHHmmss,20181030152539</td>
+</tr>
+<tr>
+    <td>biz_content</td>
+    <td>String</td>
+    <td>是</td>
+    <td>不限</td>
+    <td>请求参数集合,Json格式,长度不限,具体参数见如下业务参数</td>
+    <td>Json格式</td>
+</tr>
+<tr>
+    <td>sign_type</td>
+    <td>String</td>
+    <td>是</td>
+    <td>10</td>
+    <td>商户生成签名字符串所使用的签名算法类型</td>
+    <td>md5</td>
+</tr>
+<tr>
+    <td>sign</td>
+    <td>String</td>
+    <td>是</td>
+    <td>256</td>
+    <td>商户请求参数的签名串</td>
+    <td>详见示例</td>
+</tr>
+</table>
+
+- 业务参数
+
+<table data-hy-role="doctbl">
+    <th>参数</th>
+    <th>类型</th>
+    <th>是否必填</th>
+    <th>最大长度</th>
+    <th>描述</th>
+    <th>示例值</th>
+</tr>
+<tr>
+    <td>device_code</td>
+    <td>String</td>
+    <td>是</td>
+    <td>64</td>
+    <td>设备编码</td>
+    <td>90-2B-34-63-2C-46</td>
+</tr>
+</table>
+
+
+
+ -公共响应参数：
+
+return_code为FAIL时只返回return_code和return_msg
+
+<table data-hy-role="doctbl">
+    <th>参数</th>
+    <th>类型</th>
+    <th>是否必填</th>
+    <th>最大长度</th>
+    <th>描述</th>
+    <th>示例值</th>
+</tr>
+<tr>
+    <td>return_code</td>
+    <td>String</td>
+    <td>否</td>
+    <td>16</td>
+    <td>返回状态码</td>
+    <td>SUCCESS</td>
+</tr>
+<tr>
+    <td>return_msg</td>
+    <td>String</td>
+    <td>是</td>
+    <td>128</td>
+    <td>返回状态码描述</td>
+    <td>ok</td>
+</tr>
+<tr>
+    <td>result_code</td>
+    <td>String</td>
+    <td>是</td>
+    <td>16</td>
+    <td>业务状态码</td>
+    <td>SUCCESS</td>
+</tr>
+<tr>
+    <td>sign</td>
+    <td>String</td>
+    <td>是</td>
+    <td>32</td>
+    <td>签名结果</td>
+    <td>1234567890</td>
+</tr>
+</table>
+
+以下字段在return_code为SUCCESS时，result_code为FAIL时返回
+
+<table data-hy-role="doctbl">
+    <th>参数</th>
+    <th>类型</th>
+    <th>是否必填</th>
+    <th>最大长度</th>
+    <th>描述</th>
+    <th>示例值</th>
+</tr>
+<tr>
+    <td>error_code</td>
+    <td>String</td>
+    <td>否</td>
+    <td>32</td>
+    <td>错误码</td>
+    <td>0</td>
+</tr>
+<tr>
+    <td>error_msg</td>
+    <td>String</td>
+    <td>否</td>
+    <td>128</td>
+    <td>错误信息</td>
+    <td>ok</td>
+</tr>
+</table>
+
+- 响应参数
+
+以下字段在return_code为SUCCESS时，result_code为SUCCESS时返回
+
+<table data-hy-role="doctbl">
+    <th>参数</th>
+    <th>类型</th>
+    <th>是否必填</th>
+    <th>最大长度</th>
+    <th>描述</th>
+    <th>示例值</th>
+</tr>
+<tr>
+    <td>mch_uid</td>
+    <td>String</td>
+    <td>是</td>
+    <td>32</td>
+    <td>应用ID</td>
+    <td>Ap22512545</td>
+</tr>
+<tr>
+    <td>store_uid</td>
+    <td>String</td>
+    <td>是</td>
+    <td>32</td>
+    <td>店铺ID</td>
+    <td>1222232323</td>
+</tr>
+<tr>
+    <td>device_uid</td>
+    <td>String</td>
+    <td>是</td>
+    <td>16</td>
+    <td>设备id</td>
+    <td>QRCODE_INVOICE</td>
+</tr>
+<tr>
+    <td>sign</td>
+    <td>String</td>
+    <td>是</td>
+    <td>32</td>
+    <td>签名结果</td>
+    <td>1234567890</td>
+</tr>
+</table>	
+
+
+
+
+
+
+
+
+
+
 
 
 
