@@ -7166,7 +7166,7 @@ return_code为FAIL时只返回return_code和return_msg
     <td>String</td>
     <td>是</td>
     <td>32</td>
-    <td>机构号</td>
+    <td>代理号</td>
     <td>100250</td>
 </tr>
 <tr>
@@ -7406,7 +7406,7 @@ return_code为FAIL时只返回return_code和return_msg
     <td>1.0</td>
 </tr>
 <tr>
-    <td>app_id</td>
+    <td>isv_app_id</td>
     <td>String</td>
     <td>是</td>
     <td>32</td>
@@ -7414,11 +7414,11 @@ return_code为FAIL时只返回return_code和return_msg
     <td>Ap22512545</td>
 </tr>
 <tr>
-    <td>org_uid</td>
+    <td>isv_mch_uid</td>
     <td>String</td>
     <td>是</td>
     <td>32</td>
-    <td>机构号</td>
+    <td>代理号</td>
     <td>100250</td>
 </tr>
 <tr>
@@ -7620,7 +7620,7 @@ return_code为FAIL时只返回return_code和return_msg
 
 ## 商户上下班签退
 
-- 支付请求接口
+- 请求接口
 
 > 请求URL:`https://api.heemoney.com/v1/MerchOnOffLine`
 
@@ -7638,7 +7638,7 @@ return_code为FAIL时只返回return_code和return_msg
     <th>是否必填</th>
     <th>最大长度</th>
     <th width="220">描述</th>
-    <th>示例值</th>
+    <th width="163">示例值</th>
 </tr>
 <tr>
     <td>method</td>
@@ -7883,7 +7883,7 @@ return_code为FAIL时只返回return_code和return_msg
 
 ## 商户登录
 
-- 订单查询接口
+- 请求接口
 
 > 请求URL:`https://api.heemoney.com/v1/MerchLogin`
 
@@ -8175,7 +8175,7 @@ return_code为FAIL时只返回return_code和return_msg
 
 ## 商户设备激活
 
-- 直接开票接口
+- 请求接口
 
 > 请求URL:`https://api.heemoney.com/v1/MerchDevice`
 
