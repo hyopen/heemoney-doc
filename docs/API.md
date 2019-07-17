@@ -7638,7 +7638,7 @@ return_code为FAIL时只返回return_code和return_msg
     <th>是否必填</th>
     <th>最大长度</th>
     <th width="220">描述</th>
-    <th>示例值</th>
+    <th width="163">示例值</th>
 </tr>
 <tr>
     <td>method</td>
