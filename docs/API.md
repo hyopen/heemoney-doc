@@ -145,7 +145,7 @@
     <td>100</td>
 </tr>
 <tr>
-    <td>currency_type</td>
+    <td>channel_type</td>
     <td>String</td>
     <td>是</td>
     <td>16</td>
