@@ -45,7 +45,7 @@
     <td>Ap22512545</td>
 </tr>
 <tr>
-    <td>mch_id</td>
+    <td>mch_uid</td>
     <td>String</td>
     <td>是</td>
     <td>32</td>
@@ -534,7 +534,7 @@
     <td>Ap22512545</td>
 </tr>
 <tr>
-    <td>mch_id</td>
+    <td>mch_uid</td>
     <td>String</td>
     <td>是</td>
     <td>32</td>
@@ -938,7 +938,7 @@ total_fee=real_fee
     <td>Ap22512545</td>
 </tr>
 <tr>
-    <td>mch_id</td>
+    <td>mch_uid</td>
     <td>String</td>
     <td>是</td>
     <td>32</td>
@@ -1321,7 +1321,7 @@ total_fee=real_fee
     <td>Ap22512545</td>
 </tr>
 <tr>
-    <td>mch_id</td>
+    <td>mch_uid</td>
     <td>String</td>
     <td>是</td>
     <td>32</td>
@@ -1685,7 +1685,7 @@ total_fee=real_fee
     <td></td>
 </tr>
 <tr>
-    <td>mch_id</td>
+    <td>mch_uid</td>
     <td>String</td>
     <td>是</td>
     <td>32</td>
@@ -1858,7 +1858,7 @@ total_fee=real_fee
     <td>Ap22512545</td>
 </tr>
 <tr>
-    <td>mch_id</td>
+    <td>mch_uid</td>
     <td>String</td>
     <td>是</td>
     <td>32</td>
@@ -2344,7 +2344,7 @@ total_fee=real_fee
     <td>Ap22512545</td>
 </tr>
 <tr>
-    <td>mch_id</td>
+    <td>mch_uid</td>
     <td>String</td>
     <td>是</td>
     <td>32</td>
@@ -2763,7 +2763,7 @@ total_fee=real_fee
     <td>Ap22512545</td>
 </tr>
 <tr>
-    <td>mch_id</td>
+    <td>mch_uid</td>
     <td>String</td>
     <td>是</td>
     <td>32</td>
@@ -3129,7 +3129,7 @@ hy_contract_no和out_contract_no二选其一，不能同时为空，优先hy_con
     <td>Ap22512545</td>
 </tr>
 <tr>
-    <td>mch_id</td>
+    <td>mch_uid</td>
     <td>String</td>
     <td>是</td>
     <td>32</td>
@@ -3495,7 +3495,7 @@ hy_contract_no和out_contract_no二选其一，不能同时为空，优先hy_con
     <td></td>
 </tr>
 <tr>
-    <td>mch_id</td>
+    <td>mch_uid</td>
     <td>String</td>
     <td>是</td>
     <td>32</td>
@@ -3675,7 +3675,7 @@ hy_contract_no和out_contract_no二选其一，不能同时为空，优先hy_con
     <td></td>
 </tr>
 <tr>
-    <td>mch_id</td>
+    <td>mch_uid</td>
     <td>String</td>
     <td>是</td>
     <td>32</td>
@@ -3831,7 +3831,7 @@ hy_contract_no和out_contract_no二选其一，不能同时为空，优先hy_con
     <td></td>
 </tr>
 <tr>
-    <td>mch_id</td>
+    <td>mch_uid</td>
     <td>String</td>
     <td>是</td>
     <td>32</td>
@@ -4496,7 +4496,7 @@ hy_contract_no和out_contract_no二选其一，不能同时为空，优先hy_con
     <td>ok</td>
 </tr>
 <tr>
-    <td>sub_mch_id</td>
+    <td>sub_mch_uid</td>
     <td>String</td>
     <td>是</td>
     <td>32</td>
@@ -4575,7 +4575,7 @@ industry_id参数行业及编码:
     <td>Ap22512545</td>
 </tr>
 <tr>
-    <td>mch_id</td>
+    <td>mch_uid</td>
     <td>String</td>
     <td>是</td>
     <td>32</td>
@@ -4971,7 +4971,7 @@ hy_bill_no、out_trade_no 两者二选其一
     <td></td>
 </tr>
 <tr>
-    <td>mch_id</td>
+    <td>mch_uid</td>
     <td>String</td>
     <td>是</td>
     <td>32</td>
@@ -5124,7 +5124,7 @@ hy_bill_no、out_trade_no 两者二选其一
     <td>Ap22512545</td>
 </tr>
 <tr>
-    <td>mch_id</td>
+    <td>mch_uid</td>
     <td>String</td>
     <td>是</td>
     <td>32</td>
@@ -5458,7 +5458,7 @@ hy_bill_no、out_trade_no 两者二选其一
     <td>Ap22512545</td>
 </tr>
 <tr>
-    <td>mch_id</td>
+    <td>mch_uid</td>
     <td>String</td>
     <td>是</td>
     <td>32</td>
@@ -5876,7 +5876,7 @@ return_code为FAIL时只返回return_code和return_msg
     <td>Ap22512545</td>
 </tr>
 <tr>
-    <td>mch_id</td>
+    <td>mch_uid</td>
     <td>String</td>
     <td>是</td>
     <td>32</td>
@@ -6394,7 +6394,7 @@ return_code为FAIL时只返回return_code和return_msg
     <td>Ap22512545</td>
 </tr>
 <tr>
-    <td>mch_id</td>
+    <td>mch_uid</td>
     <td>String</td>
     <td>是</td>
     <td>32</td>
@@ -6858,7 +6858,7 @@ return_code为FAIL时只返回return_code和return_msg
     <td>Ap22512545</td>
 </tr>
 <tr>
-    <td>mch_id</td>
+    <td>mch_uid</td>
     <td>String</td>
     <td>是</td>
     <td>32</td>
@@ -7665,7 +7665,7 @@ return_code为FAIL时只返回return_code和return_msg
     <td>Ap22512545</td>
 </tr>
 <tr>
-    <td>mch_id</td>
+    <td>mch_uid</td>
     <td>String</td>
     <td>是</td>
     <td>32</td>
