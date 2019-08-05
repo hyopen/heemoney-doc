@@ -149,7 +149,7 @@
     <td>String</td>
     <td>是</td>
     <td>16</td>
-    <td>通道类型，扫码支付，WX_NATIVE、ALI_QRCODE、微信小程序：WX_APPLET，微信代扣：WX_WITHHOLD，等具体见附录通道类型</td>
+    <td>通道类型，扫码支付，WX_NATIVE、ALI_QRCODE、微信小程序：WX_APPLET，微信代扣：WX_WITHHOLD，等具体见接口规则-参数规定-通道类型</td>
     <td>WX_NATIVE</td>
 </tr>
 <tr>
@@ -2018,7 +2018,7 @@ total_fee=real_fee
     <td>String</td>
     <td>是</td>
     <td>16</td>
-    <td>通道类型，详情见通道类型刷卡类型：WX_MICROPAY、ALI_SWIPE、BANK_SWIPE</td>
+    <td>通道类型刷卡类型：WX_MICROPAY、ALI_SWIPE、BANK_SWIPE具体见接口规则-参数规定-通道类型</td>
     <td>BANK_SWIPE</td>
 </tr>
 <tr>
