@@ -187,9 +187,9 @@
 <tr>
     <td>store_uid</td>
     <td>String</td>
-    <td>是</td>
+    <td>否</td>
     <td>18</td>
-    <td>商户门店</td>
+    <td>商户门店（部分通道必传，若返回消息为“门店不能为空”，则该参数必传）</td>
     <td>1002501974599</td>
 </tr>
 <tr>
@@ -1976,9 +1976,9 @@ total_fee=real_fee
 <tr>
     <td>store_uid</td>
     <td>String</td>
-    <td>是</td>
+    <td>否</td>
     <td>18</td>
-    <td>商户门店</td>
+    <td>商户门店（部分通道必传，若返回消息为“门店不能为空”，则该参数必传）</td>
     <td>1002501974599</td>
 </tr>
 <tr>
