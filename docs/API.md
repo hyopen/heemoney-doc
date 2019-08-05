@@ -187,10 +187,10 @@
 <tr>
     <td>store_uid</td>
     <td>String</td>
-    <td>否</td>
+    <td>是</td>
     <td>18</td>
     <td>商户门店</td>
-    <td>1号店</td>
+    <td>1002501974599</td>
 </tr>
 <tr>
     <td>terminal_info</td>
@@ -817,7 +817,7 @@
     <td>String</td>
     <td>是</td>
     <td>32</td>
-    <td>单据状态：Undeal=未支付，SUCCESS=支付成功，Failure=支付失败</td>
+    <td>单据状态：Undeal=未支付，Success=支付成功，Failure=支付失败</td>
     <td>Undeal</td>
 </tr>
 <tr>
@@ -857,8 +857,8 @@
     <td>String</td>
     <td>是</td>
     <td>14</td>
-    <td>订单支付时间，格式为yyyyMMddHHmmss</td>
-    <td>20170101220011</td>
+    <td>订单支付时间，格式为yyyy-MM-dd HH:mm:ss</td>
+    <td>2017-07-31 15:41:38</td>
 </tr>
 <tr>
     <td>attach</td>
@@ -870,19 +870,19 @@
 </tr>
 <tr>
     <td>meta_option</td>
-    <td>Int</td>
+    <td>String</td>
     <td>否</td>
-    <td>32</td>
+    <td>255</td>
     <td>商户定制信息</td>
-    <td>Undeal</td>
+    <td>格式：{“key1”:”value1”,”key2”:”value2”,…}</td>
 </tr>
 <tr>
-    <td>trade_status</td>
-    <td>Int</td>
+    <td>pay_option</td>
+    <td>String</td>
     <td>否</td>
-    <td>32</td>
+    <td>255</td>
     <td>支付参数信息</td>
-    <td>Undeal</td>
+    <td>格式：{“key1”:”value1”,”key2”:”value2”,…}</td>
 </tr>
 </table>
 
@@ -1024,7 +1024,7 @@ total_fee=real_fee
 <tr>
     <td>out_refund_no</td>
     <td>String</td>
-    <td>否</td>
+    <td>是</td>
     <td>64</td>
     <td>商户退款单号</td>
     <td>Shlsjdklj2453</td>
@@ -1032,7 +1032,7 @@ total_fee=real_fee
 <tr>
     <td>total_fee</td>
     <td>int</td>
-    <td>否</td>
+    <td>是</td>
     <td></td>
     <td>总金额 正整数，单位为分</td>
     <td>100</td>
@@ -1040,7 +1040,7 @@ total_fee=real_fee
 <tr>
     <td>refund_fee</td>
     <td>int</td>
-    <td>否</td>
+    <td>是</td>
     <td></td>
     <td>退款总金额，单位为分</td>
     <td>100</td>
@@ -1257,11 +1257,11 @@ total_fee=real_fee
 </tr>
 <tr>
     <td>real_refund_fee</td>
-    <td>String</td>
+    <td>int</td>
     <td>是</td>
     <td></td>
     <td>实际退款金额</td>
-    <td>20170101220011</td>
+    <td>100</td>
 </tr>
 <tr>
     <td>channel_return_msg</td>
@@ -1409,8 +1409,8 @@ total_fee=real_fee
     <td>String</td>
     <td>与out_refund_no其中一个必填</td>
     <td>32</td>
-    <td>通道退款单号</td>
     <td>汇元退款单号</td>
+    <td>TuiKuanlsjd2453</td>
 </tr>
 </table>
 
@@ -1624,11 +1624,11 @@ total_fee=real_fee
 </tr>
 <tr>
     <td>real_refund_fee</td>
-    <td>String</td>
+    <td>int</td>
     <td>是</td>
     <td></td>
     <td>实际退款金额</td>
-    <td>20170101220011</td>
+    <td>100</td>
 </tr>
 <tr>
     <td>channel_return_msg</td>
@@ -1643,8 +1643,8 @@ total_fee=real_fee
     <td>int</td>
     <td>是</td>
     <td></td>
-    <td>退款状态：Undeal=退款处理中，SUCCESS=退款成功，Failure=退款失败</td>
-    <td>100</td>
+    <td>退款状态：Undeal=退款处理中，Success=退款成功，Failure=退款失败</td>
+    <td>Undeal</td>
 </tr>
 </table>	
 
@@ -1970,24 +1970,16 @@ total_fee=real_fee
     <td>String</td>
     <td>否</td>
     <td>18</td>
-    <td>通道类型，扫码支付，WX_NATIVE、ALI_QRCODE、微信小程序：WX_APPLET，微信代扣：WX_WITHHOLD，等具体见附录通道类型</td>
-    <td>WX_NATIVE</td>
-</tr>
-<tr>
-    <td>client_ip</td>
-    <td>String</td>
-    <td>否</td>
-    <td>18</td>
     <td>商户操作员或收银员编号</td>
     <td>1001</td>
 </tr>
 <tr>
     <td>store_uid</td>
     <td>String</td>
-    <td>否</td>
+    <td>是</td>
     <td>18</td>
     <td>商户门店</td>
-    <td>1号店</td>
+    <td>1002501974599</td>
 </tr>
 <tr>
     <td>device_code</td>
@@ -2043,14 +2035,6 @@ total_fee=real_fee
     <td>否</td>
     <td>255</td>
     <td>支付参数信息，如果支付类型为微信代扣（WX_WITHHOLD）需要填入： hy_contract_no（汇元签约编号）格式：{“key1”:”value1”,”key2”:”value2”,…}</td>
-    <td>{}</td>
-</tr>
-<tr>
-    <td>meta_option</td>
-    <td>String</td>
-    <td>否</td>
-    <td>255</td>
-    <td>商户定制信息，格式：{“key1”:”value1”,”key2”:”value2”,…}</td>
     <td>{}</td>
 </tr>
 <tr>
@@ -2231,7 +2215,7 @@ total_fee=real_fee
 </tr>
 <tr>
     <td>channel_return_msg</td>
-    <td>int</td>
+    <td>stirng</td>
     <td>是</td>
     <td></td>
     <td>渠道返回信息</td>
@@ -2242,7 +2226,7 @@ total_fee=real_fee
     <td>String</td>
     <td>是</td>
     <td>32</td>
-    <td>单据状态：Undeal=未支付，SUCCESS=支付成功，Failure=支付失败</td>
+    <td>单据状态：Undeal=未支付，Success=支付成功，Failure=支付失败</td>
     <td>Undeal</td>
 </tr>
 <tr>
@@ -2282,12 +2266,12 @@ total_fee=real_fee
     <td>String</td>
     <td>是</td>
     <td>14</td>
-    <td>订单支付时间，格式为yyyyMMddHHmmss</td>
-    <td>20170101220011</td>
+    <td>订单支付时间，格式为yyyy-MM-dd HH:mm:ss</td>
+    <td>2017-07-31 15:41:38</td>
 </tr>
 <tr>
     <td>company</td>
-    <td>int</td>
+    <td>string</td>
     <td>是</td>
     <td></td>
     <td>公司名称</td>
@@ -3772,7 +3756,7 @@ hy_contract_no和out_contract_no二选其一，不能同时为空，优先hy_con
 ```text
 	auth_data_info	鉴权数据详细json格式
      示例
-银行卡二要素 
+	银行卡二要素 
 储蓄卡： [{"bank_card_type":"1","auth_bank_card":"6217000130000751966","auth_name":"张三"}] 
 信用卡： [{"bank_card_type":"2","auth_bank_card":"6217000130000751966","auth_name":"张三","cvv2":"233","expire_date":"1225"}]
 银行卡三要素 
@@ -3781,6 +3765,9 @@ hy_contract_no和out_contract_no二选其一，不能同时为空，优先hy_con
 银行卡四要素 
 储蓄卡：[{"bank_card_type":"1","auth_bank_card":"6217000130000751966","auth_id_card":"320926195511175276","auth_name":"张三","auth_mobile":"13811111111"}] 
 信用卡： [{"bank_card_type":"2","auth_bank_card":"6217000130000751966","auth_id_card":"320926195511175276","auth_name":"张三","auth_mobile":"13811111111","cvv2":"233","expire_date":"1225"}]
+
+身份证二要素： [{"auth_id_card":"320926195511175276","auth_name":"张三"}] 
+身份证三要素： [{"auth_id_card":"320926195511175276","auth_name":"张三","auth_mobile":"13811111111"}]
 
 ```
 
@@ -7651,7 +7638,7 @@ return_code为FAIL时只返回return_code和return_msg
 <tr>
     <td>version</td>
     <td>String</td>
-    <td>否</td>
+    <td>是</td>
     <td>10</td>
     <td>版本号,默认1.0</td>
     <td>1.0</td>
@@ -7675,7 +7662,7 @@ return_code为FAIL时只返回return_code和return_msg
 <tr>
     <td>charset</td>
     <td>String</td>
-    <td>否</td>
+    <td>是</td>
     <td>10</td>
     <td>编码格式默认为UTF-8</td>
     <td>UTF-8,GBK,GB2312</td>
@@ -7752,17 +7739,17 @@ return_code为FAIL时只返回return_code和return_msg
 <tr>
     <td>url_uids</td>
     <td>String</td>
-    <td>是</td>
+    <td>否</td>
     <td>255</td>
-    <td>收款码UIDs(多个英文逗号分隔)</td>
+    <td>收款码UIDs(多个英文逗号分隔)，当clerk_on_off_line=on，不可与device_uids同时为空</td>
     <td></td>
 </tr>
 <tr>
     <td>device_uids</td>
     <td>String</td>
-    <td>是</td>
+    <td>否</td>
     <td>255</td>
-    <td>设备UIDs(多个英文逗号分隔)</td>
+    <td>设备UIDs(多个英文逗号分隔)，当clerk_on_off_line=on，不可与url_uids同时为空</td>
     <td></td>
 </tr>
 </table>
@@ -7881,6 +7868,9 @@ return_code为FAIL时只返回return_code和return_msg
 </tr>
 </table>
 
+
+
+
 ## 商户登录
 
 - 请求接口
@@ -7900,8 +7890,8 @@ return_code为FAIL时只返回return_code和return_msg
     <th>类型</th>
     <th>是否必填</th>
     <th>最大长度</th>
-    <th>描述</th>
-    <th>示例值</th>
+    <th width="220">描述</th>
+    <th width="163">示例值</th>
 </tr>
 <tr>
     <td>method</td>
@@ -7914,7 +7904,7 @@ return_code为FAIL时只返回return_code和return_msg
 <tr>
     <td>version</td>
     <td>String</td>
-    <td>否</td>
+    <td>是</td>
     <td>10</td>
     <td>版本号,默认1.0</td>
     <td>1.0</td>
@@ -7938,7 +7928,7 @@ return_code为FAIL时只返回return_code和return_msg
 <tr>
     <td>charset</td>
     <td>String</td>
-    <td>否</td>
+    <td>是</td>
     <td>10</td>
     <td>编码格式默认为utf-8</td>
     <td>utf-8</td>
@@ -7984,8 +7974,8 @@ return_code为FAIL时只返回return_code和return_msg
     <th>类型</th>
     <th>是否必填</th>
     <th>最大长度</th>
-    <th>描述</th>
-    <th>示例值</th>
+    <th width="220">描述</th>
+    <th width="163">示例值</th>
 </tr>
 <tr>
     <td>mch_account</td>
@@ -8029,13 +8019,66 @@ return_code为FAIL时只返回return_code和return_msg
 </tr>
 <tr>
     <td>login_info</td>
-    <td>String</td>
+    <td>json</td>
     <td>是</td>
     <td>255</td>
-    <td>所有业务参数组织成json格式再3eds加密后放到login_info参数里面传递</td>
-    <td>{"mch_account":"zhifubaoceshi","mch_emp_account":"15110186488","login_pwd":"123456","device_uid":"100250000000938","dpass_pwd":"123456"}</td>
+    <td>业务参数组织成json格式，再使用服务商3eds加密后放到login_info参数里面传递</td>
+    <td>{" login_info ":"ABCDEFGHIJKLMN"}</td>
 </tr>
 </table>
+
+login_info字段解密值说明
+
+<table data-hy-role="doctbl">
+    <th>参数</th>
+    <th>类型</th>
+    <th>是否必填</th>
+    <th>最大长度</th>
+    <th width="220">描述</th>
+    <th width="163">示例值</th>
+</tr>
+<tr>
+    <td>device_uid</td>
+    <td>String</td>
+    <td>是</td>
+    <td>64</td>
+    <td>设备唯一标识id</td>
+    <td>100250000000938</td>
+</tr>
+<tr>
+    <td>mch_account</td>
+    <td>String</td>
+    <td>是</td>
+    <td>-</td>
+    <td>商户账号(只能有数字，字母及下划线组成，6 - 30位)</td>
+    <td>zhifubaoceshi</td>
+</tr>
+<tr>
+    <td>mch_emp_account</td>
+    <td>String</td>
+    <td>否</td>
+    <td>32</td>
+    <td>员工账号</td>
+    <td>15110186488</td>
+</tr>
+<tr>
+    <td>login_pwd</td>
+    <td>String</td>
+    <td>是</td>
+    <td>16</td>
+    <td>密码</td>
+    <td>123456</td>
+</tr>
+<tr>
+    <td>dpass_pwd</td>
+    <td>String</td>
+    <td>否</td>
+    <td>16</td>
+    <td>动态口令</td>
+    <td>123456</td>
+</tr>
+</table>
+
 
 返回响应：
 
@@ -8206,7 +8249,7 @@ return_code为FAIL时只返回return_code和return_msg
 <tr>
     <td>version</td>
     <td>String</td>
-    <td>否</td>
+    <td>是</td>
     <td>10</td>
     <td>版本号,默认1.0</td>
     <td>1.0</td>
@@ -8230,7 +8273,7 @@ return_code为FAIL时只返回return_code和return_msg
 <tr>
     <td>charset</td>
     <td>String</td>
-    <td>否</td>
+    <td>是</td>
     <td>10</td>
     <td>编码格式默认为utf-8</td>
     <td>utf-8</td>
@@ -8399,7 +8442,31 @@ return_code为FAIL时只返回return_code和return_msg
     <td>是</td>
     <td>16</td>
     <td>设备id</td>
-    <td>QRCODE_INVOICE</td>
+    <td>22512545</td>
+</tr>
+<tr>
+    <td>company</td>
+    <td>String</td>
+    <td>是</td>
+    <td>255</td>
+    <td>公司名称</td>
+    <td>测试超市</td>
+</tr>
+<tr>
+    <td>store_name</td>
+    <td>String</td>
+    <td>是</td>
+    <td>255</td>
+    <td>店铺名称</td>
+    <td>测试小点</td>
+</tr>
+<tr>
+    <td>device_name</td>
+    <td>String</td>
+    <td>是</td>
+    <td>255</td>
+    <td>设备名称</td>
+    <td>收银台1号</td>
 </tr>
 <tr>
     <td>sign</td>
@@ -8410,17 +8477,6 @@ return_code为FAIL时只返回return_code和return_msg
     <td>1234567890</td>
 </tr>
 </table>	
-
-
-
-
-
-
-
-
-
-
-
 
 
 ## 错误码
