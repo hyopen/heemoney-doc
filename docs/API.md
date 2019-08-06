@@ -149,7 +149,7 @@
     <td>String</td>
     <td>是</td>
     <td>16</td>
-    <td>通道类型，扫码支付，WX_NATIVE、ALI_QRCODE、微信小程序：WX_APPLET，微信代扣：WX_WITHHOLD，等具体见附录通道类型</td>
+    <td>通道类型，扫码支付，WX_NATIVE、ALI_QRCODE、微信小程序：WX_APPLET，微信代扣：WX_WITHHOLD，等具体见接口规则-参数规定-通道类型</td>
     <td>WX_NATIVE</td>
 </tr>
 <tr>
@@ -187,9 +187,9 @@
 <tr>
     <td>store_uid</td>
     <td>String</td>
-    <td>是</td>
+    <td>否</td>
     <td>18</td>
-    <td>商户门店</td>
+    <td>商户门店（部分通道必传，若返回消息为“门店不能为空”，则该参数必传）</td>
     <td>1002501974599</td>
 </tr>
 <tr>
@@ -1032,7 +1032,7 @@ total_fee=real_fee
 <tr>
     <td>total_fee</td>
     <td>int</td>
-    <td>是</td>
+    <td>否</td>
     <td></td>
     <td>总金额 正整数，单位为分</td>
     <td>100</td>
@@ -1653,9 +1653,9 @@ total_fee=real_fee
 
 - 支付状态异步通知API（汇收银主动发请求给商户）
 
-> 请求URL:`https://***.***.com/recive/pay/***`
+> 请求URL:`下单接口传递的异步通知地址`
 
-> 请求方式:`POST/GET`   
+> 请求方式:`POST`   
 
 
 - 公共参数
@@ -1976,9 +1976,9 @@ total_fee=real_fee
 <tr>
     <td>store_uid</td>
     <td>String</td>
-    <td>是</td>
+    <td>否</td>
     <td>18</td>
-    <td>商户门店</td>
+    <td>商户门店（部分通道必传，若返回消息为“门店不能为空”，则该参数必传）</td>
     <td>1002501974599</td>
 </tr>
 <tr>
@@ -2018,7 +2018,7 @@ total_fee=real_fee
     <td>String</td>
     <td>是</td>
     <td>16</td>
-    <td>通道类型，详情见通道类型刷卡类型：WX_MICROPAY、ALI_SWIPE、BANK_SWIPE</td>
+    <td>通道类型刷卡类型：WX_MICROPAY、ALI_SWIPE、BANK_SWIPE具体见接口规则-参数规定-通道类型</td>
     <td>BANK_SWIPE</td>
 </tr>
 <tr>

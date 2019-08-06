@@ -117,7 +117,7 @@ CNY：人民币
         <td>微信刷卡</td>
     </tr>
     <tr>
-        <td rowspan="3">支付宝</td>
+        <td rowspan="4">支付宝</td>
         <td>ALI_QRCODE</td>
         <td>支付宝扫码</td>
     </tr>
@@ -128,6 +128,10 @@ CNY：人民币
     <tr>
         <td>ALI_SWIPE</td>
         <td>支付宝刷卡</td>
+    </tr>
+    <tr>
+        <td>ALi_JSAPI</td>
+        <td>支付宝服务窗/生活号</td>
     </tr>
     <tr>
         <td>QQ钱包</td>
