@@ -1032,7 +1032,7 @@ total_fee=real_fee
 <tr>
     <td>total_fee</td>
     <td>int</td>
-    <td>是</td>
+    <td>否</td>
     <td></td>
     <td>总金额 正整数，单位为分</td>
     <td>100</td>
