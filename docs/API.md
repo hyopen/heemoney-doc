@@ -1653,9 +1653,9 @@ total_fee=real_fee
 
 - 支付状态异步通知API（汇收银主动发请求给商户）
 
-> 请求URL:`https://***.***.com/recive/pay/***`
+> 请求URL:`下单接口传递的异步通知地址`
 
-> 请求方式:`POST/GET`   
+> 请求方式:`POST`   
 
 
 - 公共参数
