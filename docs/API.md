@@ -797,6 +797,14 @@
     <td>123456</td>
 </tr>
 <tr>
+    <td>channel_bar_code</td>
+    <td>String</td>
+    <td>否</td>
+    <td>64</td>
+    <td>微信/支付宝支付成功账单交易单号条形码</td>
+    <td>1121212019080811443774867818</td>
+</tr>
+<tr>
     <td>channel_type</td>
     <td>String</td>
     <td>是</td>
@@ -863,8 +871,8 @@
 <tr>
     <td>attach</td>
     <td>String</td>
-    <td>是</td>
     <td>否</td>
+    <td>128</td>
     <td>附加数据</td>
     <td>100</td>
 </tr>
@@ -883,6 +891,14 @@
     <td>255</td>
     <td>支付参数信息</td>
     <td>格式：{“key1”:”value1”,”key2”:”value2”,…}</td>
+</tr>
+<tr>
+    <td>channel_bar_code</td>
+    <td>String</td>
+    <td>否</td>
+    <td>64</td>
+    <td>微信/支付宝支付成功账单交易单号条形码</td>
+    <td>1121212019080811443774867818</td>
 </tr>
 </table>
 
@@ -2212,6 +2228,14 @@ total_fee=real_fee
     <td>256</td>
     <td>渠道订单号 TokenID</td>
     <td>hy123456</td>
+</tr>
+<tr>
+    <td>channel_bar_code</td>
+    <td>String</td>
+    <td>否</td>
+    <td>64</td>
+    <td>微信/支付宝支付成功账单交易单号条形码</td>
+    <td>1121212019080811443774867818</td>
 </tr>
 <tr>
     <td>channel_return_msg</td>
