@@ -3777,21 +3777,31 @@ hy_contract_no和out_contract_no二选其一，不能同时为空，优先hy_con
 </tr>
 </table>
 
-```text
-	auth_data_info	鉴权数据详细json格式
-     示例
-	银行卡二要素 
-储蓄卡： [{"bank_card_type":"1","auth_bank_card":"6217000130000751966","auth_name":"张三"}] 
-信用卡： [{"bank_card_type":"2","auth_bank_card":"6217000130000751966","auth_name":"张三","cvv2":"233","expire_date":"1225"}]
-银行卡三要素 
-储蓄卡：[{"bank_card_type":"1","auth_bank_card":"6217000130000751966","auth_id_card":"320926195511175276","auth_name":"张三"}] 
-信用卡： [{"bank_card_type":"2","auth_bank_card":"6217000130000751966","auth_id_card":"320926195511175276","auth_name":"张三","cvv2":"233","expire_date":"1225"}]
-银行卡四要素 
-储蓄卡：[{"bank_card_type":"1","auth_bank_card":"6217000130000751966","auth_id_card":"320926195511175276","auth_name":"张三","auth_mobile":"13811111111"}] 
-信用卡： [{"bank_card_type":"2","auth_bank_card":"6217000130000751966","auth_id_card":"320926195511175276","auth_name":"张三","auth_mobile":"13811111111","cvv2":"233","expire_date":"1225"}]
+auth_data_info	鉴权数据详细json格式示例
 
-身份证二要素： [{"auth_id_card":"320926195511175276","auth_name":"张三"}] 
-身份证三要素： [{"auth_id_card":"320926195511175276","auth_name":"张三","auth_mobile":"13811111111"}]
+```javascript
+//银行卡二要素 
+//储蓄卡： 
+[{"bank_card_type":"1","auth_bank_card":"6217000130000751966","auth_name":"张三"}] 
+//信用卡： 
+[{"bank_card_type":"2","auth_bank_card":"6217000130000751966","auth_name":"张三","cvv2":"233","expire_date":"1225"}]
+
+//银行卡三要素 
+//储蓄卡：
+[{"bank_card_type":"1","auth_bank_card":"6217000130000751966","auth_id_card":"320926195511175276","auth_name":"张三"}] 
+//信用卡： 
+[{"bank_card_type":"2","auth_bank_card":"6217000130000751966","auth_id_card":"320926195511175276","auth_name":"张三","cvv2":"233","expire_date":"1225"}]
+
+//银行卡四要素 
+//储蓄卡：
+[{"bank_card_type":"1","auth_bank_card":"6217000130000751966","auth_id_card":"320926195511175276","auth_name":"张三","auth_mobile":"13811111111"}] 
+//信用卡：
+[{"bank_card_type":"2","auth_bank_card":"6217000130000751966","auth_id_card":"320926195511175276","auth_name":"张三","auth_mobile":"13811111111","cvv2":"233","expire_date":"1225"}]
+
+//身份证二要素： 
+[{"auth_id_card":"320926195511175276","auth_name":"张三"}] 
+//身份证三要素： 
+[{"auth_id_card":"320926195511175276","auth_name":"张三","auth_mobile":"13811111111"}]
 
 ```
 
