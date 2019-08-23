@@ -5121,7 +5121,7 @@ industry_id参数行业及编码:
 
 ## 微信支付配置
 
-- 支付配置接口
+- 配置接口
 
 > 请求URL:`http://api.heemoney.com/v1/MerchSetWxPayConfig`
 
