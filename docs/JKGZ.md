@@ -70,7 +70,8 @@ api_from_type=Out_Api&app_id=hyp170420470720000001025BCB0C31E&biz_content={"out_
 ```
 
 MD5签名转大写后：
-```javascript
+
+```text
 {
     "sign":"5799E16B62E6607704345E02C80D5ACF"
 }
@@ -173,7 +174,7 @@ CNY：人民币
 </table>
 
 
-```text
+```javascript
 注： 快捷支付不封顶接口 pay_option 格式为{“Bank_Info”:”value”}，
 该value值由（付款银行卡号|收款银行名称|收款银行卡号|身份证号|姓名）3DES(ECB)加密组成。
 示例：

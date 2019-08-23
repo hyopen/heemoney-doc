@@ -4244,7 +4244,7 @@ auth_data_info	鉴权数据详细json格式示例
 </table>
 
 
-```text
+```javascript
 1不输入渠道提交信息--{"return_code":"FAIL","return_msg":"parent_mch_uid参数为空"}
 2不输入商户账号提交--{"return_code":"FAIL","return_msg":"mch_account参数为空"}
 3不输入名称提交信息--{"return_code":"FAIL","return_msg":"company参数为空"}
@@ -5341,7 +5341,7 @@ industry_id参数行业及编码:
 </table>
 
 
-```text
+```javascript
 如何绑定微信公众号配置成功
 Ø	客商通道已进件成功未绑定过微信公众号配置
 Ø	响应数据：
@@ -8194,7 +8194,7 @@ return_code为FAIL时只返回return_code和return_msg
 
 转账过程中报错说明：
 
-```text
+```javascript
 Ø	账号错误
 {"return_code":"SUCCESS","return_msg":"OK","result_code":"FAIL","error_msg":"转出账号不存在或不可用","sign":"E738ACD548C71C47428652A452C5B9C8"}
 
