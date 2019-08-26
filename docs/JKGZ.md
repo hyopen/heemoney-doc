@@ -71,7 +71,7 @@ api_from_type=Out_Api&app_id=hyp170420470720000001025BCB0C31E&biz_content={"out_
 
 MD5签名转大写后：
 
-```text
+```javascript
 {
     "sign":"5799E16B62E6607704345E02C80D5ACF"
 }
