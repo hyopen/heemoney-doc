@@ -3938,7 +3938,319 @@ auth_data_info	鉴权数据详细json格式示例
 </tr>
 </table>
 
+## 商户基础信息简要注册
 
+- 注册接口
+
+> 请求URL:`http://api.heemoney.com/v1/MerchRegister`
+
+> 请求方式:`POST`   
+
+> 是否需要证书：`否`
+
+> method：`heemoney.merch.account.register`
+
+- 公共参数
+
+<table data-hy-role="doctbl">
+    <th>参数</th>
+    <th>类型</th>
+    <th>是否必填</th>
+    <th>最大长度</th>
+    <th width="220">描述</th>
+    <th width="163">示例值</th>
+</tr>
+<tr>
+    <td>method</td>
+    <td>String</td>
+    <td>是</td>
+    <td>100</td>
+    <td>具体业务接口名称</td>
+    <td>heemoney.merch.account.register</td>
+</tr>
+<tr>
+    <td>version</td>
+    <td>String</td>
+    <td>是</td>
+    <td>10</td>
+    <td>版本号,默认1.0</td>
+    <td></td>
+</tr>
+<tr>
+    <td>isv_mch_uid</td>
+    <td>String</td>
+    <td>是</td>
+    <td>32</td>
+    <td>服务商商户号</td>
+    <td>1002501975866</td>
+</tr>
+<tr>
+    <td>isv_app_id</td>
+    <td>String</td>
+    <td>是</td>
+    <td>32</td>
+    <td>服务商的应用id</td>
+    <td>hyp180514100</td>
+</tr>
+<tr>
+    <td>charset</td>
+    <td>String</td>
+    <td>否</td>
+    <td>32</td>
+    <td>编码格式默认为UTF-8</td>
+    <td>UTF-8,GBK,GB2312</td>
+</tr>
+<tr>
+    <td>sign_type</td>
+    <td>String</td>
+    <td>是</td>
+    <td>10</td>
+    <td>商户生成签名字符串所使用的签名算法类型</td>
+    <td>MD5</td>
+</tr>
+<tr>
+    <td>timestamp</td>
+    <td>String</td>
+    <td>是</td>
+    <td>19</td>
+    <td>发送请求的时间</td>
+    <td>yyyyMMddHHmmss</td>
+</tr>
+<tr>
+    <td>biz_content</td>
+    <td>String</td>
+    <td>是</td>
+    <td>不限</td>
+    <td>鉴权参数集合,Json格式,长度不限,具体参数见如下业务参数</td>
+    <td>Json格式</td>
+</tr>
+<tr>
+    <td>sign</td>
+    <td>String</td>
+    <td>是</td>
+    <td>32</td>
+    <td>数据签名</td>
+    <td></td>
+</tr>
+</table>
+
+- 业务参数
+
+<table data-hy-role="doctbl">
+    <th>参数</th>
+    <th>类型</th>
+    <th>是否必填</th>
+    <th>最大长度</th>
+    <th width="220">描述</th>
+    <th width="163">示例值</th>
+</tr>
+<tr>
+    <td>parent_mch_uid</td>
+    <td>String</td>
+    <td>是</td>
+    <td>64</td>
+    <td>上级UID</td>
+    <td>1002501975866</td>
+</tr>
+<tr>
+    <td>mch_account</td>
+    <td>String</td>
+    <td>是</td>
+    <td>32</td>
+    <td>商户账号(只能有数字，字母及下划线组成，6 - 30位)</td>
+    <td>18618225555</td>
+</tr>
+<tr>
+    <td>company</td>
+    <td>String</td>
+    <td>是</td>
+    <td>128</td>
+    <td>公司名称</td>
+    <td>北京市蔬果公司</td>
+</tr>
+<tr>
+    <td>contact_name</td>
+    <td>String</td>
+    <td>是</td>
+    <td>32</td>
+    <td>联系人</td>
+    <td>张三</td>
+</tr>
+<tr>
+    <td>contact_mobile</td>
+    <td>String</td>
+    <td>是</td>
+    <td>32</td>
+    <td>手机号</td>
+    <td>18688888888</td>
+</tr>
+<tr>
+    <td>remark</td>
+    <td>String</td>
+    <td>否</td>
+    <td>128</td>
+    <td>备注</td>
+    <td>测试</td>
+</tr>
+</table>
+
+- 公共响应参数
+
+<table data-hy-role="doctbl">
+    <th>参数</th>
+    <th>类型</th>
+    <th>是否必填</th>
+    <th>最大长度</th>
+    <th width="220">描述</th>
+    <th width="163">示例值</th>
+</tr>
+<tr>
+    <td>return_code</td>
+    <td>String</td>
+    <td>是</td>
+    <td>16</td>
+    <td>返回状态码</td>
+    <td>SUCCESS</td>
+</tr>
+<tr>
+    <td>return_msg</td>
+    <td>String</td>
+    <td>是</td>
+    <td>128</td>
+    <td>返回状态码描述</td>
+    <td>提交成功</td>
+</tr>
+</table>
+
+
+
+以下字段在return_code为SUCCESS时返回
+
+<table data-hy-role="doctbl">
+    <th>参数</th>
+    <th>类型</th>
+    <th>是否必填</th>
+    <th>最大长度</th>
+    <th width="220">描述</th>
+    <th width="163">示例值</th>
+</tr>
+<tr>
+    <td>result_code</td>
+    <td>String</td>
+    <td>否</td>
+    <td>16</td>
+    <td>业务状态码</td>
+    <td>SUCCESS</td>
+</tr>
+<tr>
+    <td>result_msg</td>
+    <td>String</td>
+    <td>否</td>
+    <td>16</td>
+    <td>返回状态码描述</td>
+    <td>进件成功</td>
+</tr>
+<tr>
+    <td>sign</td>
+    <td>String</td>
+    <td>是</td>
+    <td></td>
+    <td>签名结果</td>
+    <td>1234567890</td>
+</tr>
+</table>
+
+
+以下字段在return_code为SUCCESS时，result_code为FAIL时返回
+
+<table data-hy-role="doctbl">
+    <th>参数</th>
+    <th>类型</th>
+    <th>是否必填</th>
+    <th>最大长度</th>
+    <th width="220">描述</th>
+    <th width="163">示例值</th>
+</tr>
+<tr>
+    <td>error_code</td>
+    <td>String</td>
+    <td>否</td>
+    <td>32</td>
+    <td>详见错误列表</td>
+    <td>0</td>
+</tr>
+<tr>
+    <td>error_msg</td>
+    <td>String</td>
+    <td>否</td>
+    <td>128</td>
+    <td>错误返回的信息描述</td>
+    <td>ok</td>
+</tr>
+</table>
+
+- 响应参数
+
+以下字段在return_code为SUCCESS时，result_code为SUCCESS时返回
+
+<table data-hy-role="doctbl">
+    <th>参数</th>
+    <th>类型</th>
+    <th>是否必填</th>
+    <th>最大长度</th>
+    <th width="220">描述</th>
+    <th width="163">示例值</th>
+</tr>
+<tr>
+    <td>merch_sub_uid</td>
+    <td>String</td>
+    <td>是</td>
+    <td>32</td>
+    <td>子商户UID</td>
+    <td>1002502109599</td>
+</tr>
+<tr>
+    <td>mch_account</td>
+    <td>String</td>
+    <td>是</td>
+    <td>32</td>
+    <td>账号</td>
+    <td>13612341234</td>
+</tr>
+<tr>
+    <td>version</td>
+    <td>String</td>
+    <td>否</td>
+    <td>32</td>
+    <td>版本号，1.0</td>
+    <td>1.0</td>
+</tr>
+<tr>
+    <td>isv_app_id</td>
+    <td>String</td>
+    <td>否</td>
+    <td>32</td>
+    <td>服务商的应用id</td>
+    <td>hyp180514100250</td>
+</tr>
+<tr>
+    <td>isv_mch_uid</td>
+    <td>String</td>
+    <td>否</td>
+    <td>32</td>
+    <td>服务商商户号</td>
+    <td>1002501975866</td>
+</tr>
+</table>
+
+
+```javascript
+1不输入渠道提交信息--{"return_code":"FAIL","return_msg":"parent_mch_uid参数为空"}
+2不输入商户账号提交--{"return_code":"FAIL","return_msg":"mch_account参数为空"}
+3不输入名称提交信息--{"return_code":"FAIL","return_msg":"company参数为空"}
+4不输入联系人提交--{"return_code":"FAIL","return_msg":"contact_name参数为空"}
+5不输入手机号提交--{"return_code":"FAIL","return_msg":"联系人手机号格式不正确"}
+```
 
 
 ## 统一进件
@@ -4580,6 +4892,466 @@ industry_id参数行业及编码:
 23	烟酒零食
 24	其他
 ```
+
+
+
+## 进件查询
+
+- 进件查询接口
+
+> 请求URL:`http://api.heemoney.com/v1/MerchProviderQuery`
+
+> 请求方式:`POST`   
+
+> 是否需要证书：`否`
+
+> method：`heemoney.merch.provider.query`
+
+- 公共参数
+
+<table data-hy-role="doctbl">
+    <th>参数</th>
+    <th>类型</th>
+    <th>是否必填</th>
+    <th>最大长度</th>
+    <th width="220">描述</th>
+    <th width="163">示例值</th>
+</tr>
+<tr>
+    <td>method</td>
+    <td>String</td>
+    <td>是</td>
+    <td>100</td>
+    <td>具体业务接口名称</td>
+    <td>heemoney.merch.provider.query</td>
+</tr>
+<tr>
+    <td>version</td>
+    <td>String</td>
+    <td>是</td>
+    <td>10</td>
+    <td>版本号,默认1.0</td>
+    <td></td>
+</tr>
+<tr>
+    <td>isv_mch_uid</td>
+    <td>String</td>
+    <td>是</td>
+    <td>32</td>
+    <td>服务商商户号</td>
+    <td>1002501975866</td>
+</tr>
+<tr>
+    <td>isv_app_id</td>
+    <td>String</td>
+    <td>是</td>
+    <td>32</td>
+    <td>服务商的应用id</td>
+    <td>hyp180514100</td>
+</tr>
+<tr>
+    <td>charset</td>
+    <td>String</td>
+    <td>否</td>
+    <td>32</td>
+    <td>编码格式默认为UTF-8</td>
+    <td>UTF-8,GBK,GB2312</td>
+</tr>
+<tr>
+    <td>sign_type</td>
+    <td>String</td>
+    <td>是</td>
+    <td>10</td>
+    <td>商户生成签名字符串所使用的签名算法类型</td>
+    <td>MD5</td>
+</tr>
+<tr>
+    <td>timestamp</td>
+    <td>String</td>
+    <td>是</td>
+    <td>19</td>
+    <td>发送请求的时间</td>
+    <td>yyyyMMddHHmmss</td>
+</tr>
+<tr>
+    <td>biz_content</td>
+    <td>String</td>
+    <td>是</td>
+    <td>不限</td>
+    <td>鉴权参数集合,Json格式,长度不限,具体参数见如下业务参数</td>
+    <td>Json格式</td>
+</tr>
+<tr>
+    <td>sign</td>
+    <td>String</td>
+    <td>是</td>
+    <td>32</td>
+    <td>数据签名</td>
+    <td></td>
+</tr>
+</table>
+
+- 业务参数
+
+<table data-hy-role="doctbl">
+    <th>参数</th>
+    <th>类型</th>
+    <th>是否必填</th>
+    <th>最大长度</th>
+    <th width="220">描述</th>
+    <th width="163">示例值</th>
+</tr>
+<tr>
+    <td>mch_uid</td>
+    <td>String</td>
+    <td>是</td>
+    <td>64</td>
+    <td>商户号</td>
+    <td>1002502108179</td>
+</tr>
+</table>
+
+- 公共响应参数
+
+<table data-hy-role="doctbl">
+    <th>参数</th>
+    <th>类型</th>
+    <th>是否必填</th>
+    <th>最大长度</th>
+    <th width="220">描述</th>
+    <th width="163">示例值</th>
+</tr>
+<tr>
+    <td>return_code</td>
+    <td>String</td>
+    <td>是</td>
+    <td>16</td>
+    <td>返回状态码</td>
+    <td>SUCCESS</td>
+</tr>
+<tr>
+    <td>return_msg</td>
+    <td>String</td>
+    <td>是</td>
+    <td>128</td>
+    <td>返回状态码描述</td>
+    <td>查询成功</td>
+</tr>
+</table>
+
+
+
+以下字段在return_code为SUCCESS时返回
+
+<table data-hy-role="doctbl">
+    <th>参数</th>
+    <th>类型</th>
+    <th>是否必填</th>
+    <th>最大长度</th>
+    <th width="220">描述</th>
+    <th width="163">示例值</th>
+</tr>
+<tr>
+    <td>result_code</td>
+    <td>String</td>
+    <td>否</td>
+    <td>16</td>
+    <td>业务状态码</td>
+    <td>SUCCESS</td>
+</tr>
+<tr>
+    <td>sign</td>
+    <td>String</td>
+    <td>是</td>
+    <td></td>
+    <td>签名结果</td>
+    <td>1234567890</td>
+</tr>
+</table>
+
+
+以下字段在return_code为SUCCESS时，result_code为FAIL时返回
+
+<table data-hy-role="doctbl">
+    <th>参数</th>
+    <th>类型</th>
+    <th>是否必填</th>
+    <th>最大长度</th>
+    <th width="220">描述</th>
+    <th width="163">示例值</th>
+</tr>
+<tr>
+    <td>error_code</td>
+    <td>String</td>
+    <td>否</td>
+    <td>32</td>
+    <td>详见错误列表</td>
+    <td>0</td>
+</tr>
+<tr>
+    <td>error_msg</td>
+    <td>String</td>
+    <td>否</td>
+    <td>128</td>
+    <td>错误返回的信息描述</td>
+    <td>ok</td>
+</tr>
+</table>
+
+- 响应参数
+
+以下字段在return_code为SUCCESS时，result_code为SUCCESS时返回
+
+<table data-hy-role="doctbl">
+    <th>参数</th>
+    <th>类型</th>
+    <th>是否必填</th>
+    <th>最大长度</th>
+    <th width="220">描述</th>
+    <th width="163">示例值</th>
+</tr>
+<tr>
+    <td>sub_mch_id_130</td>
+    <td>String</td>
+    <td>是</td>
+    <td>64</td>
+    <td>通道130子商户号||审核状态，审核状态1=成功、-1=失败、0=审核中</td>
+    <td>LMFPAY100001742||1</td>
+</tr>
+<tr>
+    <td>sub_mch_id_133</td>
+    <td>String</td>
+    <td>是</td>
+    <td>64</td>
+    <td>通道133子商户号||审核状态，审核状态1=成功、-1=失败、0=审核中</td>
+    <td>LMFPAY100001742||1</td>
+</tr>
+</table>
+
+
+## 微信支付配置
+
+- 配置接口
+
+> 请求URL:`http://api.heemoney.com/v1/MerchSetWxPayConfig`
+
+> 请求方式:`POST`   
+
+> 是否需要证书：`否`
+
+> method：`heemoney.set.wxpay.config`
+
+- 公共参数
+
+<table data-hy-role="doctbl">
+    <th>参数</th>
+    <th>类型</th>
+    <th>是否必填</th>
+    <th>最大长度</th>
+    <th width="220">描述</th>
+    <th width="163">示例值</th>
+</tr>
+<tr>
+    <td>method</td>
+    <td>String</td>
+    <td>是</td>
+    <td>100</td>
+    <td>具体业务接口名称</td>
+    <td>heemoney.set.wxpay.config</td>
+</tr>
+<tr>
+    <td>version</td>
+    <td>String</td>
+    <td>是</td>
+    <td>10</td>
+    <td>版本号,默认1.0</td>
+    <td></td>
+</tr>
+<tr>
+    <td>isv_mch_uid</td>
+    <td>String</td>
+    <td>是</td>
+    <td>32</td>
+    <td>服务商商户号</td>
+    <td>1002501975866</td>
+</tr>
+<tr>
+    <td>isv_app_id</td>
+    <td>String</td>
+    <td>是</td>
+    <td>32</td>
+    <td>服务商的应用id</td>
+    <td>hyp180514100</td>
+</tr>
+<tr>
+    <td>charset</td>
+    <td>String</td>
+    <td>否</td>
+    <td>32</td>
+    <td>编码格式默认为UTF-8</td>
+    <td>UTF-8,GBK,GB2312</td>
+</tr>
+<tr>
+    <td>sign_type</td>
+    <td>String</td>
+    <td>是</td>
+    <td>10</td>
+    <td>商户生成签名字符串所使用的签名算法类型</td>
+    <td>MD5</td>
+</tr>
+<tr>
+    <td>timestamp</td>
+    <td>String</td>
+    <td>是</td>
+    <td>19</td>
+    <td>发送请求的时间</td>
+    <td>yyyyMMddHHmmss</td>
+</tr>
+<tr>
+    <td>biz_content</td>
+    <td>String</td>
+    <td>是</td>
+    <td>不限</td>
+    <td>鉴权参数集合,Json格式,长度不限,具体参数见如下业务参数</td>
+    <td>Json格式</td>
+</tr>
+<tr>
+    <td>sign</td>
+    <td>String</td>
+    <td>是</td>
+    <td>32</td>
+    <td>数据签名</td>
+    <td></td>
+</tr>
+</table>
+
+- 业务参数
+
+<table data-hy-role="doctbl">
+    <th>参数</th>
+    <th>类型</th>
+    <th>是否必填</th>
+    <th>最大长度</th>
+    <th width="220">描述</th>
+    <th width="163">示例值</th>
+</tr>
+<tr>
+    <td>mch_uid</td>
+    <td>String</td>
+    <td>是</td>
+    <td>64</td>
+    <td>商户号</td>
+    <td>1002502108179</td>
+</tr>
+<tr>
+    <td>sub_mch_id_133</td>
+    <td>String</td>
+    <td>是</td>
+    <td>64</td>
+    <td>通道133子商户号（客商）</td>
+    <td>LMFPAY100001742</td>
+</tr>
+</table>
+
+- 公共响应参数
+
+<table data-hy-role="doctbl">
+    <th>参数</th>
+    <th>类型</th>
+    <th>是否必填</th>
+    <th>最大长度</th>
+    <th width="220">描述</th>
+    <th width="163">示例值</th>
+</tr>
+<tr>
+    <td>return_code</td>
+    <td>String</td>
+    <td>是</td>
+    <td>16</td>
+    <td>返回状态码</td>
+    <td>SUCCESS</td>
+</tr>
+<tr>
+    <td>return_msg</td>
+    <td>String</td>
+    <td>是</td>
+    <td>128</td>
+    <td>返回状态码描述</td>
+    <td>操作成功</td>
+</tr>
+</table>
+
+
+
+以下字段在return_code为SUCCESS时返回
+
+<table data-hy-role="doctbl">
+    <th>参数</th>
+    <th>类型</th>
+    <th>是否必填</th>
+    <th>最大长度</th>
+    <th width="220">描述</th>
+    <th width="163">示例值</th>
+</tr>
+<tr>
+    <td>result_code</td>
+    <td>String</td>
+    <td>否</td>
+    <td>16</td>
+    <td>业务状态码</td>
+    <td>SUCCESS</td>
+</tr>
+<tr>
+    <td>sign</td>
+    <td>String</td>
+    <td>是</td>
+    <td></td>
+    <td>签名结果</td>
+    <td>1234567890</td>
+</tr>
+</table>
+
+
+以下字段在return_code为SUCCESS时，result_code为FAIL时返回
+
+<table data-hy-role="doctbl">
+    <th>参数</th>
+    <th>类型</th>
+    <th>是否必填</th>
+    <th>最大长度</th>
+    <th width="220">描述</th>
+    <th width="163">示例值</th>
+</tr>
+<tr>
+    <td>error_code</td>
+    <td>String</td>
+    <td>否</td>
+    <td>32</td>
+    <td>详见错误列表</td>
+    <td>0</td>
+</tr>
+<tr>
+    <td>error_msg</td>
+    <td>String</td>
+    <td>否</td>
+    <td>128</td>
+    <td>错误返回的信息描述</td>
+    <td>ok</td>
+</tr>
+</table>
+
+
+```javascript
+如何绑定微信公众号配置成功
+Ø	客商通道已进件成功未绑定过微信公众号配置
+Ø	响应数据：
+{"return_code":"SUCCESS","return_msg":"操作成功","result_code":"SUCCESS","result_msg":"操作成功","status":"ok","sign":"23BE2F3D9BC827EC03167A646AE40588"}
+3.3已绑定过再次绑定
+Ø	该客商进件记录绑定过微信配置，再次绑定提示"已绑定成功，不能重复绑定" 
+Ø	响应数据：
+{"return_code":"SUCCESS","return_msg":"OK","result_code":"FAIL","error_msg":"已绑定成功，不能重复绑定","sign":"0FD65F8B1290072B0896B890E5989997"}
+```
+
 
 ## 聚合分账
 
@@ -7422,7 +8194,7 @@ return_code为FAIL时只返回return_code和return_msg
 
 转账过程中报错说明：
 
-```text
+```javascript
 Ø	账号错误
 {"return_code":"SUCCESS","return_msg":"OK","result_code":"FAIL","error_msg":"转出账号不存在或不可用","sign":"E738ACD548C71C47428652A452C5B9C8"}
 
@@ -8701,16 +9473,16 @@ return_code为FAIL时只返回return_code和return_msg
     <td>String</td>
     <td>是</td>
     <td>64</td>
-    <td>账户类型，个人/企业</td>
-    <td>企业</td>
+    <td>账户类型：1=个人,2=企业</td>
+    <td>1</td>
 </tr>
 <tr>
     <td>account_class</td>
     <td>String</td>
     <td>否</td>
     <td>64</td>
-    <td>账户性质，0=实户，1=虚户</td>
-    <td>实户</td>
+    <td>账户性质：0=实户（固定值）</td>
+    <td>0</td>
 </tr>
 <tr>
     <td>bank_code</td>
@@ -9032,6 +9804,14 @@ return_code为FAIL时只返回return_code和return_msg
     <th>最大长度</th>
     <th width="220">描述</th>
     <th width="163">示例值</th>
+</tr>
+<tr>
+    <td>store_uid</td>
+    <td>String</td>
+    <td>是</td>
+    <td>64</td>
+    <td>商户门店号</td>
+    <td>123123123123</td>
 </tr>
 <tr>
     <td>out_trade_no</td>
