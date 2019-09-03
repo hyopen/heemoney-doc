@@ -9842,8 +9842,8 @@ return_code为FAIL时只返回return_code和return_msg
     <td>String</td>
     <td>是</td>
     <td>32</td>
-    <td>总笔数</td>
-    <td>2</td>
+    <td>笔数</td>
+    <td>1</td>
 </tr>
 <tr>
     <td>bill_fee</td>
@@ -9858,7 +9858,7 @@ return_code为FAIL时只返回return_code和return_msg
     <td>String</td>
     <td>是</td>
     <td>32</td>
-    <td>付款类型，6=客商余额</td>
+    <td>付款类型，6=银行余额</td>
     <td>6</td>
 </tr>
 <tr>
@@ -9874,7 +9874,7 @@ return_code为FAIL时只返回return_code和return_msg
     <td>String</td>
     <td>是</td>
     <td>32</td>
-    <td>通道提供方，133=客商</td>
+    <td>通道提供方，固定值=133</td>
     <td>133</td>
 </tr>
 <tr>
