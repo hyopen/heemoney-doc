@@ -151,7 +151,7 @@
     <td>否</td>
     <td>255</td>
     <td>异步通知的地址(暂时还不支持回调)</td>
-    <td>http://www.***.com/***</td>
+    <td>http://...</td>
 </tr>
 <tr>
     <td>invoice_items</td>
