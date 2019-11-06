@@ -767,7 +767,7 @@ return_code为FAIL时只返回return_code和return_msg
     <td>否</td>
     <td></td>
     <td>异步通知</td>
-    <td>http://............</td>
+    <td>http://...</td>
 </tr>
 </table>
 
