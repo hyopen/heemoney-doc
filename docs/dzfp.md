@@ -1,5 +1,9 @@
 ## 扫码开票
 
+接口说明：电子发票开票接口
+
+应用场景：商户通过此接口提交开票信息，汇收银核对开票信息并调取商户税务信息并开具发票，并通过次接口同步返回发票二维码链接
+
 - 请求接口
 
 > 请求URL:`https://api.heemoney.com/v1/QrCodeInvoice`
@@ -420,7 +424,7 @@ return_code为FAIL时只返回return_code和return_msg
 
 ## 开票状态查询接口
 
-> 请求URL:`https://api.heemoney.com/v1/QueryInvoice`
+> 请求URL:`https://api.heemoney.com/v1/QueryInvoice`
 
 > 请求方式:`POST`   
 
@@ -944,7 +948,7 @@ return_code为FAIL时只返回return_code和return_msg
 
 > 是否需要证书：`否`
 
-> method：`heemoney.invoice.direct`
+> method：`heemoney.invoice.direct`
 
 - 公共参数
 
@@ -1133,7 +1137,7 @@ return_code为FAIL时只返回return_code和return_msg
     <td>否</td>
     <td>255</td>
     <td>异步通知的地址(暂时还不支持回调)</td>
-    <td>http://www.***.com/***</td>
+    <td>http://...</td>
 </tr>
 <tr>
     <td>invoice_items</td>
