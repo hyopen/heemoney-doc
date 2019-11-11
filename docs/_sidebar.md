@@ -4,8 +4,8 @@
 - API列表
  - [商户进件接口](jhjj.md)
  - [聚合支付接口](API.md)
- - [分账接口](fzjk.md)
- - [客商分账接口](ksfz.md)
+ - [汇收银分账接口](fzjk.md)
+ - [付款分账接口](ksfz.md)
  - [电子发票接口](dzfp.md)
  - [插件接口](xqcj.md)
  - [代偿接口](lshdc.md)
