@@ -59,7 +59,7 @@
 <tr>
     <td>charset</td>
     <td>String</td>
-    <td>否</td>
+    <td>是</td>
     <td>32</td>
     <td>编码格式默认为UTF-8</td>
     <td>UTF-8,GBK,GB2312</td>
@@ -749,7 +749,7 @@
     <td>15212341234</td>
 </tr>
 <tr>
-    <td>wei_xin_fee_rate</td>
+    <td>weixin_fee_rate</td>
     <td>String</td>
     <td>是</td>
     <td>10</td>

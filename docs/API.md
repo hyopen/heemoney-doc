@@ -165,7 +165,7 @@
     <td>是</td>
     <td>16</td>
     <td>APP和网页支付提交用户端ip，Native支付填调用微信支付API的机器IP。</td>
-    <td>127.0.0.1</td>
+    <td>192.*.*.*</td>
 </tr>
 <tr>
     <td>device_code</td>
@@ -691,7 +691,7 @@
     <td>是</td>
     <td>16</td>
     <td>APP和网页支付提交用户端ip，Native支付填调用微信支付API的机器IP</td>
-    <td>127.0.0.1</td>
+    <td>192.*.*.*</td>
 </tr>
 <tr>
     <td>terminal_info</td>
@@ -962,8 +962,8 @@
     <td>String</td>
     <td>是</td>
     <td>14</td>
-    <td>订单支付时间，格式为yyyy-MM-dd HH:mm:ss</td>
-    <td>2017-07-31 15:41:38</td>
+    <td>订单支付时间，格式为yyyy-MM-dd HHmmss</td>
+    <td>2019-07-31 15：41：38</td>
 </tr>
 <tr>
     <td>company</td>
@@ -1365,8 +1365,8 @@
     <td>String</td>
     <td>是</td>
     <td>14</td>
-    <td>订单支付时间，格式为yyyy-MM-dd HH:mm:ss</td>
-    <td>2017-07-31 15:41:38</td>
+    <td>订单支付时间，格式为yyyy-MM-dd HHmmss</td>
+    <td>2019-07-31 15：41：38</td>
 </tr>
 <tr>
     <td>attach</td>

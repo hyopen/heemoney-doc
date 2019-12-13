@@ -1405,7 +1405,7 @@ hy_contract_no和out_contract_no二选其一，不能同时为空，优先hy_con
 <tr>
     <td>charset</td>
     <td>String</td>
-    <td>否</td>
+    <td>是</td>
     <td>32</td>
     <td>编码格式默认为UTF-8</td>
     <td>UTF-8,GBK,GB2312</td>
@@ -1484,7 +1484,7 @@ hy_contract_no和out_contract_no二选其一，不能同时为空，优先hy_con
     <td>String</td>
     <td>是</td>
     <td>-</td>
-    <td>鉴权数据详细集合,Json格式,长度不限，需要进行3DES加密（ECB）</td>
+    <td>鉴权数据详细集合,Json格式,长度不限，需要进行3DES加密（ECB）编码为charset所传编码</td>
     <td>[{"bank_card_type":"","auth_bank_card":"","auth_name":""}]</td>
 </tr>
 </table>
