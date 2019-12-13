@@ -674,7 +674,7 @@ hy_bill_no、out_trade_no 两者二选其一
 - 业务参数
 
 
-hy_bill_no、out_trade_no 两者二选其一
+hy_pshard_no、out_pshard_no 两者二选其一
 （商户分账单号）
 
 <table data-hy-role="doctbl">
@@ -686,7 +686,7 @@ hy_bill_no、out_trade_no 两者二选其一
     <th width="163">示例值</th>
 </tr>
 <tr>
-    <td>out_pshared_no</td>
+    <td>out_pshard_no</td>
     <td>String</td>
     <td>是</td>
     <td>64</td>
@@ -694,7 +694,7 @@ hy_bill_no、out_trade_no 两者二选其一
     <td>Hylsjdklj245</td>
 </tr>
 <tr>
-    <td>hy_pshared_no</td>
+    <td>hy_pshard_no</td>
     <td>String</td>
     <td>是</td>
     <td>64</td>
@@ -851,7 +851,7 @@ hy_bill_no、out_trade_no 两者二选其一
     <td>hy123456</td>
 </tr>
 <tr>
-    <td>out_pshared_no</td>
+    <td>out_pshard_no</td>
     <td>String</td>
     <td>是</td>
     <td>64</td>
@@ -859,7 +859,7 @@ hy_bill_no、out_trade_no 两者二选其一
     <td>hy123456</td>
 </tr>
 <tr>
-    <td>hy_pshared_no</td>
+    <td>hy_pshard_no</td>
     <td>String</td>
     <td>是</td>
     <td>64</td>
