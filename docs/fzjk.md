@@ -851,7 +851,7 @@ hy_pshard_no、out_pshard_no 两者二选其一
     <td>hy123456</td>
 </tr>
 <tr>
-    <td>out_pshared_no</td>
+    <td>out_pshard_no</td>
     <td>String</td>
     <td>是</td>
     <td>64</td>
@@ -859,7 +859,7 @@ hy_pshard_no、out_pshard_no 两者二选其一
     <td>hy123456</td>
 </tr>
 <tr>
-    <td>hy_pshared_no</td>
+    <td>hy_pshard_no</td>
     <td>String</td>
     <td>是</td>
     <td>64</td>
