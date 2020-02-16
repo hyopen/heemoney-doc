@@ -220,7 +220,7 @@
     <td>String</td>
     <td>否</td>
     <td>255</td>
-    <td>支付参数信息，如果支付类型为微信代扣（WX_WITHHOLD）需要填入： hy_contract_no（汇元签约编号）格式：{“key1”:”value1”,”key2”:”value2”,…}</td>
+    <td>支付参数信息，如果支付类型为微信代扣（WX_WITHHOLD）需要填入： hy_contract_no（汇元签约编号） JSON 格式：{“key1”:”value1”,”key2”:”value2”,…}</td>
     <td>{}</td>
 </tr>
 <tr>
@@ -228,7 +228,7 @@
     <td>String</td>
     <td>否</td>
     <td>255</td>
-    <td>商户定制信息，格式：{“key1”:”value1”,”key2”:”value2”,…}</td>
+    <td>商户定制信息，JSON 格式：{“key1”:”value1”,”key2”:”value2”,…}</td>
     <td>{}</td>
 </tr>
 <tr>
@@ -704,9 +704,10 @@
 <tr>
     <td>channel_type</td>
     <td>String</td>
-    <td>是</td>
+    <td>否</td>
     <td>16</td>
-    <td>通道类型刷卡类型：WX_MICROPAY、ALI_SWIPE、BANK_SWIPE具体见接口规则-参数规定-通道类型</td>
+    <td>通道类型刷卡类型：WX_MICROPAY、ALI_SWIPE、BANK_SWIPE具体见接口规则-参数规定-通道类型
+    。不传从 auth_bar_code 参数自动识别</td>
     <td>BANK_SWIPE</td>
 </tr>
 <tr>
@@ -722,7 +723,7 @@
     <td>String</td>
     <td>否</td>
     <td>255</td>
-    <td>支付参数信息，格式：{“key1”:”value1”,”key2”:”value2”,…}</td>
+    <td>支付参数信息，JSON 格式：{“key1”:”value1”,”key2”:”value2”,…}</td>
     <td>{}</td>
 </tr>
 <tr>
@@ -730,7 +731,7 @@
     <td>String</td>
     <td>否</td>
     <td>255</td>
-    <td>商户定制信息，格式：{“key1”:”value1”,”key2”:”value2”,…}</td>
+    <td>商户定制信息，格式：JSON {“key1”:”value1”,”key2”:”value2”,…}</td>
     <td>{}</td>
 </tr>
 </table>
@@ -1382,7 +1383,7 @@
     <td>否</td>
     <td>255</td>
     <td>商户定制信息</td>
-    <td>格式：{“key1”:”value1”,”key2”:”value2”,…}</td>
+    <td>JSON 格式：{“key1”:”value1”,”key2”:”value2”,…}</td>
 </tr>
 <tr>
     <td>pay_option</td>
@@ -1390,7 +1391,7 @@
     <td>否</td>
     <td>255</td>
     <td>支付参数信息</td>
-    <td>格式：{“key1”:”value1”,”key2”:”value2”,…}</td>
+    <td>JSON 格式：{“key1”:”value1”,”key2”:”value2”,…}</td>
 </tr>
 <tr>
     <td>channel_bar_code</td>
