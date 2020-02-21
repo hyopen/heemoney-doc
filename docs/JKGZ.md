@@ -175,6 +175,15 @@ CNY：人民币
         <td>JD_WAP</td>
         <td>京东H5</td>
     </tr>
+    <tr>
+        <td rowspan="2">云闪付</td>
+        <td>Quick_Pass_APP</td>
+        <td>云闪付APP</td>
+    </tr>
+    <tr>
+        <td>Quick_Pass_H5</td>
+        <td>云闪付H5</td>
+    </tr>
 </table>
 
 
