@@ -1,7 +1,7 @@
 - [文档说明](README.md)
 - [接口规则](JKGZ.md)
 - [场景介绍](CJJS.md)
-- API列表
+- 聚合API列表
  - [商户进件接口](jhjj.md)
  - [聚合支付接口](API.md)
  - [汇收银分账接口](fzjk.md)
@@ -9,5 +9,10 @@
  - [电子发票接口](dzfp.md)
  - [插件接口](xqcj.md)
  - [代偿接口](lshdc.md)
+- 个人钱包API
+ - [接口说明](wallet/api_wallet.note.md)
+ - [账户类API](wallet/api_wallet.account.md)
+ - [交易类API](wallet/api_wallet.trade.md)
+ - [通知类API](wallet/api_wallet.notify.md)  
 - [错误码](cwm.md)
 - [DEMO](demo.md)  
