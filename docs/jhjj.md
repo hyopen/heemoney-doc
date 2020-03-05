@@ -1,20 +1,7 @@
-## 商户基础信息简要注册
+## 公共接口参数
+>说明：接口请求和响应的公共参数，method 参数的值详情见具体接口标记
 
-接口说明：账号注册接口
-
-应用场景：该接口可以使服务商通过API接口创建商户账号，并返回创建结果
-
-- 注册接口
-
-> 请求URL:`http://api.heemoney.com/v1/MerchRegister`
-
-> 请求方式:`POST`   
-
-> 是否需要证书：`否`
-
-> method：`heemoney.merch.account.register`
-
-- 公共参数
+>例如：商户基础信息简要注册中 method：heemoney.merch.account.register
 
 <table data-hy-role="doctbl">
     <th>参数</th>
@@ -30,7 +17,7 @@
     <td>是</td>
     <td>100</td>
     <td>具体业务接口名称</td>
-    <td>heemoney.merch.account.register</td>
+    <td>{****}</td>
 </tr>
 <tr>
     <td>version</td>
@@ -97,6 +84,106 @@
     <td></td>
 </tr>
 </table>
+
+> 公共响应参数
+
+<table data-hy-role="doctbl">
+    <th>参数</th>
+    <th>类型</th>
+    <th>是否必填</th>
+    <th>最大长度</th>
+    <th width="220">描述</th>
+    <th width="163">示例值</th>
+</tr>
+<tr>
+    <td>return_code</td>
+    <td>String</td>
+    <td>是</td>
+    <td>16</td>
+    <td>返回状态码</td>
+    <td>SUCCESS</td>
+</tr>
+<tr>
+    <td>return_msg</td>
+    <td>String</td>
+    <td>是</td>
+    <td>128</td>
+    <td>返回状态码描述</td>
+    <td>ok</td>
+</tr>
+</table>
+
+> 以下字段在return_code为SUCCESS时返回
+
+<table data-hy-role="doctbl">
+    <th>参数</th>
+    <th>类型</th>
+    <th>是否必填</th>
+    <th>最大长度</th>
+    <th width="220">描述</th>
+    <th width="163">示例值</th>
+</tr>
+<tr>
+    <td>result_code</td>
+    <td>String</td>
+    <td>否</td>
+    <td>16</td>
+    <td>业务状态码</td>
+    <td>SUCCESS</td>
+</tr>
+<tr>
+    <td>sign</td>
+    <td>String</td>
+    <td>是</td>
+    <td></td>
+    <td>签名结果</td>
+    <td>1234567890</td>
+</tr>
+</table>
+
+>以下字段在return_code为SUCCESS时，result_code为FAIL时返回
+
+<table data-hy-role="doctbl">
+    <th>参数</th>
+    <th>类型</th>
+    <th>是否必填</th>
+    <th>最大长度</th>
+    <th width="220">描述</th>
+    <th width="163">示例值</th>
+</tr>
+<tr>
+    <td>error_code</td>
+    <td>String</td>
+    <td>否</td>
+    <td>32</td>
+    <td>详见错误列表</td>
+    <td>0</td>
+</tr>
+<tr>
+    <td>error_msg</td>
+    <td>String</td>
+    <td>否</td>
+    <td>128</td>
+    <td>错误返回的信息描述</td>
+    <td>ok</td>
+</tr>
+</table>
+
+## 商户基础信息简要注册
+
+接口说明：账号注册接口
+
+应用场景：该接口可以使服务商通过API接口创建商户账号，并返回创建结果
+
+- 注册接口
+
+> 请求URL:`http://api.heemoney.com/v1/MerchRegister`
+
+> 请求方式:`POST`   
+
+> 是否需要证书：`否`
+
+> method：`heemoney.merch.account.register`
 
 - 业务参数
 
@@ -158,101 +245,6 @@
 </tr>
 </table>
 
-- 公共响应参数
-
-<table data-hy-role="doctbl">
-    <th>参数</th>
-    <th>类型</th>
-    <th>是否必填</th>
-    <th>最大长度</th>
-    <th width="220">描述</th>
-    <th width="163">示例值</th>
-</tr>
-<tr>
-    <td>return_code</td>
-    <td>String</td>
-    <td>是</td>
-    <td>16</td>
-    <td>返回状态码</td>
-    <td>SUCCESS</td>
-</tr>
-<tr>
-    <td>return_msg</td>
-    <td>String</td>
-    <td>是</td>
-    <td>128</td>
-    <td>返回状态码描述</td>
-    <td>提交成功</td>
-</tr>
-</table>
-
-
-
-以下字段在return_code为SUCCESS时返回
-
-<table data-hy-role="doctbl">
-    <th>参数</th>
-    <th>类型</th>
-    <th>是否必填</th>
-    <th>最大长度</th>
-    <th width="220">描述</th>
-    <th width="163">示例值</th>
-</tr>
-<tr>
-    <td>result_code</td>
-    <td>String</td>
-    <td>否</td>
-    <td>16</td>
-    <td>业务状态码</td>
-    <td>SUCCESS</td>
-</tr>
-<tr>
-    <td>result_msg</td>
-    <td>String</td>
-    <td>否</td>
-    <td>16</td>
-    <td>返回状态码描述</td>
-    <td>进件成功</td>
-</tr>
-<tr>
-    <td>sign</td>
-    <td>String</td>
-    <td>是</td>
-    <td></td>
-    <td>签名结果</td>
-    <td>1234567890</td>
-</tr>
-</table>
-
-
-以下字段在return_code为SUCCESS时，result_code为FAIL时返回
-
-<table data-hy-role="doctbl">
-    <th>参数</th>
-    <th>类型</th>
-    <th>是否必填</th>
-    <th>最大长度</th>
-    <th width="220">描述</th>
-    <th width="163">示例值</th>
-</tr>
-<tr>
-    <td>error_code</td>
-    <td>String</td>
-    <td>否</td>
-    <td>32</td>
-    <td>详见错误列表</td>
-    <td>0</td>
-</tr>
-<tr>
-    <td>error_msg</td>
-    <td>String</td>
-    <td>否</td>
-    <td>128</td>
-    <td>错误返回的信息描述</td>
-    <td>ok</td>
-</tr>
-</table>
-
 - 响应参数
 
 以下字段在return_code为SUCCESS时，result_code为SUCCESS时返回
@@ -307,7 +299,6 @@
 </tr>
 </table>
 
-
 ```javascript
 1不输入渠道提交信息--{"return_code":"FAIL","return_msg":"parent_mch_uid参数为空"}
 2不输入商户账号提交--{"return_code":"FAIL","return_msg":"mch_account参数为空"}
@@ -315,7 +306,6 @@
 4不输入联系人提交--{"return_code":"FAIL","return_msg":"contact_name参数为空"}
 5不输入手机号提交--{"return_code":"FAIL","return_msg":"联系人手机号格式不正确"}
 ```
-
 
 ## 统一进件
 
@@ -332,91 +322,6 @@
 > 是否需要证书：`否`
 
 > method：`heemoney.merch.provider.submit`
-
-- 公共参数
-
-<table data-hy-role="doctbl">
-    <th>参数</th>
-    <th>类型</th>
-    <th>是否必填</th>
-    <th>最大长度</th>
-    <th width="220">描述</th>
-    <th width="163">示例值</th>
-</tr>
-<tr>
-    <td>method</td>
-    <td>String</td>
-    <td>是</td>
-    <td>100</td>
-    <td>具体业务接口名称</td>
-    <td>heemoney.merch.provider.submit</td>
-</tr>
-<tr>
-    <td>version</td>
-    <td>String</td>
-    <td>是</td>
-    <td>10</td>
-    <td>版本号,默认1.0</td>
-    <td></td>
-</tr>
-<tr>
-    <td>isv_mch_uid</td>
-    <td>String</td>
-    <td>是</td>
-    <td>32</td>
-    <td>服务商商户号</td>
-    <td>1002501975866</td>
-</tr>
-<tr>
-    <td>isv_app_id</td>
-    <td>String</td>
-    <td>是</td>
-    <td>32</td>
-    <td>服务商的应用id</td>
-    <td>hyp180514100</td>
-</tr>
-<tr>
-    <td>charset</td>
-    <td>String</td>
-    <td>否</td>
-    <td>32</td>
-    <td>编码格式默认为UTF-8</td>
-    <td>UTF-8,GBK,GB2312</td>
-</tr>
-<tr>
-    <td>sign_type</td>
-    <td>String</td>
-    <td>是</td>
-    <td>10</td>
-    <td>商户生成签名字符串所使用的签名算法类型</td>
-    <td>MD5</td>
-</tr>
-<tr>
-    <td>timestamp</td>
-    <td>String</td>
-    <td>是</td>
-    <td>19</td>
-    <td>发送请求的时间</td>
-    <td>yyyyMMddHHmmss</td>
-</tr>
-<tr>
-    <td>biz_content</td>
-    <td>String</td>
-    <td>是</td>
-    <td>不限</td>
-    <td>鉴权参数集合,Json格式,长度不限,具体参数见如下业务参数</td>
-    <td>Json格式</td>
-</tr>
-<tr>
-    <td>sign</td>
-    <td>String</td>
-    <td>是</td>
-    <td>32</td>
-    <td>数据签名</td>
-    <td></td>
-</tr>
-</table>
-
 
 - 业务参数
 
@@ -977,90 +882,6 @@ industry_id参数行业及编码:
 
 > method：`heemoney.merch.provider.query`
 
-- 公共参数
-
-<table data-hy-role="doctbl">
-    <th>参数</th>
-    <th>类型</th>
-    <th>是否必填</th>
-    <th>最大长度</th>
-    <th width="220">描述</th>
-    <th width="163">示例值</th>
-</tr>
-<tr>
-    <td>method</td>
-    <td>String</td>
-    <td>是</td>
-    <td>100</td>
-    <td>具体业务接口名称</td>
-    <td>heemoney.merch.provider.query</td>
-</tr>
-<tr>
-    <td>version</td>
-    <td>String</td>
-    <td>是</td>
-    <td>10</td>
-    <td>版本号,默认1.0</td>
-    <td></td>
-</tr>
-<tr>
-    <td>isv_mch_uid</td>
-    <td>String</td>
-    <td>是</td>
-    <td>32</td>
-    <td>服务商商户号</td>
-    <td>1002501975866</td>
-</tr>
-<tr>
-    <td>isv_app_id</td>
-    <td>String</td>
-    <td>是</td>
-    <td>32</td>
-    <td>服务商的应用id</td>
-    <td>hyp180514100</td>
-</tr>
-<tr>
-    <td>charset</td>
-    <td>String</td>
-    <td>否</td>
-    <td>32</td>
-    <td>编码格式默认为UTF-8</td>
-    <td>UTF-8,GBK,GB2312</td>
-</tr>
-<tr>
-    <td>sign_type</td>
-    <td>String</td>
-    <td>是</td>
-    <td>10</td>
-    <td>商户生成签名字符串所使用的签名算法类型</td>
-    <td>MD5</td>
-</tr>
-<tr>
-    <td>timestamp</td>
-    <td>String</td>
-    <td>是</td>
-    <td>19</td>
-    <td>发送请求的时间</td>
-    <td>yyyyMMddHHmmss</td>
-</tr>
-<tr>
-    <td>biz_content</td>
-    <td>String</td>
-    <td>是</td>
-    <td>不限</td>
-    <td>鉴权参数集合,Json格式,长度不限,具体参数见如下业务参数</td>
-    <td>Json格式</td>
-</tr>
-<tr>
-    <td>sign</td>
-    <td>String</td>
-    <td>是</td>
-    <td>32</td>
-    <td>数据签名</td>
-    <td></td>
-</tr>
-</table>
-
 - 业务参数
 
 <table data-hy-role="doctbl">
@@ -1078,93 +899,6 @@ industry_id参数行业及编码:
     <td>64</td>
     <td>商户号</td>
     <td>1002502108179</td>
-</tr>
-</table>
-
-- 公共响应参数
-
-<table data-hy-role="doctbl">
-    <th>参数</th>
-    <th>类型</th>
-    <th>是否必填</th>
-    <th>最大长度</th>
-    <th width="220">描述</th>
-    <th width="163">示例值</th>
-</tr>
-<tr>
-    <td>return_code</td>
-    <td>String</td>
-    <td>是</td>
-    <td>16</td>
-    <td>返回状态码</td>
-    <td>SUCCESS</td>
-</tr>
-<tr>
-    <td>return_msg</td>
-    <td>String</td>
-    <td>是</td>
-    <td>128</td>
-    <td>返回状态码描述</td>
-    <td>查询成功</td>
-</tr>
-</table>
-
-
-
-以下字段在return_code为SUCCESS时返回
-
-<table data-hy-role="doctbl">
-    <th>参数</th>
-    <th>类型</th>
-    <th>是否必填</th>
-    <th>最大长度</th>
-    <th width="220">描述</th>
-    <th width="163">示例值</th>
-</tr>
-<tr>
-    <td>result_code</td>
-    <td>String</td>
-    <td>否</td>
-    <td>16</td>
-    <td>业务状态码</td>
-    <td>SUCCESS</td>
-</tr>
-<tr>
-    <td>sign</td>
-    <td>String</td>
-    <td>是</td>
-    <td></td>
-    <td>签名结果</td>
-    <td>1234567890</td>
-</tr>
-</table>
-
-
-以下字段在return_code为SUCCESS时，result_code为FAIL时返回
-
-<table data-hy-role="doctbl">
-    <th>参数</th>
-    <th>类型</th>
-    <th>是否必填</th>
-    <th>最大长度</th>
-    <th width="220">描述</th>
-    <th width="163">示例值</th>
-</tr>
-<tr>
-    <td>error_code</td>
-    <td>String</td>
-    <td>否</td>
-    <td>32</td>
-    <td>详见错误列表</td>
-    <td>0</td>
-</tr>
-<tr>
-    <td>error_msg</td>
-    <td>String</td>
-    <td>否</td>
-    <td>128</td>
-    <td>错误返回的信息描述</td>
-    <td>ok</td>
 </tr>
 </table>
 
@@ -1215,90 +949,6 @@ industry_id参数行业及编码:
 
 > method：`heemoney.set.wxpay.config`
 
-- 公共参数
-
-<table data-hy-role="doctbl">
-    <th>参数</th>
-    <th>类型</th>
-    <th>是否必填</th>
-    <th>最大长度</th>
-    <th width="220">描述</th>
-    <th width="163">示例值</th>
-</tr>
-<tr>
-    <td>method</td>
-    <td>String</td>
-    <td>是</td>
-    <td>100</td>
-    <td>具体业务接口名称</td>
-    <td>heemoney.set.wxpay.config</td>
-</tr>
-<tr>
-    <td>version</td>
-    <td>String</td>
-    <td>是</td>
-    <td>10</td>
-    <td>版本号,默认1.0</td>
-    <td></td>
-</tr>
-<tr>
-    <td>isv_mch_uid</td>
-    <td>String</td>
-    <td>是</td>
-    <td>32</td>
-    <td>服务商商户号</td>
-    <td>1002501975866</td>
-</tr>
-<tr>
-    <td>isv_app_id</td>
-    <td>String</td>
-    <td>是</td>
-    <td>32</td>
-    <td>服务商的应用id</td>
-    <td>hyp180514100</td>
-</tr>
-<tr>
-    <td>charset</td>
-    <td>String</td>
-    <td>否</td>
-    <td>32</td>
-    <td>编码格式默认为UTF-8</td>
-    <td>UTF-8,GBK,GB2312</td>
-</tr>
-<tr>
-    <td>sign_type</td>
-    <td>String</td>
-    <td>是</td>
-    <td>10</td>
-    <td>商户生成签名字符串所使用的签名算法类型</td>
-    <td>MD5</td>
-</tr>
-<tr>
-    <td>timestamp</td>
-    <td>String</td>
-    <td>是</td>
-    <td>19</td>
-    <td>发送请求的时间</td>
-    <td>yyyyMMddHHmmss</td>
-</tr>
-<tr>
-    <td>biz_content</td>
-    <td>String</td>
-    <td>是</td>
-    <td>不限</td>
-    <td>鉴权参数集合,Json格式,长度不限,具体参数见如下业务参数</td>
-    <td>Json格式</td>
-</tr>
-<tr>
-    <td>sign</td>
-    <td>String</td>
-    <td>是</td>
-    <td>32</td>
-    <td>数据签名</td>
-    <td></td>
-</tr>
-</table>
-
 - 业务参数
 
 <table data-hy-role="doctbl">
@@ -1326,94 +976,6 @@ industry_id参数行业及编码:
     <td>LMFPAY100001742</td>
 </tr>
 </table>
-
-- 公共响应参数
-
-<table data-hy-role="doctbl">
-    <th>参数</th>
-    <th>类型</th>
-    <th>是否必填</th>
-    <th>最大长度</th>
-    <th width="220">描述</th>
-    <th width="163">示例值</th>
-</tr>
-<tr>
-    <td>return_code</td>
-    <td>String</td>
-    <td>是</td>
-    <td>16</td>
-    <td>返回状态码</td>
-    <td>SUCCESS</td>
-</tr>
-<tr>
-    <td>return_msg</td>
-    <td>String</td>
-    <td>是</td>
-    <td>128</td>
-    <td>返回状态码描述</td>
-    <td>操作成功</td>
-</tr>
-</table>
-
-
-
-以下字段在return_code为SUCCESS时返回
-
-<table data-hy-role="doctbl">
-    <th>参数</th>
-    <th>类型</th>
-    <th>是否必填</th>
-    <th>最大长度</th>
-    <th width="220">描述</th>
-    <th width="163">示例值</th>
-</tr>
-<tr>
-    <td>result_code</td>
-    <td>String</td>
-    <td>否</td>
-    <td>16</td>
-    <td>业务状态码</td>
-    <td>SUCCESS</td>
-</tr>
-<tr>
-    <td>sign</td>
-    <td>String</td>
-    <td>是</td>
-    <td></td>
-    <td>签名结果</td>
-    <td>1234567890</td>
-</tr>
-</table>
-
-
-以下字段在return_code为SUCCESS时，result_code为FAIL时返回
-
-<table data-hy-role="doctbl">
-    <th>参数</th>
-    <th>类型</th>
-    <th>是否必填</th>
-    <th>最大长度</th>
-    <th width="220">描述</th>
-    <th width="163">示例值</th>
-</tr>
-<tr>
-    <td>error_code</td>
-    <td>String</td>
-    <td>否</td>
-    <td>32</td>
-    <td>详见错误列表</td>
-    <td>0</td>
-</tr>
-<tr>
-    <td>error_msg</td>
-    <td>String</td>
-    <td>否</td>
-    <td>128</td>
-    <td>错误返回的信息描述</td>
-    <td>ok</td>
-</tr>
-</table>
-
 
 ```javascript
 如何绑定微信公众号配置成功

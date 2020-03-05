@@ -51,3 +51,8 @@ trade_status
 0=未知
 1=支付成功
 2=支付中
+
+接口字段中的三个url区分：
+notify_url:系统处理业务后通知商户的URL
+return_url:系统处理业务后返回到商户的URL
+redirect_url:钱包业务返回的URL，需要商户跳转到此URL进行后续操作
