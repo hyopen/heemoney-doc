@@ -911,7 +911,7 @@
 
 ## 用户转账
 - 接口请求
-  - 地址：`{URL}/Transfer`
+  - 地址：`{URL}/ApplyTransfer`
   - 请求方式：`Post`
   - 是否需要证书：`否`
 
