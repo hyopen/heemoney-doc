@@ -234,9 +234,22 @@ hy_bill_no、out_trade_no 两者二选其一
     <td>是</td>
     <td>200</td>
     <td>分润明细参数</td>
-    <td>[{merch_uid:1211,allot_amt_fen:1000},{merch_uid:1213,allot_amt_fen:500}]</td>
+    <td>[{login_account:test,allot_amt_fen:100},{login_account:test2,allot_amt_fen:200}]</td>
 </tr>
 </table>
+
+**allot_data 说明**:
+```Text
+[{login_account:test1,allot_amt_fen:100},{login_account:test2,allot_amt_fen:200}]
+整体是一个Json 素组，对应的多条分润明细
+login_account：被分润的登录账号
+allot_amt_fen：被分润的金额|单位分
+
+分润明细最多只支持4条。
+
+剩余的钱自动分润到支付商户。比如：订单100块，账号：test1分润1块，test2分润2块，剩下的97块直接结算到下单商户
+
+```
 
 - 响应参数
 
