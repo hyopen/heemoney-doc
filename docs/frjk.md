@@ -595,17 +595,17 @@ allot_list：分润明细数据，属性含义如下：
     <td>begin_time</td>
     <td>String</td>
     <td>是</td>
-    <td>14</td>
+    <td>8</td>
     <td>开始时间</td>
-    <td>2020-03-08</td>
+    <td>20200308</td>
     </tr>
 <tr>
     <td>end_time</td>
     <td>String</td>
     <td>是</td>
-    <td>14</td>
+    <td>8</td>
     <td>截止时间</td>
-    <td>2020-03-10</td>
+    <td>20200310</td>
 </tr>
 </table>
 
