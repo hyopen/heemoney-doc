@@ -15,5 +15,7 @@
  - [账户类API](wallet/api_wallet.account.md)
  - [交易类API](wallet/api_wallet.trade.md)
  - [通知类API](wallet/api_wallet.notify.md)  
+- 企业钱包API
+ - [账户类API](wallet/api_enterprise.account.md)
 - [错误码](cwm.md)
 - [DEMO](demo.md)  
