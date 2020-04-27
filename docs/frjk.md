@@ -7,7 +7,7 @@
 
 >说明：接口请求和响应的公共参数，method 参数的值详情见具体接口标记
 
->例如：请求分润 method：heemoney.guarantee.allot
+>例如：请求分润 method：heemoney.guaranteeallot.submit
 
 <table data-hy-role="doctbl">
     <th>参数</th>
@@ -23,7 +23,7 @@
     <td>是</td>
     <td>100</td>
     <td>具体业务接口名称</td>
-    <td>heemoney.guarantee.allot</td>
+    <td>heemoney.guaranteeallot.submit</td>
 </tr>
 <tr>
     <td>version</td>
@@ -197,7 +197,7 @@
 
 - 分润请求接口
 
-> method：`heemoney.guarantee.allot`
+> method：`heemoney.guaranteeallot.submit`
 
 - 业务参数
 
@@ -234,21 +234,22 @@ hy_bill_no、out_trade_no 两者二选其一
     <td>是</td>
     <td>200</td>
     <td>分润明细参数</td>
-    <td>[{login_account:test,allot_amt_fen:100},{login_account:test2,allot_amt_fen:200}]</td>
+    <td>[{\"login_account\":\"B\",\"allot_amt_fen\":\"100\"}，{\"login_account\":\"C\",\"allot_amt_fen\":\"200\"}]</td>
 </tr>
 </table>
 
 **allot_data 说明**:
 ```Text
-[{login_account:test1,allot_amt_fen:100},{login_account:test2,allot_amt_fen:200}]
+"allot_data":"[{\"login_account\":\"B\",\"allot_amt_fen\":\"100\"}，{\"login_account\":\"C\",\"allot_amt_fen\":\"200\"}]"
+
 整体是一个Json 素组，对应的多条分润明细
 login_account：被分润的登录账号
 allot_amt_fen：被分润的金额|单位分
 
+支付商户A收单了 100块。调用分润接口  分给B商户 1 块 和C商户  2块。
+剩下的97结算给A商户
+
 分润明细最多只支持4条。
-
-剩余的钱自动分润到支付商户。比如：订单100块，账号：test1分润1块，test2分润2块，剩下的97块直接结算到下单商户
-
 ```
 
 - 响应参数
@@ -325,7 +326,7 @@ allot_amt_fen：被分润的金额|单位分
 
 应用场景：通过调用该接口查询分润状态。分润会有一定的处理周期。
 
-> method：`heemoney.guarantee.allot.query`
+> method：`heemoney.guaranteeallot.submit.query`
 
 <table data-hy-role="doctbl">
     <th>参数</th>
