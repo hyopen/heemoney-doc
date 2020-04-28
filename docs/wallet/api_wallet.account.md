@@ -1,6 +1,7 @@
 ## 公共信息
 - 接口请求
-  - 地址 URL：`https://demo.heemoney.com/YunBiz/Wallet/V1`
+  - 联调地址 URL：`https://demo.heemoney.com/YunBiz/Wallet/V1`
+  - 正式地址 URL：`https://yunbiz.heepay.com/Wallet/V1`
   - 请求方式：`Post` 
 
 - 公共请求参数
@@ -275,7 +276,7 @@
         <td>是</td>
         <td>20</td>
         <td>用户唯一标识</td>
-        <td>100001</td>
+        <td>100001300210091</td>
     </tr>  
 </table>
 
@@ -367,7 +368,7 @@
         <td>是</td>
         <td>20</td>
         <td>用户唯一标识</td>
-        <td>100001</td>
+        <td>100001300210091</td>
     </tr>  
 </table>
 
@@ -451,7 +452,7 @@
         <td>是</td>
         <td>20</td>
         <td>用户唯一标识</td>
-        <td>100001</td>
+        <td>100001300210091</td>
     </tr>  
 </table>
 
@@ -476,7 +477,7 @@
         <td>是</td>
         <td>16</td>
         <td>用户uid</td>
-        <td>100001</td>
+        <td>100001300210091</td>
     </tr>
     <tr>
         <td>encrypt_data</td>
@@ -544,7 +545,7 @@
         <td>是</td>
         <td>16</td>
         <td>用户uid</td>
-        <td>100001</td>
+        <td>100001300210091</td>
     </tr>
     <tr>
         <td>token</td>
@@ -576,7 +577,7 @@
         <td>是</td>
         <td>16</td>
         <td>用户uid</td>
-        <td>100001</td>
+        <td>100001300210091</td>
     </tr>
     <tr>
         <td>verify_code</td>
@@ -611,7 +612,7 @@
         <td>是</td>
         <td>16</td>
         <td>用户uid</td>
-        <td>100001</td>
+        <td>100001300210091</td>
     </tr>
     <tr>
         <td>bank_card_uid</td>
@@ -619,7 +620,7 @@
         <td>是</td>
         <td>20</td>
         <td>用户绑卡记录标识</td>
-        <td>*****</td>
+        <td>100080800202027</td>
     </tr>
 </table>
 
@@ -651,7 +652,7 @@
         <td>否</td>
         <td>16</td>
         <td>用户uid,两个必须填写一个</td>
-        <td>100002</td>
+        <td>100001300210091</td>
     </tr>     
 </table>
 - 响应参数
@@ -769,7 +770,7 @@
         <td>是</td>
         <td>20</td>
         <td>用户唯一标识</td>
-        <td>100001</td>
+        <td>100001300210091</td>
     </tr>
     <tr>
         <td>redirect_url</td>
@@ -801,7 +802,7 @@
         <td>是</td>
         <td>20</td>
         <td>用户唯一标识</td>
-        <td>100001</td>
+        <td>100001300210091</td>
     </tr>
     <tr>
         <td>return_url</td>
@@ -836,7 +837,7 @@
         <td>是</td>
         <td>20</td>
         <td>用户唯一标识</td>
-        <td>100001</td>
+        <td>100001300210091</td>
     </tr>
     <tr>
         <td>redirect_url</td>
@@ -869,7 +870,7 @@
         <td>是</td>
         <td>20</td>
         <td>用户唯一标识</td>
-        <td>100001</td>
+        <td>100001300210091</td>
     </tr>
     <tr>
         <td>return_url</td>
@@ -904,7 +905,7 @@
         <td>是</td>
         <td>20</td>
         <td>用户唯一标识</td>
-        <td>100001</td>
+        <td>100001300210091</td>
     </tr>
     <tr>
         <td>redirect_url</td>
@@ -936,7 +937,7 @@
         <td>是</td>
         <td>16</td>
         <td>用户uid</td>
-        <td>100001</td>
+        <td>100001300210091</td>
     </tr>
     <tr>
         <td>user_mobile</td>
@@ -978,7 +979,7 @@
         <td>是</td>
         <td>16</td>
         <td>用户uid</td>
-        <td>100001</td>
+        <td>100001300210091</td>
     </tr>
     <tr>
         <td>bank_card_uid</td>
@@ -1005,7 +1006,7 @@
         <td>是</td>
         <td>16</td>
         <td>用户uid</td>
-        <td>100001</td>
+        <td>100001300210091</td>
     </tr>
     <tr>
         <td>total_size</td>
@@ -1214,7 +1215,7 @@
         <td>是</td>
         <td>16</td>
         <td>用户uid</td>
-        <td>100001</td>
+        <td>100001300210091</td>
     </tr>
     <tr>
         <td>token</td>
