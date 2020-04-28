@@ -328,7 +328,7 @@
         <td>string</td>
         <td>是</td>
         <td>1M以下图片</td>
-        <td>证件照，如：营业执照</td>
+        <td>证件照</td>
         <td>图片格式base64编码</td>
     </tr>
     <tr>
