@@ -23,6 +23,14 @@
         <td>1.0</td>
     </tr>
     <tr>
+        <td>method</td>
+        <td>String</td>
+        <td>否</td>
+        <td>100</td>
+        <td>请求方法</td>
+        <td>V1/Login</td>
+    </tr>
+    <tr>
         <td>owner_uid</td>
         <td>String</td>
         <td>是</td>
@@ -224,7 +232,7 @@
         <td>是</td>
         <td>16</td>
         <td>用户uid(对接商户所属用户唯一标识)</td>
-        <td>hyp190918494589000018558B0707C82</td>
+        <td>100001300210091</td>
     </tr>
     <tr>
         <td>redirect_url</td>
@@ -237,7 +245,7 @@
 </table>
 
 
-## 注册会员（实名，绑卡）
+## 企业开户（实名，绑卡）
 - 请求方式：`Post` 
 - 请求地址：`{URL}/Register`
 - 是否需要证书：`否`
@@ -660,4 +668,56 @@
         <td>新疆自治区农村信用社</td>
         <td>XJRCCBANK</td>
     </tr>
+</table>
+
+## 企业登录
+- 请求地址：`{URL}/Login`
+- 请求方式：`Post` 
+- 是否需要证书：`否`
+- 请求参数
+<table data-hy-role="doctbl">
+    <tr>
+        <th width="120">参数</th>
+        <th width="70">类型</th>
+        <th width="60">是否必填</th>
+        <th width="80">最大长度</th>
+        <th width="220">描述</th>
+        <th width="153">示例值</th>
+    </tr>
+    <tr>
+        <td>login_account</td>
+        <td>String</td>
+        <td>是</td>
+        <td>30</td>
+        <td>登录账号</td>
+        <td>709609096@163.com</td>
+    </tr>   
+</table>
+
+- 响应参数
+<table data-hy-role="doctbl">
+    <tr>
+        <th width="120">参数</th>
+        <th width="70">类型</th>
+        <th width="60">是否必填</th>
+        <th width="80">最大长度</th>
+        <th width="220">描述</th>
+        <th width="153">示例值</th>
+    </tr>
+    <tr>
+        <td>user_uid</td>
+        <td>String</td>
+        <td>是</td>
+        <td>16</td>
+        <td>用户uid</td>
+        <td>100001300210091</td>
+    </tr>
+    <tr>
+        <td>redirect_url</td>
+        <td>String</td>
+        <td>是</td>
+        <td>500</td>
+        <td>返回跳转地址（携带token）</td>
+        <td>http://************</td>
+     </tr>
 </table>

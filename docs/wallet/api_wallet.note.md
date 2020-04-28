@@ -18,7 +18,7 @@
     <td>否</td>
     <td>100</td>
     <td>公共类接口必传</td>
-    <td>heemoney.pay.applypay</td>
+    <td>V1/ApplyBindCard</td>
 </tr>
 <tr>
     <td>version</td>
