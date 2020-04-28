@@ -625,7 +625,7 @@
 </table>
 
 ## 用户信息
-- 请求地址：`{URL}/GetUserAccountInfo`
+- 请求地址：`{URL}/GetUserInfo`
 - 请求方式：`Post` 
 - 是否需要证书：`否`
 - 请求参数
