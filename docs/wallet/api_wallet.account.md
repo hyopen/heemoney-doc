@@ -1033,14 +1033,6 @@
         <td>1</td>
     </tr>
     <tr>
-        <td>bank_card_no</td>
-        <td>String</td>
-        <td>是</td>
-        <td>20</td>
-        <td>银行卡号</td>
-        <td>6227002845010113927</td>
-    </tr>
-    <tr>
         <td>bank_card_name</td>
         <td>String</td>
         <td>是</td>
@@ -1054,24 +1046,64 @@
         <td>是</td>
         <td>10</td>
         <td>银行编号</td>
-        <td>15</td>
+        <td>CCB</td>
     </tr>
     <tr>
         <td>bank_card_type</td>
         <td>String</td>
         <td>是</td>
         <td>2</td>
-        <td>卡类型|00=银行卡,01=存折,02=信用卡</td>
-        <td>15</td>
+        <td>卡类型|储蓄卡,信用卡</td>
+        <td>储蓄卡</td>
+    </tr>
+    <tr>
+        <td>id_card_no</td>
+        <td>String</td>
+        <td>是</td>
+        <td>50</td>
+        <td>加密身份证号</td>
+        <td>085D65C7652BA704E56B23860E6AC52186F3A273B7A23FE3</td>
+    </tr>
+    <tr>
+        <td>bank_card_no</td>
+        <td>String</td>
+        <td>是</td>
+        <td>50</td>
+        <td>加密银行卡号</td>
+        <td>C82568BBB707B8BE4665FCF6B5F6ADF3FC51BA962B0B7DC3</td>
+    </tr>
+    <tr>
+        <td>bank_account_name</td>
+        <td>String</td>
+        <td>是</td>
+        <td>50</td>
+        <td>加密银行账户名称</td>
+        <td>0811714359CC31F47287DBF4C33E8F52</td>
     </tr>
     <tr>
         <td>user_mobile</td>
         <td>String</td>
         <td>否</td>
         <td>11</td>
-        <td>用户手机号</td>
-        <td>15</td>
-    </tr>    
+        <td>加密用户手机号</td>
+        <td>ABCA8E64A18B88C459D09F09847C66E0</td>
+    </tr>
+    <tr>
+        <td>status</td>
+        <td>String</td>
+        <td>是</td>
+        <td>1</td>
+        <td>绑卡状态|1=启用,-1=无效,0=未启用</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>create_time</td>
+        <td>String</td>
+        <td>是</td>
+        <td>20</td>
+        <td>创建时间|yyyyMMddHHmmss</td>
+        <td>20191223145222</td>
+    </tr>
     <tr>
         <td>bank_card_list</td>
         <td>String</td>
