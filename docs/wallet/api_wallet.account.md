@@ -1065,6 +1065,30 @@
         <td>15</td>
     </tr>
     <tr>
+        <td>id_card_no</td>
+        <td>String</td>
+        <td>是</td>
+        <td>50</td>
+        <td>加密身份证号</td>
+        <td>085D65C7652BA704E56B23860E6AC52186F3A273B7A23FE3</td>
+    </tr>
+    <tr>
+        <td>bank_card_no</td>
+        <td>String</td>
+        <td>是</td>
+        <td>50</td>
+        <td>加密银行卡号</td>
+        <td>C82568BBB707B8BE4665FCF6B5F6ADF3FC51BA962B0B7DC3</td>
+    </tr>
+    <tr>
+        <td>bank_account_name</td>
+        <td>String</td>
+        <td>是</td>
+        <td>50</td>
+        <td>加密银行账户名称</td>
+        <td>0811714359CC31F47287DBF4C33E8F52</td>
+    </tr>
+    <tr>
         <td>user_mobile</td>
         <td>String</td>
         <td>否</td>
