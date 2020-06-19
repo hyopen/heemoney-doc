@@ -10,6 +10,7 @@
  - [汇收银分润接口](frjk.md)
  - [插件接口](xqcj.md)
  - [代偿接口](lshdc.md)
+ - [扩展类接口](other.md)
 - 个人钱包API
  - [接口说明](wallet/api_wallet.note.md)
  - [账户类API](wallet/api_wallet.account.md)
