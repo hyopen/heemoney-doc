@@ -1,23 +1,7 @@
+## 公共接口参数
+>说明：接口请求和响应的公共参数，method 参数的值详情见具体接口标记
 
-
-
-## 统一下单
-
-接口说明：支持主扫、H5、微信公众号、小程序、服务窗、网银、快捷等
-
-应用场景：系统调用该接口后，返回支付URL调起支付。
-
-- 支付请求接口
-
-> 请求URL:`https://pay.heemoney.com/v1/ApplyPay`
-
-> 请求方式:`POST`   
-
-> 是否需要证书：`否`
-
-> method：`heemoney.pay.applypay`
-
-- 公共参数
+>例如：统一下单 method：heemoney.pay.applypay
 
 <table data-hy-role="doctbl">
     <th>参数</th>
@@ -49,7 +33,7 @@
     <td>是</td>
     <td>32</td>
     <td>应用ID，商户的应用id</td>
-    <td>Ap22512545</td>
+    <td>hyp180417100250000003720CF8776AA</td>
 </tr>
 <tr>
     <td>mch_uid</td>
@@ -57,7 +41,7 @@
     <td>是</td>
     <td>32</td>
     <td>商户统一编号</td>
-    <td>276952</td>
+    <td>1002501974599</td>
 </tr>
 <tr>
     <td>isv_app_id</td>
@@ -117,6 +101,106 @@
 </tr>
 </table>
 
+> 公共响应参数
+
+<table data-hy-role="doctbl">
+    <th>参数</th>
+    <th>类型</th>
+    <th>是否必填</th>
+    <th>最大长度</th>
+    <th width="220">描述</th>
+    <th width="163">示例值</th>
+</tr>
+<tr>
+    <td>return_code</td>
+    <td>String</td>
+    <td>是</td>
+    <td>16</td>
+    <td>返回状态码</td>
+    <td>SUCCESS</td>
+</tr>
+<tr>
+    <td>return_msg</td>
+    <td>String</td>
+    <td>是</td>
+    <td>128</td>
+    <td>返回状态码描述</td>
+    <td>ok</td>
+</tr>
+</table>
+
+> 以下字段在return_code为SUCCESS时返回
+
+<table data-hy-role="doctbl">
+    <th>参数</th>
+    <th>类型</th>
+    <th>是否必填</th>
+    <th>最大长度</th>
+    <th width="220">描述</th>
+    <th width="163">示例值</th>
+</tr>
+<tr>
+    <td>result_code</td>
+    <td>String</td>
+    <td>否</td>
+    <td>16</td>
+    <td>业务状态码</td>
+    <td>SUCCESS</td>
+</tr>
+<tr>
+    <td>sign</td>
+    <td>String</td>
+    <td>是</td>
+    <td></td>
+    <td>签名结果</td>
+    <td>1234567890</td>
+</tr>
+</table>
+
+>以下字段在return_code为SUCCESS时，result_code为FAIL时返回
+
+<table data-hy-role="doctbl">
+    <th>参数</th>
+    <th>类型</th>
+    <th>是否必填</th>
+    <th>最大长度</th>
+    <th width="220">描述</th>
+    <th width="163">示例值</th>
+</tr>
+<tr>
+    <td>error_code</td>
+    <td>String</td>
+    <td>否</td>
+    <td>32</td>
+    <td>详见错误列表</td>
+    <td>0</td>
+</tr>
+<tr>
+    <td>error_msg</td>
+    <td>String</td>
+    <td>否</td>
+    <td>128</td>
+    <td>错误返回的信息描述</td>
+    <td>ok</td>
+</tr>
+</table>
+
+## 统一下单
+
+接口说明：支持主扫、H5、微信公众号、小程序、服务窗、网银、快捷等
+
+应用场景：系统调用该接口后，返回支付URL调起支付。
+
+- 支付请求接口
+
+> 请求URL:`https://pay.heemoney.com/v1/ApplyPay`
+
+> 请求方式:`POST`   
+
+> 是否需要证书：`否`
+
+> method：`heemoney.pay.applypay`
+
 - 业务参数
 
 <table data-hy-role="doctbl">
@@ -141,7 +225,7 @@
     <td>是</td>
     <td>256</td>
     <td>订单标题</td>
-    <td>购买礼品</td>
+    <td>test</td>
 </tr>
 <tr>
     <td>total_fee</td>
@@ -220,7 +304,7 @@
     <td>String</td>
     <td>否</td>
     <td>255</td>
-    <td>支付参数信息，如果支付类型为微信代扣（WX_WITHHOLD）需要填入： hy_contract_no（汇元签约编号）格式：{“key1”:”value1”,”key2”:”value2”,…}。如果支付类型为支付宝扫码花呗分期传{"hb_fq_num":"3","hb_fq_seller_percent":"100"}  hb_fq_num分期数，3/6/12期，hb_fq_seller_percent 商家承担手续费比例,0=用户承担，100=商家承担</td>
+    <td>支付参数信息，如果支付类型为微信代扣（WX_WITHHOLD）需要填入： hy_contract_no（汇元签约编号） JSON 格式：{“key1”:”value1”,”key2”:”value2”,…}。如果支付类型为支付宝扫码花呗分期传{"hb_fq_num":"3","hb_fq_seller_percent":"100"}  hb_fq_num分期数，3/6/12期，hb_fq_seller_percent 商家承担手续费比例,0=用户承担，100=商家承担</td>
     <td>{}</td>
 </tr>
 <tr>
@@ -228,7 +312,7 @@
     <td>String</td>
     <td>否</td>
     <td>255</td>
-    <td>商户定制信息，格式：{“key1”:”value1”,”key2”:”value2”,…}</td>
+    <td>商户定制信息，JSON 格式：{“key1”:”value1”,”key2”:”value2”,…}</td>
     <td>{}</td>
 </tr>
 <tr>
@@ -257,93 +341,6 @@
 </tr>
 </table>
 
-- 公共响应参数
-
-<table data-hy-role="doctbl">
-    <th>参数</th>
-    <th>类型</th>
-    <th>是否必填</th>
-    <th>最大长度</th>
-    <th width="220">描述</th>
-    <th width="163">示例值</th>
-</tr>
-<tr>
-    <td>return_code</td>
-    <td>String</td>
-    <td>是</td>
-    <td>16</td>
-    <td>返回状态码</td>
-    <td>SUCCESS</td>
-</tr>
-<tr>
-    <td>return_msg</td>
-    <td>String</td>
-    <td>是</td>
-    <td>128</td>
-    <td>返回状态码描述</td>
-    <td>ok</td>
-</tr>
-</table>
-
-
-
-以下字段在return_code为SUCCESS时返回
-
-<table data-hy-role="doctbl">
-    <th>参数</th>
-    <th>类型</th>
-    <th>是否必填</th>
-    <th>最大长度</th>
-    <th width="220">描述</th>
-    <th width="163">示例值</th>
-</tr>
-<tr>
-    <td>result_code</td>
-    <td>String</td>
-    <td>否</td>
-    <td>16</td>
-    <td>业务状态码</td>
-    <td>SUCCESS</td>
-</tr>
-<tr>
-    <td>sign</td>
-    <td>String</td>
-    <td>是</td>
-    <td></td>
-    <td>签名结果</td>
-    <td>1234567890</td>
-</tr>
-</table>
-
-
-以下字段在return_code为SUCCESS时，result_code为FAIL时返回
-
-<table data-hy-role="doctbl">
-    <th>参数</th>
-    <th>类型</th>
-    <th>是否必填</th>
-    <th>最大长度</th>
-    <th width="220">描述</th>
-    <th width="163">示例值</th>
-</tr>
-<tr>
-    <td>error_code</td>
-    <td>String</td>
-    <td>否</td>
-    <td>32</td>
-    <td>详见错误列表</td>
-    <td>0</td>
-</tr>
-<tr>
-    <td>error_msg</td>
-    <td>String</td>
-    <td>否</td>
-    <td>128</td>
-    <td>错误返回的信息描述</td>
-    <td>ok</td>
-</tr>
-</table>
-
 - 响应参数
 
 以下字段在return_code为SUCCESS时，result_code为SUCCESS时返回
@@ -362,7 +359,7 @@
     <td>是</td>
     <td>32</td>
     <td>应用ID,商户的应用id</td>
-    <td>Ap22512545</td>
+    <td>hyp180417100250000003720CF8776AA</td>
 </tr>
 <tr>
     <td>mch_uid</td>
@@ -370,7 +367,7 @@
     <td>是</td>
     <td>32</td>
     <td>商户统一编号</td>
-    <td>276952</td>
+    <td>1002501974599</td>
 </tr>
 <tr>
     <td>isv_app_id</td>
@@ -410,7 +407,7 @@
     <td>是</td>
     <td>64</td>
     <td>订单号</td>
-    <td>hy123456</td>
+    <td>hyp180417100250000003720CF8776AA</td>
 </tr>
 <tr>
     <td>hy_pay_id</td>
@@ -418,7 +415,7 @@
     <td>是</td>
     <td>256</td>
     <td>订单号 TokenID</td>
-    <td>hy123456</td>
+    <td>hyp180417100250000003720CF8776AA</td>
 </tr>
 <tr>
     <td>subject</td>
@@ -426,7 +423,7 @@
     <td>是</td>
     <td>64</td>
     <td>标题</td>
-    <td>购买</td>
+    <td>test</td>
 </tr>
 <tr>
     <td>total_fee</td>
@@ -492,14 +489,23 @@
     <td>汇元签约编号，只有通道类型是微信代扣（WX_WITHHOLD）时才会返回改参数</td>
     <td></td>
 </tr>
+<tr>
+    <td>hy_extend_params</td>
+    <td>String</td>
+    <td>否</td>
+    <td>512</td>
+    <td>汇元返回支付扩展参数</td>
+    <td>JSON格式，云闪付APP支付类型返回 {\"tn\":\"533142681549904444118\"}</td>
+</tr>
+
 </table>
 
 
 ## 直接下单
 
-接口说明：付款码支付下单接口（商户扫用户）
+- 接口说明：付款码支付下单接口（商户扫用户）
 
-应用场景：例如-收银员使用扫码设备读取用户付款码以后，二维码或条码信息会传送至商户收银台，由商户收银台或者商户后台调用该接口发起支付。
+- 应用场景：例如-收银员使用扫码设备读取用户付款码以后，二维码或条码信息会传送至商户收银台，由商户收银台或者商户后台调用该接口发起支付。
 
 - 直接下单请求接口
 
@@ -510,106 +516,6 @@
 > 是否需要证书：`否`
 
 > method：`heemoney.pay.dirctpay`
-
-- 公共参数
-
-<table data-hy-role="doctbl">
-    <th>参数</th>
-    <th>类型</th>
-    <th>是否必填</th>
-    <th>最大长度</th>
-    <th width="220">描述</th>
-    <th width="163">示例值</th>
-</tr>
-<tr>
-    <td>method</td>
-    <td>String</td>
-    <td>是</td>
-    <td>128</td>
-    <td>具体业务接口名称</td>
-    <td>heemoney.pay.applypay</td>
-</tr>
-<tr>
-    <td>version</td>
-    <td>String</td>
-    <td>是</td>
-    <td>10</td>
-    <td>版本号,默认1.0</td>
-    <td>1.0</td>
-</tr>
-<tr>
-    <td>app_id</td>
-    <td>String</td>
-    <td>是</td>
-    <td>32</td>
-    <td>应用ID，商户的应用id</td>
-    <td>Ap22512545</td>
-</tr>
-<tr>
-    <td>mch_uid</td>
-    <td>String</td>
-    <td>是</td>
-    <td>32</td>
-    <td>商户统一编号</td>
-    <td>276952</td>
-</tr>
-<tr>
-    <td>isv_app_id</td>
-    <td>String</td>
-    <td>否</td>
-    <td>32</td>
-    <td>服务商应用ID</td>
-    <td>A2sdfjkl</td>
-</tr>
-<tr>
-    <td>isv_mch_uid</td>
-    <td>String</td>
-    <td>否</td>
-    <td>32</td>
-    <td>服务商商户号</td>
-    <td>22255522</td>
-</tr>
-<tr>
-    <td>charset</td>
-    <td>String</td>
-    <td>否</td>
-    <td>10</td>
-    <td>编码格式默认为UTF-8</td>
-    <td>UTF-8,GBK,GB2312</td>
-</tr>
-<tr>
-    <td>timestamp</td>
-    <td>String</td>
-    <td>是</td>
-    <td>19</td>
-    <td>发送请求的时间</td>
-    <td>yyyyMMddHHmmss</td>
-</tr>
-<tr>
-    <td>biz_content</td>
-    <td>String</td>
-    <td>是</td>
-    <td>不限</td>
-    <td>请求参数集合,Json格式,长度不限,具体参数见如下业务参数</td>
-    <td>Json格式</td>
-</tr>
-<tr>
-    <td>sign_type</td>
-    <td>String</td>
-    <td>是</td>
-    <td>10</td>
-    <td>商户生成签名字符串所使用的签名算法类型</td>
-    <td>MD5</td>
-</tr>
-<tr>
-    <td>sign</td>
-    <td>String</td>
-    <td>是</td>
-    <td>256</td>
-    <td>商户请求参数的签名串</td>
-    <td>详见示例</td>
-</tr>
-</table>
 
 - 业务参数
 
@@ -635,7 +541,7 @@
     <td>是</td>
     <td>256</td>
     <td>订单标题</td>
-    <td>购买礼品</td>
+    <td>test</td>
 </tr>
 <tr>
     <td>attach</td>
@@ -702,14 +608,6 @@
     <td></td>
 </tr>
 <tr>
-    <td>channel_type</td>
-    <td>String</td>
-    <td>是</td>
-    <td>16</td>
-    <td>通道类型刷卡类型：WX_MICROPAY、ALI_SWIPE、BANK_SWIPE具体见接口规则-参数规定-通道类型</td>
-    <td>BANK_SWIPE</td>
-</tr>
-<tr>
     <td>auth_bar_code</td>
     <td>String</td>
     <td>是</td>
@@ -718,11 +616,20 @@
     <td>56565656565656</td>
 </tr>
 <tr>
+    <td>channel_type</td>
+    <td>String</td>
+    <td>否</td>
+    <td>16</td>
+    <td>通道类型刷卡类型：WX_MICROPAY、ALI_SWIPE、BANK_SWIPE具体见接口规则-参数规定-通道类型
+    。不传从 auth_bar_code 参数自动识别</td>
+    <td>BANK_SWIPE</td>
+</tr>
+<tr>
     <td>pay_option</td>
     <td>String</td>
     <td>否</td>
     <td>255</td>
-    <td>支付参数信息，格式：{“key1”:”value1”,”key2”:”value2”,…}。如果支付类型为支付宝刷卡花呗分期传{"hb_fq_num":"3","hb_fq_seller_percent":"100"}  hb_fq_num分期数，3/6/12期，hb_fq_seller_percent 商家承担手续费比例,0=用户承担，100=商家承担</td>
+    <td>支付参数信息，json格式：{“key1”:”value1”,”key2”:”value2”,…}。如果支付类型为支付宝刷卡花呗分期传{"hb_fq_num":"3","hb_fq_seller_percent":"100"}  hb_fq_num分期数，3/6/12期，hb_fq_seller_percent 商家承担手续费比例,0=用户承担，100=商家承担</td>
     <td>{}</td>
 </tr>
 <tr>
@@ -730,100 +637,12 @@
     <td>String</td>
     <td>否</td>
     <td>255</td>
-    <td>商户定制信息，格式：{“key1”:”value1”,”key2”:”value2”,…}</td>
+    <td>商户定制信息，格式：JSON {“key1”:”value1”,”key2”:”value2”,…}</td>
     <td>{}</td>
 </tr>
 </table>
 
 被扫不需要同步和异步地址，按照下方响应参数处理。
-
-
-- 公共响应参数
-
-<table data-hy-role="doctbl">
-    <th>参数</th>
-    <th>类型</th>
-    <th>是否必填</th>
-    <th>最大长度</th>
-    <th width="220">描述</th>
-    <th width="163">示例值</th>
-</tr>
-<tr>
-    <td>return_code</td>
-    <td>String</td>
-    <td>是</td>
-    <td>16</td>
-    <td>返回状态码</td>
-    <td>SUCCESS</td>
-</tr>
-<tr>
-    <td>return_msg</td>
-    <td>String</td>
-    <td>是</td>
-    <td>128</td>
-    <td>返回状态码描述</td>
-    <td>ok</td>
-</tr>
-</table>
-
-
-
-以下字段在return_code为SUCCESS时返回
-
-<table data-hy-role="doctbl">
-    <th>参数</th>
-    <th>类型</th>
-    <th>是否必填</th>
-    <th>最大长度</th>
-    <th width="220">描述</th>
-    <th width="163">示例值</th>
-</tr>
-<tr>
-    <td>result_code</td>
-    <td>String</td>
-    <td>否</td>
-    <td>16</td>
-    <td>业务状态码</td>
-    <td>SUCCESS</td>
-</tr>
-<tr>
-    <td>sign</td>
-    <td>String</td>
-    <td>是</td>
-    <td></td>
-    <td>签名结果</td>
-    <td>565656565</td>
-</tr>
-</table>
-
-
-以下字段在return_code为SUCCESS时，result_code为FAIL时返回
-
-<table data-hy-role="doctbl">
-    <th>参数</th>
-    <th>类型</th>
-    <th>是否必填</th>
-    <th>最大长度</th>
-    <th width="220">描述</th>
-    <th width="163">示例值</th>
-</tr>
-<tr>
-    <td>error_code</td>
-    <td>String</td>
-    <td>否</td>
-    <td>32</td>
-    <td>详见错误列表</td>
-    <td>0</td>
-</tr>
-<tr>
-    <td>error_msg</td>
-    <td>String</td>
-    <td>否</td>
-    <td>128</td>
-    <td>错误返回的信息描述</td>
-    <td>ok</td>
-</tr>
-</table>
 
 - 响应参数
 
@@ -843,7 +662,7 @@
     <td>是</td>
     <td>32</td>
     <td>应用ID,商户的应用id</td>
-    <td>Ap22512545</td>
+    <td>hyp180417100250000003720CF8776AA</td>
 </tr>
 <tr>
     <td>mch_uid</td>
@@ -851,7 +670,7 @@
     <td>是</td>
     <td>32</td>
     <td>商户统一编号</td>
-    <td>276952</td>
+    <td>1002501974599</td>
 </tr>
 <tr>
     <td>isv_app_id</td>
@@ -883,7 +702,7 @@
     <td>是</td>
     <td>64</td>
     <td>商户订单号</td>
-    <td>hy123456</td>
+    <td>hyp180417100250000003720CF8776AA</td>
 </tr>
 <tr>
     <td>hy_bill_no</td>
@@ -891,7 +710,7 @@
     <td>是</td>
     <td>64</td>
     <td>订单号</td>
-    <td>hy123456</td>
+    <td>hyp180417100250000003720CF8776AA</td>
 </tr>
 <tr>
     <td>channel_trade_no</td>
@@ -899,7 +718,7 @@
     <td>否</td>
     <td>256</td>
     <td>渠道订单号 TokenID</td>
-    <td>hy123456</td>
+    <td>hyp180417100250000003720CF8776AA</td>
 </tr>
 <tr>
     <td>channel_bar_code</td>
@@ -939,7 +758,7 @@
     <td>是</td>
     <td>64</td>
     <td>标题</td>
-    <td>购买</td>
+    <td>test</td>
 </tr>
 <tr>
     <td>total_fee</td>
@@ -978,15 +797,16 @@
 
 ## 订单查询
 
-接口说明：查询支付订单接口
+- 接口说明接口说明：查询支付订单接口
 
-应用场景：该接口提供支付订单的查询，商户可以通过查询订单接口主动查询订单状态，完成下一步的业务逻辑。
+- 应用场景：该接口提供支付订单的查询，商户可以通过查询订单接口主动查询订单状态，完成下一步的业务逻辑。
 
 需要调用查询接口的情况：
 
 1. 当商户后台、网络、服务器等出现异常，商户系统最终未接收到支付通知；
 2. 调用支付接口后，返回系统错误或未知交易状态情况；
 3. 确保异步通知返回状态无误
+4. 使用汇元订单号查询速度更快，建议优先使用
 
 
 - 订单查询接口
@@ -998,106 +818,6 @@
 > 是否需要证书：`否`
 
 > method：`heemoney.pay.query`
-
-- 公共参数
-
-<table data-hy-role="doctbl">
-    <th>参数</th>
-    <th>类型</th>
-    <th>是否必填</th>
-    <th>最大长度</th>
-    <th width="220">描述</th>
-    <th width="163">示例值</th>
-</tr>
-<tr>
-    <td>method</td>
-    <td>String</td>
-    <td>是</td>
-    <td>128</td>
-    <td>具体业务接口名称</td>
-    <td>heemoney.pay.applypay</td>
-</tr>
-<tr>
-    <td>version</td>
-    <td>String</td>
-    <td>是</td>
-    <td>10</td>
-    <td>版本号,默认1.0</td>
-    <td>1.0</td>
-</tr>
-<tr>
-    <td>app_id</td>
-    <td>String</td>
-    <td>是</td>
-    <td>32</td>
-    <td>应用ID，商户的应用id</td>
-    <td>Ap22512545</td>
-</tr>
-<tr>
-    <td>mch_uid</td>
-    <td>String</td>
-    <td>是</td>
-    <td>32</td>
-    <td>商户统一编号</td>
-    <td>276952</td>
-</tr>
-<tr>
-    <td>isv_app_id</td>
-    <td>String</td>
-    <td>否</td>
-    <td>32</td>
-    <td>服务商应用ID</td>
-    <td>A2sdfjkl</td>
-</tr>
-<tr>
-    <td>isv_mch_uid</td>
-    <td>String</td>
-    <td>否</td>
-    <td>32</td>
-    <td>服务商商户号</td>
-    <td>22255522</td>
-</tr>
-<tr>
-    <td>charset</td>
-    <td>String</td>
-    <td>是</td>
-    <td>10</td>
-    <td>编码格式默认为utf-8</td>
-    <td>utf-8</td>
-</tr>
-<tr>
-    <td>timestamp</td>
-    <td>String</td>
-    <td>是</td>
-    <td>19</td>
-    <td>发送请求的时间</td>
-    <td>yyyyMMddHHmmss,20181030152539</td>
-</tr>
-<tr>
-    <td>biz_content</td>
-    <td>String</td>
-    <td>是</td>
-    <td>不限</td>
-    <td>请求参数集合,Json格式,长度不限,具体参数见如下业务参数</td>
-    <td>Json格式</td>
-</tr>
-<tr>
-    <td>sign_type</td>
-    <td>String</td>
-    <td>是</td>
-    <td>10</td>
-    <td>商户生成签名字符串所使用的签名算法类型</td>
-    <td>MD5</td>
-</tr>
-<tr>
-    <td>sign</td>
-    <td>String</td>
-    <td>是</td>
-    <td>256</td>
-    <td>商户请求参数的签名串</td>
-    <td>详见示例</td>
-</tr>
-</table>
 
 - 业务参数
 
@@ -1127,91 +847,6 @@
 </tr>
 </table>
 
-- 公共响应参数
-
-<table data-hy-role="doctbl">
-    <th>参数</th>
-    <th>类型</th>
-    <th>是否必填</th>
-    <th>最大长度</th>
-    <th width="220">描述</th>
-    <th width="163">示例值</th>
-</tr>
-<tr>
-    <td>return_code</td>
-    <td>String</td>
-    <td>是</td>
-    <td>16</td>
-    <td>返回状态码</td>
-    <td>SUCCESS</td>
-</tr>
-<tr>
-    <td>return_msg</td>
-    <td>String</td>
-    <td>是</td>
-    <td>128</td>
-    <td>返回状态码描述</td>
-    <td>ok</td>
-</tr>
-</table>
-
-
-以下字段在return_code为SUCCESS时返回
-
-<table data-hy-role="doctbl">
-    <th>参数</th>
-    <th>类型</th>
-    <th>是否必填</th>
-    <th>最大长度</th>
-    <th width="220">描述</th>
-    <th width="163">示例值</th>
-</tr>
-<tr>
-    <td>result_code</td>
-    <td>String</td>
-    <td>是</td>
-    <td>16</td>
-    <td>业务状态码</td>
-    <td>SUCCESS</td>
-</tr>
-<tr>
-    <td>sign</td>
-    <td>String</td>
-    <td>是</td>
-    <td>32</td>
-    <td>签名结果</td>
-    <td>1234567890</td>
-</tr>
-</table>
-
-以下字段在return_code=SUCCESS&result_code=FAIL时返回
-
-<table data-hy-role="doctbl">
-    <th>参数</th>
-    <th>类型</th>
-    <th>是否必填</th>
-    <th>最大长度</th>
-    <th width="220">描述</th>
-    <th width="163">示例值</th>
-</tr>
-<tr>
-    <td>error_code</td>
-    <td>int</td>
-    <td>是</td>
-    <td></td>
-    <td>错误码</td>
-    <td>0</td>
-</tr>
-<tr>
-    <td>error_msg</td>
-    <td>String</td>
-    <td>是</td>
-    <td>128</td>
-    <td>错误信息</td>
-    <td>结果不明确，不处理单据，状态=Unknow</td>
-</tr>
-</table>
-
 - 响应参数
 
 以下字段在return_code为SUCCESS时，result_code为SUCCESS时返回
@@ -1238,7 +873,7 @@
     <td>是</td>
     <td>32</td>
     <td>应用ID,商户的应用id</td>
-    <td>Ap22512545</td>
+    <td>hyp180417100250000003720CF8776AA</td>
 </tr>
 <tr>
     <td>mch_uid</td>
@@ -1246,7 +881,7 @@
     <td>是</td>
     <td>32</td>
     <td>商户统一编号</td>
-    <td>276952</td>
+    <td>1002501974599</td>
 </tr>
 <tr>
     <td>isv_app_id</td>
@@ -1270,7 +905,7 @@
     <td>是</td>
     <td>64</td>
     <td>标题</td>
-    <td>购买</td>
+    <td>test</td>
 </tr>
 <tr>
     <td>out_trade_no</td>
@@ -1286,7 +921,7 @@
     <td>是</td>
     <td>64</td>
     <td>汇元订单号</td>
-    <td>hy123456</td>
+    <td>hyp180417100250000003720CF8776AA</td>
 </tr>
 <tr>
     <td>channel_trade_no</td>
@@ -1382,7 +1017,7 @@
     <td>否</td>
     <td>255</td>
     <td>商户定制信息</td>
-    <td>格式：{“key1”:”value1”,”key2”:”value2”,…}</td>
+    <td>JSON 格式：{“key1”:”value1”,”key2”:”value2”,…}</td>
 </tr>
 <tr>
     <td>pay_option</td>
@@ -1390,7 +1025,7 @@
     <td>否</td>
     <td>255</td>
     <td>支付参数信息</td>
-    <td>格式：{“key1”:”value1”,”key2”:”value2”,…}</td>
+    <td>JSON 格式：{“key1”:”value1”,”key2”:”value2”,…}</td>
 </tr>
 <tr>
     <td>channel_bar_code</td>
@@ -1477,7 +1112,7 @@ total_fee=real_fee
     <td>是</td>
     <td>64</td>
     <td>标题</td>
-    <td>购买</td>
+    <td>test</td>
 </tr>
 <tr>
     <td>out_trade_no</td>
@@ -1493,7 +1128,7 @@ total_fee=real_fee
     <td>是</td>
     <td>64</td>
     <td>订单号</td>
-    <td>hy123456</td>
+    <td>hyp180417100250000003720CF8776AA</td>
 </tr>
 <tr>
     <td>channel_type</td>
@@ -1591,106 +1226,6 @@ total_fee=real_fee
 
 > method：`heemoney.pay.refund`
 
-- 公共参数
-
-<table data-hy-role="doctbl">
-    <th>参数</th>
-    <th>类型</th>
-    <th>是否必填</th>
-    <th>最大长度</th>
-    <th width="220">描述</th>
-    <th width="163">示例值</th>
-</tr>
-<tr>
-    <td>method</td>
-    <td>String</td>
-    <td>是</td>
-    <td>128</td>
-    <td>具体业务接口名称</td>
-    <td>heemoney.pay.applypay</td>
-</tr>
-<tr>
-    <td>version</td>
-    <td>String</td>
-    <td>是</td>
-    <td>10</td>
-    <td>版本号,默认1.0</td>
-    <td>1.0</td>
-</tr>
-<tr>
-    <td>app_id</td>
-    <td>String</td>
-    <td>是</td>
-    <td>32</td>
-    <td>应用ID，商户的应用id</td>
-    <td>Ap22512545</td>
-</tr>
-<tr>
-    <td>mch_uid</td>
-    <td>String</td>
-    <td>是</td>
-    <td>32</td>
-    <td>商户统一编号</td>
-    <td>276952</td>
-</tr>
-<tr>
-    <td>isv_app_id</td>
-    <td>String</td>
-    <td>否</td>
-    <td>32</td>
-    <td>服务商应用ID</td>
-    <td>A2sdfjkl</td>
-</tr>
-<tr>
-    <td>isv_mch_uid</td>
-    <td>String</td>
-    <td>否</td>
-    <td>32</td>
-    <td>服务商商户号</td>
-    <td>22255522</td>
-</tr>
-<tr>
-    <td>charset</td>
-    <td>String</td>
-    <td>是</td>
-    <td>10</td>
-    <td>编码格式默认为utf-8</td>
-    <td>utf-8</td>
-</tr>
-<tr>
-    <td>timestamp</td>
-    <td>String</td>
-    <td>是</td>
-    <td>19</td>
-    <td>发送请求的时间</td>
-    <td>yyyyMMddHHmmss,20181030152539</td>
-</tr>
-<tr>
-    <td>biz_content</td>
-    <td>String</td>
-    <td>是</td>
-    <td>不限</td>
-    <td>请求参数集合,Json格式,长度不限,具体参数见如下业务参数</td>
-    <td>Json格式</td>
-</tr>
-<tr>
-    <td>sign_type</td>
-    <td>String</td>
-    <td>是</td>
-    <td>10</td>
-    <td>商户生成签名字符串所使用的签名算法类型</td>
-    <td>MD5</td>
-</tr>
-<tr>
-    <td>sign</td>
-    <td>String</td>
-    <td>是</td>
-    <td>256</td>
-    <td>商户请求参数的签名串</td>
-    <td>详见示例</td>
-</tr>
-</table>
-
 - 业务参数
 
 <table data-hy-role="doctbl">
@@ -1735,90 +1270,6 @@ total_fee=real_fee
 </tr>
 </table>
 
-- 公共响应参数
-
-<table data-hy-role="doctbl">
-    <th>参数</th>
-    <th>类型</th>
-    <th>是否必填</th>
-    <th>最大长度</th>
-    <th width="220">描述</th>
-    <th width="163">示例值</th>
-</tr>
-<tr>
-    <td>return_code</td>
-    <td>String</td>
-    <td>是</td>
-    <td>16</td>
-    <td>返回状态码</td>
-    <td>SUCCESS</td>
-</tr>
-<tr>
-    <td>return_msg</td>
-    <td>String</td>
-    <td>是</td>
-    <td>128</td>
-    <td>返回状态码描述</td>
-    <td>ok</td>
-</tr>
-</table>
-
-以下字段在return_code为SUCCESS时返回
-
-<table data-hy-role="doctbl">
-    <th>参数</th>
-    <th>类型</th>
-    <th>是否必填</th>
-    <th>最大长度</th>
-    <th width="220">描述</th>
-    <th width="163">示例值</th>
-</tr>
-<tr>
-    <td>result_code</td>
-    <td>String</td>
-    <td>否</td>
-    <td>16</td>
-    <td>业务状态码</td>
-    <td>SUCCESS</td>
-</tr>
-<tr>
-    <td>sign</td>
-    <td>String</td>
-    <td>是</td>
-    <td></td>
-    <td>签名结果</td>
-    <td>1234567890</td>
-</tr>
-</table>
-
-以下字段在return_code为SUCCESS时，result_code为FAIL时返回
-
-<table data-hy-role="doctbl">
-    <th>参数</th>
-    <th>类型</th>
-    <th>是否必填</th>
-    <th>最大长度</th>
-    <th width="220">描述</th>
-    <th width="163">示例值</th>
-</tr>
-<tr>
-    <td>error_code</td>
-    <td>String</td>
-    <td>否</td>
-    <td>32</td>
-    <td>详见错误列表</td>
-    <td>0</td>
-</tr>
-<tr>
-    <td>error_msg</td>
-    <td>String</td>
-    <td>否</td>
-    <td>128</td>
-    <td>错误返回的信息描述</td>
-    <td>ok</td>
-</tr>
-</table>
-
 - 响应参数
 
 以下字段在return_code为SUCCESS时，result_code为SUCCESS时返回
@@ -1845,7 +1296,7 @@ total_fee=real_fee
     <td>是</td>
     <td>32</td>
     <td>应用ID</td>
-    <td>Ap22512545</td>
+    <td>hyp180417100250000003720CF8776AA</td>
 </tr>
 <tr>
     <td>mch_uid</td>
@@ -1893,7 +1344,7 @@ total_fee=real_fee
     <td>是</td>
     <td>64</td>
     <td>汇元订单号</td>
-    <td>hy123456</td>
+    <td>hyp180417100250000003720CF8776AA</td>
 </tr>
 <tr>
     <td>out_refund_no</td>
@@ -1977,106 +1428,6 @@ total_fee=real_fee
 
 > method：`heemoney.pay.refund.query`
 
-- 公共参数
-
-<table data-hy-role="doctbl">
-    <th>参数</th>
-    <th>类型</th>
-    <th>是否必填</th>
-    <th>最大长度</th>
-    <th width="220">描述</th>
-    <th width="163">示例值</th>
-</tr>
-<tr>
-    <td>method</td>
-    <td>String</td>
-    <td>是</td>
-    <td>128</td>
-    <td>具体业务接口名称</td>
-    <td>heemoney.pay.applypay</td>
-</tr>
-<tr>
-    <td>version</td>
-    <td>String</td>
-    <td>是</td>
-    <td>10</td>
-    <td>版本号,默认1.0</td>
-    <td>1.0</td>
-</tr>
-<tr>
-    <td>app_id</td>
-    <td>String</td>
-    <td>是</td>
-    <td>32</td>
-    <td>应用ID，商户的应用id</td>
-    <td>Ap22512545</td>
-</tr>
-<tr>
-    <td>mch_uid</td>
-    <td>String</td>
-    <td>是</td>
-    <td>32</td>
-    <td>商户统一编号</td>
-    <td>276952</td>
-</tr>
-<tr>
-    <td>isv_app_id</td>
-    <td>String</td>
-    <td>否</td>
-    <td>32</td>
-    <td>服务商应用ID</td>
-    <td>A2sdfjkl</td>
-</tr>
-<tr>
-    <td>isv_mch_uid</td>
-    <td>String</td>
-    <td>否</td>
-    <td>32</td>
-    <td>服务商商户号</td>
-    <td>22255522</td>
-</tr>
-<tr>
-    <td>charset</td>
-    <td>String</td>
-    <td>是</td>
-    <td>10</td>
-    <td>编码格式默认为utf-8</td>
-    <td>utf-8</td>
-</tr>
-<tr>
-    <td>timestamp</td>
-    <td>String</td>
-    <td>是</td>
-    <td>19</td>
-    <td>发送请求的时间</td>
-    <td>yyyyMMddHHmmss,20181030152539</td>
-</tr>
-<tr>
-    <td>biz_content</td>
-    <td>String</td>
-    <td>是</td>
-    <td>不限</td>
-    <td>请求参数集合,Json格式,长度不限,具体参数见如下业务参数</td>
-    <td>Json格式</td>
-</tr>
-<tr>
-    <td>sign_type</td>
-    <td>String</td>
-    <td>是</td>
-    <td>10</td>
-    <td>商户生成签名字符串所使用的签名算法类型</td>
-    <td>MD5</td>
-</tr>
-<tr>
-    <td>sign</td>
-    <td>String</td>
-    <td>是</td>
-    <td>256</td>
-    <td>商户请求参数的签名串</td>
-    <td>详见示例</td>
-</tr>
-</table>
-
 - 业务参数
 
 <table data-hy-role="doctbl">
@@ -2102,90 +1453,6 @@ total_fee=real_fee
     <td>32</td>
     <td>汇元退款单号</td>
     <td>TuiKuanlsjd2453</td>
-</tr>
-</table>
-
-- 公共响应参数
-
-<table data-hy-role="doctbl">
-    <th>参数</th>
-    <th>类型</th>
-    <th>是否必填</th>
-    <th>最大长度</th>
-    <th width="220">描述</th>
-    <th width="163">示例值</th>
-</tr>
-<tr>
-    <td>return_code</td>
-    <td>String</td>
-    <td>是</td>
-    <td>16</td>
-    <td>返回状态码</td>
-    <td>SUCCESS</td>
-</tr>
-<tr>
-    <td>return_msg</td>
-    <td>String</td>
-    <td>是</td>
-    <td>128</td>
-    <td>返回状态码描述</td>
-    <td>ok</td>
-</tr>
-</table>
-
-以下字段在return_code为SUCCESS时返回
-
-<table data-hy-role="doctbl">
-    <th>参数</th>
-    <th>类型</th>
-    <th>是否必填</th>
-    <th>最大长度</th>
-    <th width="220">描述</th>
-    <th width="163">示例值</th>
-</tr>
-<tr>
-    <td>result_code</td>
-    <td>String</td>
-    <td>否</td>
-    <td>16</td>
-    <td>业务状态码</td>
-    <td>SUCCESS</td>
-</tr>
-<tr>
-    <td>sign</td>
-    <td>String</td>
-    <td>是</td>
-    <td></td>
-    <td>签名结果</td>
-    <td>1234567890</td>
-</tr>
-</table>
-
-以下字段在return_code为SUCCESS时，result_code为FAIL时返回
-
-<table data-hy-role="doctbl">
-    <th>参数</th>
-    <th>类型</th>
-    <th>是否必填</th>
-    <th>最大长度</th>
-    <th width="220">描述</th>
-    <th width="163">示例值</th>
-</tr>
-<tr>
-    <td>error_code</td>
-    <td>int</td>
-    <td>否</td>
-    <td></td>
-    <td>错误码</td>
-    <td>0</td>
-</tr>
-<tr>
-    <td>error_msg</td>
-    <td>String</td>
-    <td>否</td>
-    <td>128</td>
-    <td>错误信息</td>
-    <td>结果不明确，不处理单据，状态=Unknow</td>
 </tr>
 </table>
 
@@ -2215,7 +1482,7 @@ total_fee=real_fee
     <td>是</td>
     <td>32</td>
     <td>应用ID</td>
-    <td>Ap22512545</td>
+    <td>hyp180417100250000003720CF8776AA</td>
 </tr>
 <tr>
     <td>mch_uid</td>
@@ -2263,7 +1530,7 @@ total_fee=real_fee
     <td>是</td>
     <td>64</td>
     <td>订单号</td>
-    <td>hy123456</td>
+    <td>hyp180417100250000003720CF8776AA</td>
 </tr>
 <tr>
     <td>out_refund_no</td>
@@ -2337,6 +1604,4 @@ total_fee=real_fee
     <td>退款状态：Undeal=退款处理中，Success=退款成功，Failure=退款失败</td>
     <td>Undeal</td>
 </tr>
-</table>	
-
-
+</table>

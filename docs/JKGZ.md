@@ -101,7 +101,7 @@ CNY：人民币
         <th>含义</th>
     </tr>
     <tr>
-        <td rowspan="4">微信</td>
+        <td rowspan="5">微信</td>
         <td>WX_NATIVE</td>
         <td>微信扫码</td>
     </tr>
@@ -116,6 +116,10 @@ CNY：人民币
     <tr>
         <td>WX_MICROPAY</td>
         <td>微信刷卡</td>
+    </tr>
+    <tr>
+        <td>WX_APPLET</td>
+        <td>微信小程序</td>
     </tr>
     <tr>
         <td rowspan="4">支付宝</td>
@@ -178,6 +182,15 @@ CNY：人民币
         <td>京东H5</td>
         <td>JD_WAP</td>
         <td>京东H5</td>
+    </tr>
+    <tr>
+        <td rowspan="2">云闪付</td>
+        <td>Quick_Pass_APP</td>
+        <td>云闪付APP</td>
+    </tr>
+    <tr>
+        <td>Quick_Pass_H5</td>
+        <td>云闪付H5</td>
     </tr>
 </table>
 
