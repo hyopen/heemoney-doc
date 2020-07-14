@@ -135,6 +135,14 @@ CNY：人民币
         <td>支付宝服务窗/生活号</td>
     </tr>
     <tr>
+        <td>ALI_QRCODE_HUABEI_INSTALLMENT</td>
+        <td>支付宝扫码花呗分期</td>
+    </tr>
+    <tr>
+        <td>ALI_SWIPE_HUABEI_INSTALLMENT</td>
+        <td>支付宝刷卡花呗分期</td>
+    </tr>
+    <tr>
         <td>QQ钱包</td>
         <td>QQ_QRCODE</td>
         <td>QQ扫码</td>

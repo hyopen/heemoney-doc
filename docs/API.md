@@ -220,7 +220,7 @@
     <td>String</td>
     <td>否</td>
     <td>255</td>
-    <td>支付参数信息，如果支付类型为微信代扣（WX_WITHHOLD）需要填入： hy_contract_no（汇元签约编号）格式：{“key1”:”value1”,”key2”:”value2”,…}</td>
+    <td>支付参数信息，如果支付类型为微信代扣（WX_WITHHOLD）需要填入： hy_contract_no（汇元签约编号）格式：{“key1”:”value1”,”key2”:”value2”,…}。如果支付类型为支付宝扫码花呗分期传{"hb_fq_num":"3","hb_fq_seller_percent":"100"}  hb_fq_num分期数，3/6/12期，hb_fq_seller_percent 商家承担手续费比例,0=用户承担，100=商家承担</td>
     <td>{}</td>
 </tr>
 <tr>
@@ -722,7 +722,7 @@
     <td>String</td>
     <td>否</td>
     <td>255</td>
-    <td>支付参数信息，格式：{“key1”:”value1”,”key2”:”value2”,…}</td>
+    <td>支付参数信息，格式：{“key1”:”value1”,”key2”:”value2”,…}。如果支付类型为支付宝刷卡花呗分期传{"hb_fq_num":"3","hb_fq_seller_percent":"100"}  hb_fq_num分期数，3/6/12期，hb_fq_seller_percent 商家承担手续费比例,0=用户承担，100=商家承担</td>
     <td>{}</td>
 </tr>
 <tr>
