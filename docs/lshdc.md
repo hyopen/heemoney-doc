@@ -125,7 +125,7 @@
     <th width="163">示例值</th>
 </tr>
 <tr>
-    <td>out_trade_no</td>
+    <td>out_contract_no</td>
     <td>String</td>
     <td>是</td>
     <td>28</td>
