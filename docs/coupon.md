@@ -175,7 +175,7 @@
         <td>4706******500</td>
     </tr>
     <tr>
-        <td>activit_uid</td>
+        <td>activity_uid</td>
         <td>int</td>
         <td>是</td>
         <td>6</td>
