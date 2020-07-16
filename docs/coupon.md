@@ -167,7 +167,7 @@
         <th width="153">示例值</th>
     </tr>
     <tr>
-        <td>merch_uid</td>
+        <td>merch_id</td>
         <td>long</td>
         <td>是</td>
         <td>15</td>
@@ -175,7 +175,7 @@
         <td>4706******500</td>
     </tr>
     <tr>
-        <td>activity_uid</td>
+        <td>activity_id</td>
         <td>int</td>
         <td>是</td>
         <td>6</td>
@@ -247,7 +247,7 @@
         <th width="153">示例值</th>
     </tr>
    <tr>
-        <td>merch_uid</td>
+        <td>merch_id</td>
         <td>long</td>
         <td>是</td>
         <td>15</td>
@@ -255,7 +255,7 @@
         <td>4706******500</td>
     </tr>
     <tr>
-        <td>activit_uid</td>
+        <td>activity_id</td>
         <td>int</td>
         <td>是</td>
         <td>6</td>
