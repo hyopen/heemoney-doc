@@ -351,12 +351,12 @@
         <td>1***53</td>
     </tr>
     <tr>
-        <td>user_coupon_data</td>
+        <td>coupon_data</td>
         <td>int</td>
         <td>是</td>
         <td>6</td>
-        <td>用户优惠券信息（json数组格式）具体见下方优惠券信息参数说明</td>
-        <td>[{"coupon_no":"1***5333","coupon_name":"电子产品消费券",...},{...}]</td>
+        <td>用户优惠券信息（json格式）具体见下方优惠券信息参数说明</td>
+        <td>{"coupon_data":[{"coupon_no":"1***5333","coupon_name":"电子产品消费券",...},{...}]}</td>
     </tr>
 </table>
 
