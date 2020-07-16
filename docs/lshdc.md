@@ -210,15 +210,15 @@
     <td>否</td>
     <td>127</td>
     <td>附加数据，在查询API和支付通知中原样返回，可作为自定义参数使用格式：{“key1”:”value1”,”key2”:”value2”,…}</td>
-    <td>{}</td>
+    <td></td>
 </tr>
 <tr>
     <td>contract_option</td>
     <td>String</td>
     <td>否</td>
     <td>255</td>
-    <td>签约扩展信息，格式：{“key1”:”value1”,”key2”:”value2”,…}</td>
-    <td>{}</td>
+    <td>签约扩展信息，格式：{“key1”:”value1”,”key2”:”value2”,…}，其它规则请看说明</td>
+    <td></td>
 </tr>
 <tr>
     <td>meta_option</td>
@@ -226,7 +226,7 @@
     <td>否</td>
     <td>255</td>
     <td>商户定制信息，格式：{“key1”:”value1”,”key2”:”value2”,…}</td>
-    <td>{}</td>
+    <td></td>
 </tr>
 <tr>
     <td>notify_url</td>
@@ -238,6 +238,8 @@
 </tr>
 </table>
 
+- contract_option 参数说明：
+- 1、如果为多个模板、请通过API接口传入。 例子：{"Plan_Id":{签约模板ID},"Return_App_ID":{H5返回APPID}} 
 
 - 公共响应参数
 
