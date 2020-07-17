@@ -131,6 +131,8 @@
         <td></td>
     </tr>
 </table>
+- 注：当业务状态码result_code为SUCCESS时才返回业务响应参数
+
 
 ## 发放优惠券列表
 - 请求方式：`Post` 
@@ -151,12 +153,32 @@
         <td>int</td>
         <td>是</td>
         <td>3</td>
-        <td>优惠券分类</td>
-        <td>0(0=全部)</td>
+        <td>优惠券类别</td>
+        <td>0(0=全部,1=食品,2=手机,3=服饰,4=家电,5=生鲜,...)</td>
     </tr>
 </table>
 
 - 业务响应参数
+<table data-hy-role="doctbl">
+    <tr>
+        <th width="120">参数</th>
+        <th width="70">类型</th>
+        <th width="60">是否必填</th>
+        <th width="80">最大长度</th>
+        <th width="220">描述</th>
+        <th width="153">示例值</th>
+    </tr>
+    <tr>
+        <td>coupon_data</td>
+        <td>int</td>
+        <td>是</td>
+        <td>6</td>
+        <td>用户优惠券信息（json数组）具体见下方优惠券信息参数说明</td>
+        <td>{"coupon_data":[{"merch_id":"4706******500","coupon_name":"电子产品消费券",...},{...}]}</td>
+    </tr>
+</table>
+
+- 优惠券信息参数说明
 <table data-hy-role="doctbl">
     <tr>
         <th width="120">参数</th>
@@ -175,6 +197,14 @@
         <td>4706******500</td>
     </tr>
     <tr>
+        <td>merch_name</td>
+        <td>long</td>
+        <td>是</td>
+        <td>30</td>
+        <td>商户名称</td>
+        <td>北京***生活超市</td>
+    </tr>
+    <tr>
         <td>activity_id</td>
         <td>int</td>
         <td>是</td>
@@ -190,6 +220,14 @@
         <td>优惠券编号</td>
         <td>1**01</td>
     </tr>
+    <tr>
+        <td>coupon_type</td>
+        <td>int</td>
+        <td>是</td>
+        <td>3</td>
+        <td>优惠券类别</td>
+        <td>0(0=全部,1=食品,2=手机,3=服饰,4=家电,5=生鲜,...)</td>
+    </tr>  
     <tr>
         <td>coupon_name</td>
         <td>String</td>
@@ -246,7 +284,7 @@
         <th width="220">描述</th>
         <th width="153">示例值</th>
     </tr>
-   <tr>
+    <tr>
         <td>merch_id</td>
         <td>long</td>
         <td>是</td>
@@ -274,7 +312,7 @@
         <td>app_id</td>
         <td>string</td>
         <td>是</td>
-        <td>6</td>
+        <td>50</td>
         <td>应用编号</td>
         <td>wx4********51beac</td>
     </tr>
@@ -299,12 +337,20 @@
         <th width="153">示例值</th>
     </tr>
     <tr>
-        <td>user_id</td>
-        <td>int</td>
+        <td>app_id</td>
+        <td>string</td>
         <td>是</td>
-        <td>6</td>
-        <td>聚合用户编号</td>
-        <td>1***53</td>
+        <td>50</td>
+        <td>应用编号</td>
+        <td>wx4********51beac</td>
+    </tr>
+    <tr>
+        <td>open_id</td>
+        <td>string</td>
+        <td>是</td>
+        <td>50</td>
+        <td>用户唯一标识</td>
+        <td>oiz2w**********MJI</td>
     </tr>
 </table>
 
@@ -322,13 +368,21 @@
         <th width="220">描述</th>
         <th width="153">示例值</th>
     </tr>
-   <tr>
-        <td>user_id</td>
-        <td>int</td>
+    <tr>
+        <td>app_id</td>
+        <td>string</td>
         <td>是</td>
-        <td>6</td>
-        <td>聚合用户编号</td>
-        <td>1***53</td>
+        <td>50</td>
+        <td>应用编号</td>
+        <td>wx4********51beac</td>
+    </tr>
+    <tr>
+        <td>open_id</td>
+        <td>string</td>
+        <td>是</td>
+        <td>50</td>
+        <td>用户唯一标识</td>
+        <td>oiz2w**********MJI</td>
     </tr>
 </table>
 
@@ -343,20 +397,28 @@
         <th width="153">示例值</th>
     </tr>
     <tr>
-        <td>user_id</td>
-        <td>int</td>
+        <td>app_id</td>
+        <td>string</td>
         <td>是</td>
-        <td>6</td>
-        <td>聚合用户编号</td>
-        <td>1***53</td>
+        <td>50</td>
+        <td>应用编号</td>
+        <td>wx4********51beac</td>
+    </tr>
+    <tr>
+        <td>open_id</td>
+        <td>string</td>
+        <td>是</td>
+        <td>50</td>
+        <td>用户唯一标识</td>
+        <td>oiz2w**********MJI</td>
     </tr>
     <tr>
         <td>coupon_data</td>
         <td>int</td>
         <td>是</td>
         <td>6</td>
-        <td>用户优惠券信息（json格式）具体见下方优惠券信息参数说明</td>
-        <td>{"coupon_data":[{"coupon_no":"1***5333","coupon_name":"电子产品消费券",...},{...}]}</td>
+        <td>用户优惠券信息（json数组）具体见下方优惠券信息参数说明</td>
+        <td>{...，"coupon_data":[{"coupon_no":"1***5333","coupon_name":"电子产品消费券",...},{...}]}</td>
     </tr>
 </table>
 
@@ -369,6 +431,30 @@
         <th width="80">最大长度</th>
         <th width="220">描述</th>
         <th width="153">示例值</th>
+    </tr>
+    <tr>
+        <td>merch_id</td>
+        <td>long</td>
+        <td>是</td>
+        <td>15</td>
+        <td>商户编号</td>
+        <td>4706******500</td>
+    </tr>
+    <tr>
+        <td>merch_name</td>
+        <td>long</td>
+        <td>是</td>
+        <td>30</td>
+        <td>商户名称</td>
+        <td>北京***生活超市</td>
+    </tr>
+    <tr>
+        <td>activity_id</td>
+        <td>int</td>
+        <td>是</td>
+        <td>6</td>
+        <td>活动编号</td>
+        <td>1**11</td>
     </tr>
     <tr>
         <td>coupon_no</td>
