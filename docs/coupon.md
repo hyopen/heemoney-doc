@@ -57,7 +57,7 @@
     <tr>
         <td>isv_app_id</td>
         <td>String</td>
-        <td>否</td>
+        <td>是</td>
         <td>32</td>
         <td>服务商应用ID</td>
         <td>A2sdfjkl</td>
@@ -65,7 +65,7 @@
     <tr>
         <td>isv_mch_uid</td>
         <td>String</td>
-        <td>否</td>
+        <td>是</td>
         <td>32</td>
         <td>服务商商户编号</td>
         <td>22255522</td>
