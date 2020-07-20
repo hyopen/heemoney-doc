@@ -55,12 +55,12 @@
         <td>20200701010101</td>
     </tr>
     <tr>
-        <td>org_uid</td>
+        <td>agent_uid</td>
         <td>long</td>
         <td>是</td>
-        <td>6</td>
-        <td>聚合机构编号</td>
-        <td>4706**</td>
+        <td>15</td>
+        <td>聚合代理商编号</td>
+        <td>4706******100</td>
     </tr>
     <tr>
         <td>biz_content</td>
