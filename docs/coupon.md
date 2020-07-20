@@ -55,12 +55,20 @@
         <td>20200701010101</td>
     </tr>
     <tr>
-        <td>agent_uid</td>
-        <td>long</td>
-        <td>是</td>
-        <td>15</td>
-        <td>聚合代理商编号</td>
-        <td>4706******100</td>
+        <td>isv_app_id</td>
+        <td>String</td>
+        <td>否</td>
+        <td>32</td>
+        <td>服务商应用ID</td>
+        <td>A2sdfjkl</td>
+    </tr>
+    <tr>
+        <td>isv_mch_uid</td>
+        <td>String</td>
+        <td>否</td>
+        <td>32</td>
+        <td>服务商商户编号</td>
+        <td>22255522</td>
     </tr>
     <tr>
         <td>biz_content</td>
