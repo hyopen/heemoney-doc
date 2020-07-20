@@ -122,7 +122,7 @@ CNY：人民币
         <td>微信小程序</td>
     </tr>
     <tr>
-        <td rowspan="4">支付宝</td>
+        <td rowspan="6">支付宝</td>
         <td>ALI_QRCODE</td>
         <td>支付宝扫码</td>
     </tr>
