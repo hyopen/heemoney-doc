@@ -53,7 +53,15 @@
         <td>14</td>
         <td>请求时间(yyyyMMddHHmmss)</td>
         <td>20200701010101</td>
-    </tr>   
+    </tr>
+    <tr>
+        <td>org_uid</td>
+        <td>long</td>
+        <td>是</td>
+        <td>6</td>
+        <td>聚合机构编号</td>
+        <td>4706**</td>
+    </tr>
     <tr>
         <td>biz_content</td>
         <td>String</td>
@@ -189,7 +197,7 @@
         <th width="153">示例值</th>
     </tr>
     <tr>
-        <td>merch_id</td>
+        <td>merch_uid</td>
         <td>long</td>
         <td>是</td>
         <td>15</td>
@@ -205,7 +213,7 @@
         <td>北京***生活超市</td>
     </tr>
     <tr>
-        <td>activity_id</td>
+        <td>activity_uid</td>
         <td>int</td>
         <td>是</td>
         <td>6</td>
@@ -285,7 +293,7 @@
         <th width="153">示例值</th>
     </tr>
     <tr>
-        <td>merch_id</td>
+        <td>merch_uid</td>
         <td>long</td>
         <td>是</td>
         <td>15</td>
@@ -293,7 +301,7 @@
         <td>4706******500</td>
     </tr>
     <tr>
-        <td>activity_id</td>
+        <td>activity_uid</td>
         <td>int</td>
         <td>是</td>
         <td>6</td>
@@ -433,7 +441,7 @@
         <th width="153">示例值</th>
     </tr>
     <tr>
-        <td>merch_id</td>
+        <td>merch_uid</td>
         <td>long</td>
         <td>是</td>
         <td>15</td>
@@ -449,7 +457,7 @@
         <td>北京***生活超市</td>
     </tr>
     <tr>
-        <td>activity_id</td>
+        <td>activity_uid</td>
         <td>int</td>
         <td>是</td>
         <td>6</td>
