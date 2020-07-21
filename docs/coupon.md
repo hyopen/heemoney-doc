@@ -28,7 +28,7 @@
         <td>否</td>
         <td>100</td>
         <td>请求方法</td>
-        <td>coupon.list</td>
+        <td>heemoney.coupon.couponlist</td>
     </tr>
     <tr>
         <td>charset</td>
@@ -154,7 +154,7 @@
 - 请求地址：`https://api.heemoney.com/v1/CouponList`
 - 请求方式：`Post` 
 - 是否需要证书：`否`
-- method：coupon.list
+- method：heemoney.coupon.couponlist
 - 业务请求参数
 <table data-hy-role="doctbl">
     <tr>
@@ -291,7 +291,7 @@
 - 请求地址：`https://api.heemoney.com/v1/GetCoupon`
 - 请求方式：`Post` 
 - 是否需要证书：`否`
-- method：get.coupon
+- method：heemoney.coupon.getcoupon
 - 业务请求参数
 <table data-hy-role="doctbl">
     <tr>
@@ -376,7 +376,7 @@
 - 请求地址：`https://api.heemoney.com/v1/UserCouponList`
 - 请求方式：`Post` 
 - 是否需要证书：`否`
-- method：user.coupon.list
+- method：heemoney.coupon.usercouponlist
 - 业务请求参数
 <table data-hy-role="doctbl">
     <tr>
