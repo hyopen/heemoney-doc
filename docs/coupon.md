@@ -1,7 +1,7 @@
 ## 公共信息
 - 接口请求
-  - 联调地址 URL：`https://demo.heemoney.com/api/v1/Coupon`
-  - 正式地址 URL：`https://api.heemoney.com/v1/Coupon`
+  - 联调地址 URL：`https://demo.heemoney.com/api`
+  - 正式地址 URL：`https://api.heemoney.com`
   - 请求方式：`Post` 
 
 - 公共请求参数
@@ -28,7 +28,7 @@
         <td>否</td>
         <td>100</td>
         <td>请求方法</td>
-        <td>CouponList</td>
+        <td>heemoney.coupon.couponlist</td>
     </tr>
     <tr>
         <td>charset</td>
@@ -151,9 +151,10 @@
 
 
 ## 发放优惠券列表
+- 请求地址：`https://api.heemoney.com/v1/CouponList`
 - 请求方式：`Post` 
 - 是否需要证书：`否`
-- method：CouponList
+- method：heemoney.coupon.couponlist
 - 业务请求参数
 <table data-hy-role="doctbl">
     <tr>
@@ -287,9 +288,10 @@
 </table>
 
 ## 领取优惠券
+- 请求地址：`https://api.heemoney.com/v1/GetCoupon`
 - 请求方式：`Post` 
 - 是否需要证书：`否`
-- method：GetCoupon
+- method：heemoney.coupon.getcoupon
 - 业务请求参数
 <table data-hy-role="doctbl">
     <tr>
@@ -371,9 +373,10 @@
 </table>
 
 ## 用户优惠券列表
+- 请求地址：`https://api.heemoney.com/v1/UserCouponList`
 - 请求方式：`Post` 
 - 是否需要证书：`否`
-- method：UserCouponList
+- method：heemoney.coupon.usercouponlist
 - 业务请求参数
 <table data-hy-role="doctbl">
     <tr>
