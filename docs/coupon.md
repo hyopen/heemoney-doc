@@ -215,7 +215,7 @@
     </tr>
     <tr>
         <td>merch_name</td>
-        <td>long</td>
+        <td>string</td>
         <td>是</td>
         <td>30</td>
         <td>商户名称</td>
@@ -238,13 +238,21 @@
         <td>1**01</td>
     </tr>
     <tr>
+        <td>coupon_kind</td>
+        <td>int</td>
+        <td>是</td>
+        <td>2</td>
+        <td>优惠券券种</td>
+        <td>1=代金券,2=打折券,3=兑换券,4=时长券</td>
+    </tr>
+    <tr>
         <td>coupon_type</td>
         <td>int</td>
         <td>是</td>
         <td>3</td>
         <td>优惠券类别</td>
         <td>0(0=全部,1=食品,2=手机,3=服饰,4=家电,5=生鲜,...)</td>
-    </tr>  
+    </tr>
     <tr>
         <td>coupon_name</td>
         <td>String</td>
@@ -262,12 +270,36 @@
         <td>66（单位：元）</td>
     </tr>
     <tr>
+        <td>coupon_num</td>
+        <td>int</td>
+        <td>是</td>
+        <td>1000</td>
+        <td>优惠券发行总数</td>
+        <td>100</td>
+    </tr>
+    <tr>
         <td>can_use_num</td>
         <td>int</td>
         <td>否</td>
         <td>1000</td>
         <td>优惠券剩余数量</td>
         <td>100</td>
+    </tr>
+    <tr>
+        <td>pay_upper_limit_amt</td>
+        <td>String</td>
+        <td>是</td>
+        <td>10000</td>
+        <td>订单门槛金额(达到门槛消费金额才可使用该券)</td>
+        <td>66（单位：元）</td>
+    </tr>
+    <tr>
+        <td>limit_gain_num</td>
+        <td>int</td>
+        <td>是</td>
+        <td>1</td>
+        <td>限制领取次数</td>
+        <td>0（0=不限制，1=限制领取1次）</td>
     </tr>
     <tr>
         <td>begin_time</td>
@@ -284,6 +316,14 @@
         <td>10</td>
         <td>结束有效期</td>
         <td>2020-07-01</td>
+    </tr>
+    <tr>
+        <td>coupon_statust</td>
+        <td>int</td>
+        <td>是</td>
+        <td>1</td>
+        <td>优惠券状态/td>
+        <td>1（0=不可用，1=可用）</td>
     </tr>
 </table>
 
@@ -327,7 +367,7 @@
         <td>1**01</td>
     </tr>
     <tr>
-        <td>app_id</td>
+        <td>third_app_id</td>
         <td>string</td>
         <td>是</td>
         <td>50</td>
@@ -335,11 +375,19 @@
         <td>wx4********51beac</td>
     </tr>
     <tr>
-        <td>open_id</td>
+        <td>third_open_id</td>
         <td>string</td>
         <td>是</td>
         <td>50</td>
         <td>用户唯一标识</td>
+        <td>oiz2w**********MJI</td>
+    </tr>
+        <tr>
+        <td>third_union_id</td>
+        <td>string</td>
+        <td>否</td>
+        <td>50</td>
+        <td>群组用户唯一标识</td>
         <td>oiz2w**********MJI</td>
     </tr>
 </table>
@@ -355,7 +403,7 @@
         <th width="153">示例值</th>
     </tr>
     <tr>
-        <td>app_id</td>
+        <td>third_app_id</td>
         <td>string</td>
         <td>是</td>
         <td>50</td>
@@ -363,12 +411,20 @@
         <td>wx4********51beac</td>
     </tr>
     <tr>
-        <td>open_id</td>
+        <td>third_open_id</td>
         <td>string</td>
         <td>是</td>
         <td>50</td>
         <td>用户唯一标识</td>
         <td>oiz2w**********MJI</td>
+    </tr>
+    <tr>
+        <td>get_coupon_status</td>
+        <td>int</td>
+        <td>是</td>
+        <td>1</td>
+        <td>领取优惠券状态</td>
+        <td>1（0=失败，1=成功）</td>
     </tr>
 </table>
 
@@ -388,7 +444,7 @@
         <th width="153">示例值</th>
     </tr>
     <tr>
-        <td>app_id</td>
+        <td>third_app_id</td>
         <td>string</td>
         <td>是</td>
         <td>50</td>
@@ -396,7 +452,7 @@
         <td>wx4********51beac</td>
     </tr>
     <tr>
-        <td>open_id</td>
+        <td>third_open_id</td>
         <td>string</td>
         <td>是</td>
         <td>50</td>
@@ -460,14 +516,6 @@
         <td>4706******500</td>
     </tr>
     <tr>
-        <td>merch_name</td>
-        <td>long</td>
-        <td>是</td>
-        <td>30</td>
-        <td>商户名称</td>
-        <td>北京***生活超市</td>
-    </tr>
-    <tr>
         <td>activity_uid</td>
         <td>int</td>
         <td>是</td>
@@ -506,5 +554,151 @@
         <td>1</td>
         <td>优惠券状态</td>
         <td>1（1=可使用，2=已使用，3=已过期）</td>
+    </tr>
+</table>
+
+## 核销优惠券
+- 请求地址：`https://api.heemoney.com/v1/CancelCoupon`
+- 请求方式：`Post` 
+- 是否需要证书：`否`
+- method：heemoney.coupon.cancelcoupon
+- 业务请求参数
+<table data-hy-role="doctbl">
+    <tr>
+        <th width="120">参数</th>
+        <th width="70">类型</th>
+        <th width="60">是否必填</th>
+        <th width="80">最大长度</th>
+        <th width="220">描述</th>
+        <th width="153">示例值</th>
+    </tr>
+    <tr>
+        <td>merch_uid</td>
+        <td>long</td>
+        <td>是</td>
+        <td>15</td>
+        <td>商户编号</td>
+        <td>4706******500</td>
+    </tr>
+    <tr>
+        <td>coupon_no</td>
+        <td>int</td>
+        <td>是</td>
+        <td>6</td>
+        <td>优惠券券号</td>
+        <td>12545*******01</td>
+    </tr>
+    <tr>
+        <td>third_open_id</td>
+        <td>string</td>
+        <td>是</td>
+        <td>50</td>
+        <td>用户唯一标识</td>
+        <td>oiz2w**********MJI</td>
+    </tr>
+        <tr>
+        <td>bill_no</td>
+        <td>string</td>
+        <td>否</td>
+        <td>50</td>
+        <td>支付单号</td>
+        <td>134**************4234</td>
+    </tr>
+</table>
+
+- 业务响应参数
+<table data-hy-role="doctbl">
+    <tr>
+        <th width="120">参数</th>
+        <th width="70">类型</th>
+        <th width="60">是否必填</th>
+        <th width="80">最大长度</th>
+        <th width="220">描述</th>
+        <th width="153">示例值</th>
+    </tr>
+    <tr>
+        <td>merch_uid</td>
+        <td>long</td>
+        <td>是</td>
+        <td>15</td>
+        <td>商户编号</td>
+        <td>4706******500</td>
+    </tr>
+    <tr>
+        <td>third_open_id</td>
+        <td>string</td>
+        <td>是</td>
+        <td>50</td>
+        <td>用户唯一标识</td>
+        <td>oiz2w**********MJI</td>
+    </tr>
+    <tr>
+        <td>coupon_no</td>
+        <td>int</td>
+        <td>是</td>
+        <td>6</td>
+        <td>优惠券券号</td>
+        <td>12545*******01</td>
+    </tr>
+    <tr>
+        <td>coupon_status</td>
+        <td>int</td>
+        <td>是</td>
+        <td>1</td>
+        <td>优惠券核销状态</td>
+        <td>1（0=失败,1=成功）</td>
+    </tr>
+</table>
+
+## 服务商（代理商）直属商户列表
+- 请求地址：`https://api.heemoney.com/v1/MerchList`
+- 请求方式：`Post` 
+- 是否需要证书：`否`
+- method：heemoney.coupon.merchlist
+- 业务请求参数
+<table data-hy-role="doctbl">
+    <tr>
+        <th width="120">参数</th>
+        <th width="70">类型</th>
+        <th width="60">是否必填</th>
+        <th width="80">最大长度</th>
+        <th width="220">描述</th>
+        <th width="153">示例值</th>
+    </tr>
+</table>
+
+- 业务响应参数
+<table data-hy-role="doctbl">
+    <tr>
+        <th width="120">参数</th>
+        <th width="70">类型</th>
+        <th width="60">是否必填</th>
+        <th width="80">最大长度</th>
+        <th width="220">描述</th>
+        <th width="153">示例值</th>
+    </tr>
+    <tr>
+        <td>merch_uid</td>
+        <td>long</td>
+        <td>是</td>
+        <td>15</td>
+        <td>商户编号</td>
+        <td>4706******500</td>
+    </tr>
+    <tr>
+        <td>merch_name</td>
+        <td>string</td>
+        <td>是</td>
+        <td>30</td>
+        <td>商户名称</td>
+        <td>北京***生活超市</td>
+    </tr>
+    <tr>
+        <td>merch_account</td>
+        <td>string</td>
+        <td>否</td>
+        <td>30</td>
+        <td>商户账号</td>
+        <td>ce*****i23</td>
     </tr>
 </table>
