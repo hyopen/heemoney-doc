@@ -419,7 +419,15 @@
         <td>oiz2w**********MJI</td>
     </tr>
     <tr>
-        <td>get_coupon_status</td>
+        <td>coupon_no</td>
+        <td>int</td>
+        <td>是</td>
+        <td>6</td>
+        <td>优惠券券号</td>
+        <td>12545*******01</td>
+    </tr>
+    <tr>
+        <td>coupon_status</td>
         <td>int</td>
         <td>是</td>
         <td>1</td>
@@ -458,6 +466,14 @@
         <td>50</td>
         <td>用户唯一标识</td>
         <td>oiz2w**********MJI</td>
+    </tr>
+    <tr>
+        <td>coupon_status</td>
+        <td>int</td>
+        <td>是</td>
+        <td>1</td>
+        <td>优惠券状态</td>
+        <td>0（0=全部，1=可使用，2=已使用，3=已过期）</td>
     </tr>
 </table>
 
@@ -700,5 +716,13 @@
         <td>30</td>
         <td>商户账号</td>
         <td>ce*****i23</td>
+    </tr>
+    <tr>
+        <td>merch_status</td>
+        <td>int</td>
+        <td>否</td>
+        <td>1</td>
+        <td>商户状态</td>
+        <td>1（-1=无效，0=不可用，1=可用）</td>
     </tr>
 </table>
