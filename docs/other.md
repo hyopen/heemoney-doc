@@ -46,7 +46,7 @@
     <td>String</td>
     <td>否</td>
     <td>32</td>
-    <td>服务商/代理商应用ID</td>
+    <td>服务商/代理商UID</td>
     <td>22255522</td>
 </tr>
 <tr>
