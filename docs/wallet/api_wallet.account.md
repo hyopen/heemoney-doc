@@ -1315,3 +1315,116 @@
     </tr>
 </table>
 - 加密信息例子：user_mobile={user_mobile} 拼接字符串进行3DES加密后放入业务参数 encrypt_data 中进行传输
+
+## 用户激活变更申请
+- 请求地址：`{URL}/ApplyChangeActive`
+- 请求方式：`Post` 
+- 是否需要证书：`否`
+
+- 公共请求参数额外添加
+<table data-hy-role="doctbl">
+    <tr>
+        <th width="120">参数</th>
+        <th width="70">类型</th>
+        <th width="60">是否必填</th>
+        <th width="80">最大长度</th>
+        <th width="220">描述</th>
+        <th width="153">示例值</th>
+    </tr>
+    <tr>
+        <td>src_owner_uid</td>
+        <td>String</td>
+        <td>是</td>
+        <td>13</td>
+        <td>原始所有者uid(对接商户唯一标识)</td>
+        <td>1002501966169</td>
+    </tr>
+</table>
+
+- 业务请求参数
+<table data-hy-role="doctbl">
+    <tr>
+        <th width="120">参数</th>
+        <th width="70">类型</th>
+        <th width="60">是否必填</th>
+        <th width="80">最大长度</th>
+        <th width="220">描述</th>
+        <th width="153">示例值</th>
+    </tr>
+    <tr>
+        <td>user_code</td>
+        <td>String</td>
+        <td>是</td>
+        <td>20</td>
+        <td>渠道用户唯一标识</td>
+        <td>10001</td>
+    </tr> 
+    <tr>
+        <td>user_nick_name</td>
+        <td>String</td>
+        <td>否</td>
+        <td>20</td>
+        <td>用户昵称</td>
+        <td>张三</td>
+    </tr> 
+    <tr>
+        <td>encrypt_data</td>
+        <td>String</td>
+        <td>是</td>
+        <td></td>
+        <td></td>
+        <td>【加密信息参数开始】</td>
+    </tr>
+    <tr>
+        <td>user_name</td>
+        <td>String</td>
+        <td>否</td>
+        <td>50</td>
+        <td>用户姓名</td>
+        <td>张三</td>
+    </tr>    
+     <tr>
+        <td>user_mobile</td>
+        <td>String</td>
+        <td>是</td>
+        <td>11</td>
+        <td>银行预留手机号</td>
+        <td>13300001111</td>
+    </tr>
+    <tr>
+        <td>encrypt_data</td>
+        <td>String</td>
+        <td>是</td>
+        <td></td>
+        <td></td>
+        <td>【加密信息参数结束】</td>
+    </tr>
+</table>
+- 加密信息例子：user_name={user_name}&user_mobile={user_mobile} 拼接字符串进行3DES加密后放入业务参数 encrypt_data 中进行传输
+- 响应参数
+<table data-hy-role="doctbl">
+    <tr>
+        <th width="120">参数</th>
+        <th width="70">类型</th>
+        <th width="60">是否必填</th>
+        <th width="80">最大长度</th>
+        <th width="220">描述</th>
+        <th width="153">示例值</th>
+    </tr>
+    <tr>
+        <td>user_uid</td>
+        <td>String</td>
+        <td>是</td>
+        <td>16</td>
+        <td>用户uid</td>
+        <td>100001300210091</td>
+    </tr>
+    <tr>
+        <td>token</td>
+        <td>String</td>
+        <td>是</td>
+        <td>20</td>
+        <td>激活申请token</td>
+        <td>http://***</td>
+    </tr>
+</table>
