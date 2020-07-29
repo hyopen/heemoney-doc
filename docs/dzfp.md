@@ -110,6 +110,38 @@
     <th width="163">示例值</th>
 </tr>
 <tr>
+    <td>channel_type</td>
+    <td>String</td>
+    <td>是</td>
+    <td>-</td>
+    <td>通道类型:QRCODE_INVOICE</td>
+    <td>QRCODE_INVOICE</td>
+</tr>
+<tr>
+    <td>pay_from_type</td>
+    <td>String</td>
+    <td>否</td>
+    <td>-</td>
+    <td>支付单据来源类型:0=未知，1=聚合，2=汇付宝，3=其他</td>
+    <td>0</td>
+</tr>
+<tr>
+    <td>third_bill_no</td>
+    <td>String</td>
+    <td>是</td>
+    <td>64</td>
+    <td>交易单号</td>
+    <td>2007291537144488342027001813</td>
+</tr>
+<tr>
+    <td>pay_time</td>
+    <td>String</td>
+    <td>否</td>
+    <td>64</td>
+    <td>交易时间</td>
+    <td>20200729152914</td>
+</tr>
+<tr>
     <td>out_trade_no</td>
     <td>String</td>
     <td>是</td>
@@ -134,6 +166,22 @@
     <td>201609140000001</td>
 </tr>
 <tr>
+    <td>merch_address_phone</td>
+    <td>String</td>
+    <td>否</td>
+    <td>32</td>
+    <td>商家地址电话</td>
+    <td>河北省 张家口市 张三路10号 1380000000</td>
+</tr>
+<tr>
+    <td>merch_bank_info</td>
+    <td>String</td>
+    <td>否</td>
+    <td>32</td>
+    <td>商家开户行及账号</td>
+    <td>中国银行 123456</td>
+</tr>
+<tr>
     <td>total_amt</td>
     <td>decimal</td>
     <td>是</td>
@@ -154,8 +202,32 @@
     <td>String</td>
     <td>否</td>
     <td>255</td>
-    <td>异步通知的地址(暂时还不支持回调)</td>
+    <td>异步通知的地址</td>
     <td>http://...</td>
+</tr>
+<tr>
+    <td>email</td>
+    <td>String</td>
+    <td>否</td>
+    <td>64</td>
+    <td>接收邮箱</td>
+    <td></td>
+</tr>
+<tr>
+    <td>phone</td>
+    <td>String</td>
+    <td>否</td>
+    <td>64</td>
+    <td>接收手机号码</td>
+    <td>13800000000</td>
+</tr>
+<tr>
+    <td>client_ip</td>
+    <td>String</td>
+    <td>是</td>
+    <td>-</td>
+    <td>终端IP(用户端实际ip)</td>
+    <td></td>
 </tr>
 <tr>
     <td>invoice_items</td>
@@ -1045,6 +1117,38 @@ return_code为FAIL时只返回return_code和return_msg
     <th width="163">示例值</th>
 </tr>
 <tr>
+    <td>channel_type</td>
+    <td>String</td>
+    <td>是</td>
+    <td>64</td>
+    <td>通道类型:DIRECT_INVOICE</td>
+    <td>DIRECT_INVOICE</td>
+</tr>
+<tr>
+    <td>pay_from_type</td>
+    <td>String</td>
+    <td>否</td>
+    <td>-</td>
+    <td>支付单据来源类型:0=未知，1=聚合，2=汇付宝，3=其他</td>
+    <td>0</td>
+</tr>
+<tr>
+    <td>third_bill_no</td>
+    <td>String</td>
+    <td>是</td>
+    <td>64</td>
+    <td>交易单号</td>
+    <td>2007291537144488342027001813</td>
+</tr>
+<tr>
+    <td>pay_time</td>
+    <td>String</td>
+    <td>否</td>
+    <td>64</td>
+    <td>交易时间</td>
+    <td>20200729152914</td>
+</tr>
+<tr>
     <td>out_trade_no</td>
     <td>String</td>
     <td>是</td>
@@ -1055,8 +1159,9 @@ return_code为FAIL时只返回return_code和return_msg
 <tr>
     <td>invoice_type</td>
     <td>int</td>
-    <td>否</td>
-    <td>16</td>  <td>发票类型,1=增值税电子普通发票,3=增值税普通发票,4=增值税专用发票,8=增值税电子普通发票（成品油）,9=成品油普通发票(卷式),10=成品油普通发票，11=成品油专用发票，12=增值税普通发票(卷式)</td>
+    <td>是</td>
+    <td>16</td> 
+    <td>发票类型,1=增值税电子普通发票,3=增值税普通发票,4=增值税专用发票,8=增值税电子普通发票（成品油）,9=成品油普通发票(卷式),10=成品油普通发票，11=成品油专用发票，12=增值税普通发票(卷式)</td>
     <td>默认1</td>
 </tr>
 <tr>
@@ -1124,11 +1229,43 @@ return_code为FAIL时只返回return_code和return_msg
     <td>建行1 62202201212121212</td>
 </tr>
 <tr>
+    <td>total_amt</td>
+    <td>String</td>
+    <td>是</td>
+    <td>-</td>
+    <td>价税合计</td>
+    <td>60</td>
+</tr>
+<tr>
     <td>note</td>
     <td>String</td>
     <td>否</td>
     <td>255</td>
-    <td>发票备注(暂时还不支持回调)</td>
+    <td>发票备注</td>
+    <td>测试</td>
+</tr>
+<tr>
+    <td>email</td>
+    <td>String</td>
+    <td>否</td>
+    <td>64</td>
+    <td>接收邮箱</td>
+    <td></td>
+</tr>
+<tr>
+    <td>phone</td>
+    <td>String</td>
+    <td>否</td>
+    <td>64</td>
+    <td>接收手机号码</td>
+    <td>13800000000</td>
+</tr>
+<tr>
+    <td>client_ip</td>
+    <td>String</td>
+    <td>是</td>
+    <td>-</td>
+    <td>终端IP(用户端实际ip)</td>
     <td></td>
 </tr>
 <tr>
@@ -1136,7 +1273,7 @@ return_code为FAIL时只返回return_code和return_msg
     <td>String</td>
     <td>否</td>
     <td>255</td>
-    <td>异步通知的地址(暂时还不支持回调)</td>
+    <td>异步通知的地址</td>
     <td>http://...</td>
 </tr>
 <tr>
