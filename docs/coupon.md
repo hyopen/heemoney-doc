@@ -488,7 +488,7 @@
         <th width="153">示例值</th>
     </tr>
     <tr>
-        <td>app_id</td>
+        <td>third_app_id</td>
         <td>string</td>
         <td>是</td>
         <td>50</td>
@@ -496,7 +496,7 @@
         <td>wx4********51beac</td>
     </tr>
     <tr>
-        <td>open_id</td>
+        <td>third_open_id</td>
         <td>string</td>
         <td>是</td>
         <td>50</td>
@@ -665,6 +665,100 @@
         <td>1（0=失败,1=成功）</td>
     </tr>
 </table>
+
+## 优惠券核销通知
+- 请求地址：接入系统提供地址
+- 请求方式：`Post` 
+- 是否需要证书：`否`
+- 业务说明：聚合平台优惠券核销成功后主动通知
+- 业务请求参数
+<table data-hy-role="doctbl">
+    <tr>
+        <th width="120">参数</th>
+        <th width="70">类型</th>
+        <th width="60">是否必填</th>
+        <th width="80">最大长度</th>
+        <th width="220">描述</th>
+        <th width="153">示例值</th>
+    </tr>
+    <tr>
+        <td>merch_uid</td>
+        <td>long</td>
+        <td>是</td>
+        <td>15</td>
+        <td>商户编号</td>
+        <td>4706******500</td>
+    </tr>
+    <tr>
+        <td>activity_uid</td>
+        <td>int</td>
+        <td>是</td>
+        <td>6</td>
+        <td>活动编号</td>
+        <td>1**11</td>
+    </tr>
+    <tr>
+        <td>coupon_id</td>
+        <td>int</td>
+        <td>是</td>
+        <td>6</td>
+        <td>优惠券编号</td>
+        <td>1**01</td>
+    </tr>
+    <tr>
+        <td>coupon_no</td>
+        <td>int</td>
+        <td>是</td>
+        <td>6</td>
+        <td>优惠券券号</td>
+        <td>12545*******01</td>
+    </tr>
+    <tr>
+        <td>third_app_id</td>
+        <td>string</td>
+        <td>是</td>
+        <td>50</td>
+        <td>应用编号</td>
+        <td>wx4********51beac</td>
+    </tr>
+    <tr>
+        <td>third_open_id</td>
+        <td>string</td>
+        <td>是</td>
+        <td>50</td>
+        <td>用户唯一标识</td>
+        <td>oiz2w**********MJI</td>
+    </tr>
+    <tr>
+        <td>coupon_status</td>
+        <td>int</td>
+        <td>是</td>
+        <td>1</td>
+        <td>优惠券状态</td>
+        <td>1（0=核销失败,1=核销成功）</td>
+    </tr>
+    <tr>
+        <td>verify_time</td>
+        <td>int</td>
+        <td>是</td>
+        <td>1</td>
+        <td>核销时间</td>
+        <td>20200101013030</td>
+    </tr>
+</table>
+
+- 业务响应参数
+<table data-hy-role="doctbl">
+    <tr>
+        <th width="120">参数</th>
+        <th width="70">类型</th>
+        <th width="60">是否必填</th>
+        <th width="80">最大长度</th>
+        <th width="220">描述</th>
+        <th width="153">示例值</th>
+    </tr>
+</table>
+- 业务成功返回"SUCCESS"，失败返回"FAIL"
 
 ## 服务商（代理商）直属商户列表
 - 请求地址：`https://api.heemoney.com/v1/MerchList`
