@@ -135,7 +135,7 @@ CNY：人民币
         <td>支付宝刷卡</td>
     </tr>
     <tr>
-        <td>ALi_JSAPI</td>
+        <td>ALI_JSAPI</td>
         <td>支付宝服务窗/生活号</td>
     </tr>
     <tr>
