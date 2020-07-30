@@ -735,7 +735,7 @@
         <td>是</td>
         <td>1</td>
         <td>优惠券状态</td>
-        <td>1（0=核销失败,1=核销成功）</td>
+        <td>1（1=核销成功）</td>
     </tr>
     <tr>
         <td>verify_time</td>
