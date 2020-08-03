@@ -490,7 +490,7 @@
 
 ## 简单注册
 - 请求方式：`Post` 
-- 请求地址：`{URL}/SimpleRegister`
+- 请求地址：`{URL}/SimpleReg`
 - 是否需要证书：`否`
 - 请求参数
 <table data-hy-role="doctbl">
